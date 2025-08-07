@@ -1,0 +1,3 @@
+com/framework/models/Post.class
+com/framework/base/BaseTest.class
+com/framework/endpoints/PostsEndpoint.class

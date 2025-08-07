@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playwright Tutorial: Page Object Model (POM)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        ul {
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📘 Playwright Tutorial: Page Object Model (POM)</h1>
+
+    <div class="section">
+        <h2>🧭 What is Page Object Model?</h2>
+        <p>The Page Object Model (POM) is a design pattern used in test automation to create maintainable, scalable, and
+            readable test suites. Each web page or component is represented by a class that encapsulates its locators
+            and interactions.</p>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Benefits of POM in Playwright</h2>
+        <ul>
+            <li><strong>Easy Maintenance</strong>: Centralizes locators and actions, simplifying updates.</li>
+            <li><strong>Reusability</strong>: Share page objects across multiple tests.</li>
+            <li><strong>Improved Readability</strong>: Abstracts complex interactions into clean methods.</li>
+            <li><strong>Reduced Duplication</strong>: Encapsulates common actions.</li>
+            <li><strong>Better Debugging</strong>: Isolates issues within specific page objects.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🧱 Structure of a Page Object</h2>
+        <p>Each page object class typically includes:</p>
+        <ul>
+            <li>Locators for elements</li>
+            <li>Methods to interact with those elements</li>
+            <li>Assertions to verify page behavior</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>💡 Example: Playwright Page Object</h2>
+        <pre><code>// login-page.ts
+import { expect, Locator, Page } from '@playwright/test';
+
+export class LoginPage {
+  readonly page: Page;
+  readonly usernameInput: Locator;
+  readonly passwordInput: Locator;
+  readonly loginButton: Locator;
+
+  constructor(page: Page) {
+    this.page = page;
+    this.usernameInput = page.locator('#username');
+    this.passwordInput = page.locator('#password');
+    this.loginButton = page.locator('button[type="submit"]');
+  }
+
+  async goto() {
+    await this.page.goto('https://example.com/login');
+  }
+
+  async login(username: string, password: string) {
+    await this.usernameInput.fill(username);
+    await this.passwordInput.fill(password);
+    await this.loginButton.click();
+  }
+
+  async assertLoginSuccess() {
+    await expect(this.page.locator('.welcome')).toBeVisible();
+  }
+}
+</code></pre>
+
+        <pre><code>// login.spec.ts
+import { test } from '@playwright/test';
+import { LoginPage } from './login-page';
+
+test('successful login', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.goto();
+  await loginPage.login('user1', 'securePass');
+  await loginPage.assertLoginSuccess();
+});
+</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>📚 Tutorials & Resources</h2>
+        <ul>
+            <li>📖 <a href="https://playwright.dev/docs/pom" target="_blank">Playwright Official Docs on Page Object
+                    Models</a></li>
+            <li>🧠 <a href="https://www.lambdatest.com/learning-hub/playwright-page-object-model"
+                    target="_blank">Complete Guide to Playwright POM – LambdaTest</a></li>
+            <li>📘 <a href="https://www.browserstack.com/guide/page-object-model-with-playwright" target="_blank">Page
+                    Object Model with Playwright – BrowserStack</a></li>
+            <li>🛠️ <a href="https://autify.com/blog/playwright-page-object-model" target="_blank">Playwright POM
+                    Tutorial – Autify</a></li>
+            <li>🚀 <a href="https://ray.run/blog/mastering-poms" target="_blank">Mastering POM in Playwright –
+                    Rayrun</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📌 Conclusion</h2>
+        <p>Using the Page Object Model with Playwright helps you build clean, maintainable, and scalable test
+            automation. It’s a must-know pattern for any serious QA engineer or developer working with modern web apps.
+        </p>
+    </div>
+
+</body>
+
+</html>

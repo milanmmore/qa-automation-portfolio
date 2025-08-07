@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-10T00:31:42 CEST" name="REST_Assured_API_Testing_Suite" finished-at="2025-07-10T00:31:44 CEST" duration-ms="2335">
+    <groups>
+    </groups>
+    <test started-at="2025-07-10T00:31:42 CEST" name="Posts_API_Tests" finished-at="2025-07-10T00:31:44 CEST" duration-ms="2335">
+      <class name="com.framework.tests.PostsTests">
+        <test-method is-config="true" signature="setupSuite()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:42 CEST" name="setupSuite" finished-at="2025-07-10T00:31:42 CEST" duration-ms="385" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSuite -->
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:42 CEST" name="setupTest" finished-at="2025-07-10T00:31:42 CEST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.framework.tests.PostsTests.testGetAllPosts()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method signature="testGetAllPosts()[pri:1, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:42 CEST" name="testGetAllPosts" finished-at="2025-07-10T00:31:43 CEST" duration-ms="732" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllPosts -->
+        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="teardownTest" finished-at="2025-07-10T00:31:43 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownTest -->
+        <test-method signature="testGetPostById()[pri:2, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="testGetPostById" finished-at="2025-07-10T00:31:43 CEST" duration-ms="268" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetPostById -->
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="setupTest" finished-at="2025-07-10T00:31:43 CEST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.framework.tests.PostsTests.testGetPostById()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="teardownTest" finished-at="2025-07-10T00:31:43 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownTest -->
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="setupTest" finished-at="2025-07-10T00:31:43 CEST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.framework.tests.PostsTests.testCreatePost()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method signature="testCreatePost()[pri:3, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="testCreatePost" finished-at="2025-07-10T00:31:43 CEST" duration-ms="470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePost -->
+        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="teardownTest" finished-at="2025-07-10T00:31:43 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownTest -->
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="setupTest" finished-at="2025-07-10T00:31:43 CEST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.framework.tests.PostsTests.testUpdatePost()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method signature="testUpdatePost()[pri:4, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:43 CEST" name="testUpdatePost" finished-at="2025-07-10T00:31:44 CEST" duration-ms="322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdatePost -->
+        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="teardownTest" finished-at="2025-07-10T00:31:44 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownTest -->
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="setupTest" finished-at="2025-07-10T00:31:44 CEST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.framework.tests.PostsTests.testDeletePost()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method signature="testDeletePost()[pri:5, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="testDeletePost" finished-at="2025-07-10T00:31:44 CEST" duration-ms="299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeletePost -->
+        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="teardownTest" finished-at="2025-07-10T00:31:44 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownTest -->
+        <test-method signature="testGetPostsByUserId()[pri:6, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="testGetPostsByUserId" finished-at="2025-07-10T00:31:44 CEST" duration-ms="124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetPostsByUserId -->
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="setupTest" finished-at="2025-07-10T00:31:44 CEST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.framework.tests.PostsTests.testGetPostsByUserId()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="teardownTest" finished-at="2025-07-10T00:31:44 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownTest -->
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="setupTest" finished-at="2025-07-10T00:31:44 CEST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.framework.tests.PostsTests.testGetNonExistentPost()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method signature="testGetNonExistentPost()[pri:7, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="testGetNonExistentPost" finished-at="2025-07-10T00:31:44 CEST" duration-ms="55" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetNonExistentPost -->
+        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="teardownTest" finished-at="2025-07-10T00:31:44 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownTest -->
+        <test-method is-config="true" signature="teardownSuite()[pri:0, instance:com.framework.tests.PostsTests@6fd5717c]" started-at="2025-07-10T00:31:44 CEST" name="teardownSuite" finished-at="2025-07-10T00:31:44 CEST" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownSuite -->
+      </class> <!-- com.framework.tests.PostsTests -->
+    </test> <!-- Posts_API_Tests -->
+  </suite> <!-- REST_Assured_API_Testing_Suite -->
+</testng-results>

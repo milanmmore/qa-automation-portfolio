@@ -1,0 +1,327 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🌐 Base Layout */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* 🌟 Header */
+/* Fix header at top */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #333;
+  color: #fff;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  /* centers horizontally */
+  align-items: center;
+  /* centers vertically */
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.theme-toggle {
+  position: relative;
+  top: 70px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#darkModeToggle {
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+body.dark #darkModeToggle {
+  background-color: #ffa500;
+  color: #121212;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-left: 1em;
+}
+
+/* 🧱 Main Structure */
+
+.layout {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+}
+
+/* Push main content to the right and below header */
+
+main {
+  margin-left: 200px;
+  margin-top: 60px;
+  /* height of fixed header */
+  padding: 80px 1rem 1rem;
+  flex: 1;
+  min-height: 100vh;
+  /* ensures full height minus header */
+  overflow-y: auto;
+}
+
+
+main input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* 📚 Sidebar */
+/* Fix sidebar on the left */
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  /* below the header */
+  left: 0;
+  width: 200px;
+  height: calc(100vh - 60px);
+  /* full height minus header */
+  background: #222;
+  color: #fff;
+  overflow-y: auto;
+  padding: 1rem;
+    border-right: 1px solid #ccc;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 8px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* 🖥️ Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .sidebar.active {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    z-index: 999;
+  }
+  .hamburger {
+    display: block;
+    margin: 10px;
+  }
+}
+
+/* 🔦 Section Styling */
+section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+section h2 {
+  margin-top: 0;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+
+section h3 {
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: #007BFF;
+}
+
+/* 🎯 Challenges Section */
+section#challenges {
+  overflow-wrap: break-word;
+}
+
+.challenge-category {
+  margin-bottom: 20px;
+}
+
+.challenge-category ul {
+  padding-left: 20px;
+}
+
+.challenge-category li {
+  margin-bottom: 6px;
+}
+
+/* 📜 Details Accordion */
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5em 0;
+}
+
+details[open] summary::after {
+  content: "▲";
+  float: right;
+}
+
+details:not([open]) {
+  display: block;
+  /* keeps summary visible */
+}
+
+details:not([open]) ul {
+  display: none;
+  /* hides inner content */
+}
+
+details summary::after {
+  content: "▼";
+  float: right;
+}
+/* Optional: smooth transition for details */
+
+
+details {
+  transition: all 0.3s ease;
+}
+
+
+
+
+/* 🌒 Dark Mode */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark .sidebar {
+  background: #1e1e1e;
+}
+
+body.dark header {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+body.dark a {
+  color: #6cf;
+}
+
+body.dark section {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+
+/* Sidebar active link */
+.sidebar a.active-section {
+  color: orange;
+  font-weight: bold;
+}
+
+/* Section header highlight */
+section h2.active-section {
+  font-size: 1.4em;
+  border-bottom: 2px solid orange;
+  padding-bottom: 4px;
+}
+
+
+
+.active-section {
+  color: orange !important;
+  font-weight: bold;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+
+
+main section.active {
+  border-left: 4px solid #007acc;
+  padding-left: 10px;
+  background-color: #f0f8ff;
+}
+
+
+.active-section::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: orange;
+  margin-top: 4px;
+  transition: width 0.3s ease;
+}
+
+/* 🧮 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ⚓ Focus Styles */
+a:focus {
+  outline: 2px solid #007BFF;
+  outline-offset: 2px;
+}
+
+/* 🦶 Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+

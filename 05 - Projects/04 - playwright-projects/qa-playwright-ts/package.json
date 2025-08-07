@@ -1,0 +1,24 @@
+{
+  "name": "qa-playwright-ts",
+  "version": "1.0.0",
+  "description": "Comprehensive QA Automation Portfolio featuring real-world projects using Cypress, Playwright, Selenium, Appium, and Postman — across web, mobile, API, and performance testing domains.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.1.0",
+    "playwright": "^1.54.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
+  }
+}

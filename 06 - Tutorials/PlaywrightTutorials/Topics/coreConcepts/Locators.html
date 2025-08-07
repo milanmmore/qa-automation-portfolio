@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playwright Tutorial: Locators & Selectors</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e0e0e0;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📘 Playwright Tutorial: Locators & Selectors Explained</h1>
+
+    <div class="section">
+        <h2>🧭 Introduction</h2>
+        <p>Locators and selectors are the backbone of Playwright’s automation capabilities. They allow you to find and
+            interact with elements on a web page in a reliable and readable way.</p>
+    </div>
+
+    <div class="section">
+        <h2>🔍 What Are Locators?</h2>
+        <p>Locators are Playwright’s abstraction over selectors. They:</p>
+        <ul>
+            <li>Automatically wait for elements to be ready</li>
+            <li>Retry actions until they succeed</li>
+            <li>Make your tests more stable and readable</li>
+        </ul>
+        <pre><code>const locator = page.locator('text=Login');
+await locator.click();</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>🧵 Types of Selectors in Playwright</h2>
+
+        <h3>1. Text Selector</h3>
+        <pre><code>await page.locator('text=Submit').click();</code></pre>
+
+        <h3>2. CSS Selector</h3>
+        <pre><code>await page.locator('.btn.primary').click();</code></pre>
+
+        <h3>3. XPath Selector</h3>
+        <pre><code>await page.locator('//button[text()="Submit"]').click();</code></pre>
+
+        <h3>4. Role Selector</h3>
+        <pre><code>await page.getByRole('button', { name: 'Submit' }).click();</code></pre>
+
+        <h3>5. Label Selector</h3>
+        <pre><code>await page.getByLabel('Username').fill('myUser');</code></pre>
+
+        <h3>6. Placeholder Selector</h3>
+        <pre><code>await page.getByPlaceholder('Enter email').fill('test@example.com');</code></pre>
+
+        <h3>7. Test ID Selector</h3>
+        <pre><code>&lt;button data-testid="login-button"&gt;Login&lt;/button&gt;</code></pre>
+        <pre><code>await page.getByTestId('login-button').click();</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>🧪 Locator Methods</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>.click()</code></td>
+                    <td>Clicks the element</td>
+                </tr>
+                <tr>
+                    <td><code>.fill(value)</code></td>
+                    <td>Fills input fields</td>
+                </tr>
+                <tr>
+                    <td><code>.check()</code></td>
+                    <td>Checks a checkbox</td>
+                </tr>
+                <tr>
+                    <td><code>.selectOption()</code></td>
+                    <td>Selects a dropdown option</td>
+                </tr>
+                <tr>
+                    <td><code>.nth(index)</code></td>
+                    <td>Targets a specific element in a list</td>
+                </tr>
+                <tr>
+                    <td><code>.first()</code> / <code>.last()</code></td>
+                    <td>Targets first/last element</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre><code>await page.locator('.item').nth(2).click(); // Clicks the third item</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>✅ Best Practices</h2>
+        <ul>
+            <li>Use <strong>role</strong>, <strong>label</strong>, or <strong>test ID</strong> selectors for stability.
+            </li>
+            <li>Avoid brittle selectors like deeply nested CSS or XPath.</li>
+            <li>Chain locators for precise targeting:</li>
+        </ul>
+        <pre><code>await page.locator('.form').locator('button:has-text("Submit")').click();</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>🧠 Bonus: Locator Assertions</h2>
+        <pre><code>await expect(page.getByRole('button', { name: 'Submit' })).toBeVisible();
+await expect(page.locator('.error')).toHaveText('Invalid credentials');</code></pre>
+    </div>
+
+<div class="section">
+    <h2>📚 Tutorials & Resources</h2>
+    <ul>
+        <li>▶️ <a href="https://www.youtube.com/watch?v=KsxWkXcRKGI" target="_blank">Locators in Playwright | Playwright
+                Selectors</a> – Covers built-in locators and how to use them effectively</li>
+        <li>🚀 <a href="https://www.youtube.com/watch?v=WSNOM0FbZP0" target="_blank">Master Playwright Locators Like a
+                Pro!</a> – Quick guide to CSS, XPath, ID, Class, and Role selectors</li>
+        <li>🧠 <a href="https://www.youtube.com/watch?v=iQvjpbG2N98" target="_blank">How to use CSS Selector and XPath
+                Selector</a> – Practical examples and best practices</li>
+        <li>📖 <a href="https://playwright.dev/docs/locators" target="_blank">Playwright Official Docs on Locators</a> –
+            Comprehensive guide with examples</li>
+        <li>✍️ <a href="https://dev.to/zt4ff_1/playwright-tutorial-for-beginners-4-selectors-and-locators-1l41"
+                target="_blank">Playwright Tutorial for Beginners – Selectors & Locators</a> – Covers text, CSS, and
+            pseudo-class selectors</li>
+        <li>📖 <a href="https://the-internet.herokuapp.com"
+            target="_blank">demo web application</a> - for practicing automated browser testing</li>
+    </ul>
+</div>
+
+    <div class="section">
+        <h2>📌 Conclusion</h2>
+        <p>Locators and selectors are powerful tools in Playwright that make your tests more readable, reliable, and
+            maintainable. Mastering them is key to writing great automation scripts.</p>
+    </div>
+
+</body>
+
+</html>

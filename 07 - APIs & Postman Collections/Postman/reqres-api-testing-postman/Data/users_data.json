@@ -1,0 +1,37 @@
+
+[
+  {
+    "name": "Milan",
+    "job": "QA Lead"
+  },
+  {
+    "name": "Ava",
+    "job": "Automation Engineer"
+  },
+  {
+    "name": "Liam",
+    "job": "Software Developer"
+  },
+  {
+    "name": "Olivia",
+    "job": "Product Manager"
+  },
+  {
+    "name": "Noah",
+    "job": "Data Scientist"
+  },
+  {
+    "name": "Emma",
+    "job": "UX Designer"
+  },
+  {
+    "name": "Oliver",
+    "job": "DevOps Engineer"
+  },
+  {
+    "name": "Sophia",
+    "job": "Business Analyst"
+  }
+
+]
+

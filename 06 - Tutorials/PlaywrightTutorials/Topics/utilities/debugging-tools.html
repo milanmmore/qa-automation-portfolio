@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Debugging Tools</title>
+    <style>
+        pre {
+            white-space: pre;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🕵️ Debugging Tools</h2>
+    <p>Techniques and tools to troubleshoot test failures and inspect behavior.</p>
+    <pre><code>
+// Example: enable debug mode
+DEBUG=pw:api npx playwright test
+
+// Use browser.pause() for manual inspection
+await page.pause();
+  </code></pre>
+</body>
+
+</html>

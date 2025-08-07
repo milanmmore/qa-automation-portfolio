@@ -1,0 +1,17 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "types": ["node"],
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "rootDir": "./tests",
+    "outDir": "dist"
+  },
+  "include": ["tests", "pages", "utils"],
+  "exclude": ["node_modules", "dist"]
+}
+

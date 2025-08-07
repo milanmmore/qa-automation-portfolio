@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prime Number Checker <!-- change for new challenge --></title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .challenge-description {
+      text-align: center;
+      margin: 10px auto;
+      max-width: 600px;
+      font-size: 16px;
+    }
+
+    .difficulty-info {
+      text-align: center;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 8px 15px;
+      margin: 0 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #hintBox {
+      display: none;
+      background-color: #fff9e6;
+      border: 1px solid #ffcc66;
+      padding: 10px;
+      border-radius: 6px;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 250px;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Coding Challenge</h1>
+  <h2>Prime Number Checker <!-- change this title for a different challenge --></h2>
+
+  <div class="challenge-description">
+    <!-- Challenge description -->
+    🧪 <strong>Challenge:</strong> Write a function that checks if a given number is prime.<br>
+    <strong>Example:</strong> Input: <code>7</code> → Output: <code>true</code> (because 7 is a prime number)<br>
+    Input: <code>10</code> → Output: <code>false</code> (because 10 is divisible by 2 and 5)
+  </div>
+
+  <div class="difficulty-info">
+    🔍 Difficulty: Easy-Medium | 💡 Topics: Loops, Conditionals, Math
+  </div>
+
+  <div class="button-container">
+    <button onclick="showSolution()">Show Solution</button>
+    <button onclick="toggleHint()">Show Hint</button>
+    <button onclick="resetAll()">Reset</button>
+  </div>
+
+  <div id="hintBox">
+    💡 Hint: Try dividing the number by values from 2 up to √n. If any division leaves no remainder, it's not prime.
+  </div>
+
+  <textarea id="solutionBox" readonly>
+<!-- You can edit or replace this sample code -->
+// ✅ Sample Solution: Prime Checker
+function isPrime(n) {
+  if (n <= 1) return false;
+  if (n === 2) return true;
+
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+
+// Try it out:
+console.log(isPrime(7));  // true
+console.log(isPrime(10)); // false
+  </textarea>
+
+  <script>
+    function showSolution() {
+      document.getElementById("solutionBox").style.display = "block";
+    }
+
+    function toggleHint() {
+      const hint = document.getElementById("hintBox");
+      hint.style.display = hint.style.display === "none" ? "block" : "none";
+    }
+
+    function resetAll() {
+      document.getElementById("solutionBox").style.display = "none";
+      document.getElementById("hintBox").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prime Number Checker <!-- change for new challenge --></title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .challenge-description {
+      text-align: center;
+      margin: 10px auto;
+      max-width: 600px;
+      font-size: 16px;
+    }
+
+    .difficulty-info {
+      text-align: center;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 8px 15px;
+      margin: 0 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #hintBox {
+      display: none;
+      background-color: #fff9e6;
+      border: 1px solid #ffcc66;
+      padding: 10px;
+      border-radius: 6px;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 250px;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Coding Challenge</h1>
+  <h2>Prime Number Checker <!-- change this title for a different challenge --></h2>
+
+  <div class="challenge-description">
+    <!-- Challenge description -->
+    🧪 <strong>Challenge:</strong> Write a function that checks if a given number is prime.<br>
+    <strong>Example:</strong> Input: <code>7</code> → Output: <code>true</code> (because 7 is a prime number)<br>
+    Input: <code>10</code> → Output: <code>false</code> (because 10 is divisible by 2 and 5)
+  </div>
+
+  <div class="difficulty-info">
+    🔍 Difficulty: Easy-Medium | 💡 Topics: Loops, Conditionals, Math
+  </div>
+
+  <div class="button-container">
+    <button onclick="showSolution()">Show Solution</button>
+    <button onclick="toggleHint()">Show Hint</button>
+    <button onclick="resetAll()">Reset</button>
+  </div>
+
+  <div id="hintBox">
+    💡 Hint: Try dividing the number by values from 2 up to √n. If any division leaves no remainder, it's not prime.
+  </div>
+
+  <textarea id="solutionBox" readonly>
+<!-- You can edit or replace this sample code -->
+// ✅ Sample Solution: Prime Checker
+function isPrime(n) {
+  if (n <= 1) return false;
+  if (n === 2) return true;
+
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+
+// Try it out:
+console.log(isPrime(7));  // true
+console.log(isPrime(10)); // false
+  </textarea>
+
+  <script>
+    function showSolution() {
+      document.getElementById("solutionBox").style.display = "block";
+    }
+
+    function toggleHint() {
+      const hint = document.getElementById("hintBox");
+      hint.style.display = hint.style.display === "none" ? "block" : "none";
+    }
+
+    function resetAll() {
+      document.getElementById("solutionBox").style.display = "none";
+      document.getElementById("hintBox").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

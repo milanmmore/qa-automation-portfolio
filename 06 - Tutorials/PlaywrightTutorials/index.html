@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Playwright Learning Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+  <header>
+    <h1>🎭 Playwright Learning Map</h1>
+    <!-- Toggle button below header -->
+    
+    <!-- div class="theme-toggle">
+      <button id="darkModeToggle">🌙 Dark Mode</button>
+    </div> -->
+    <button onclick="document.body.classList.toggle('dark')">🌓 Toggle Dark Mode</button>
+    <span class="hamburger" onclick="document.querySelector('.sidebar').classList.toggle('active')">☰ Menu</span>
+
+  </header>
+
+
+
+
+  <div class="layout">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#getting-started" data-target="getting-started">🧭 Getting Started</a></li>
+        <li><a href="#core-concepts" data-target="core-concepts">🧪 Core Concepts</a></li>
+        <li><a href="#utilities" data-target="utilities">🔁 Reusable Utilities</a></li>
+        <li><a href="#advanced" data-target="advanced">🧰 Advanced Features</a></li>
+        <li><a href="#reporting" data-target="reporting">📊 Reporting & CI/CD</a></li>
+        <li><a href="#framework" data-target="framework">🎓 Framework Finalization</a></li>
+        <li><a href="#bonus" data-target="bonus">🎁 Bonus Section</a></li>
+        <li><a href="#references" data-target="references">🔗 References</a></li>
+      </ul>
+    </aside>
+     
+    <main>
+
+    <div class="search-container">
+      <input type="text" id="search" placeholder="🔍 Search topics..." />
+    </div>
+      <section id="getting-started">
+        <h2>🧭 Getting Started</h2>
+
+        <details open>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="topic1.html" target="_blank">What is Playwright?</a></li>
+            <li><a href="topic2.html" target="_blank">Installing Playwright</a></li>
+            <li><a href="topic3.html" target="_blank">Project Setup with VS Code</a></li>
+            <li><a href="topic4.html" target="_blank">Folder Structure</a></li>
+            <li><a href="topic5.html" target="_blank">Running Your First Test</a></li>
+          </ul>
+        </details>
+      </section>
+    
+      <section id="core-concepts">
+        <h2>🧪 Core Concepts</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="Topics/coreConcepts/Locators.html" target="_blank">Locators & Selectors</a></li>
+            <li><a href="Topics/coreConcepts/POM.html" target="_blank">Page Object Model (POM)</a></li>
+            <li><a href="Topics/coreConcepts/UIInteractions.html" target="_blank">UI Interactions</a></li>
+            <li><a href="Topics/coreConcepts/frames_alerts.html" target="_blank">Frames, Alerts & Shadow DOM</a></li>
+          </ul>
+        </details>
+      </section>
+    
+      <section id="utilities">
+        <h2>🔁 Reusable Utilities</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="Topics/utilities/HelperFunctions.html" target="_blank">Custom Helper Functions</a></li>
+            <li><a href="Topics/utilities/config-management.html" target="_blank">Config Management</a></li>
+            <li><a href="Topics/utilities/environment-setup.html" target="_blank">Environment Setup</a></li>
+            <li><a href="Topics/utilities/data-driven-testing.html" target="_blank">Data-Driven Testing</a></li>
+            <li><a href="Topics/utilities/debugging-tools.html" target="_blank">Debugging Tools</a></li>
+          </ul>
+        </details>
+      </section>
+    
+      <section id="advanced">
+        <h2>🧰 Advanced Features</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="topic15.html" target="_blank">API Testing</a></li>
+            <li><a href="topic16.html" target="_blank">File Uploads & Downloads</a></li>
+            <li><a href="topic17.html" target="_blank">Visual Regression Testing</a></li>
+            <li><a href="topic18.html" target="_blank">Browser Contexts & Storage State</a></li>
+          </ul>
+        </details>
+      </section>
+    
+      <section id="reporting">
+        <h2>📊 Reporting & CI/CD</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="topic19.html" target="_blank">HTML & Allure Reports</a></li>
+            <li><a href="topic20.html" target="_blank">GitHub Actions Integration</a></li>
+            <li><a href="topic21.html" target="_blank">Docker Setup</a></li>
+            <li><a href="topic22.html" target="_blank">Cloud Testing (BrowserStack, LambdaTest)</a></li>
+          </ul>
+        </details>
+      </section>
+    
+      <section id="framework">
+        <h2>🎓 Framework Finalization</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="topic23.html" target="_blank">Reusable Framework Skeleton</a></li>
+            <li><a href="topic24.html" target="_blank">Utility Layers (Helpers, Constants)</a></li>
+            <li><a href="topic25.html" target="_blank">Sample Test Suites</a></li>
+            <li><a href="topic26.html" target="_blank">Publishing & Versioning</a></li>
+            <li><a href="topic27.html" target="_blank">GitHub README & Demo</a></li>
+          </ul>
+        </details>
+      </section>
+    
+      <section id="bonus">
+        <h2>🎁 Bonus Section</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="topic28.html" target="_blank">Playwright vs Cypress</a></li>
+            <li><a href="topic29.html" target="_blank">Interview Questions</a></li>
+            <li><a href="topic30.html" target="_blank">YouTube Series Branding</a></li>
+            <li><a href="topic31.html" target="_blank">Logo & Animation</a></li>
+          </ul>
+        </details>
+      </section>
+    
+      <section id="references">
+        <h2>🔗 References</h2>
+        <details>
+          <summary><strong>Reference Links</strong></summary>
+          <ul>
+            <li><a href="https://playwright.dev/" target="_blank">Official Playwright Docs</a></li>
+            <li><a href="https://github.com/microsoft/playwright" target="_blank">Playwright GitHub Repo</a></li>
+            <li><a href="https://www.youtube.com/@MilanMore" target="_blank">Milan's YouTube Channel</a></li>
+          </ul>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>Made by Milan More | <a href="https://github.com/milanmmore/PlaywrightTutorial" target="_blank">View on
+        GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

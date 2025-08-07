@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Helper Functions</title>
+    <style>
+        pre {
+            white-space: pre;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🔧 Custom Helper Functions</h2>
+    <p>Reusable functions to simplify repetitive tasks in your test scripts.</p>
+    <pre><code>
+// Example: login helper
+async function login(page, username, password) {
+  await page.fill('#username', username);
+  await page.fill('#password', password);
+  await page.click('button[type="submit"]');
+}
+  </code></pre>
+</body>
+
+</html>

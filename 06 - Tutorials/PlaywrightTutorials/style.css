@@ -1,0 +1,169 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #007acc;
+  color: white;
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+header button,
+header .hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Search Box */
+.search-container {
+  position: fixed;
+  top: 60px;
+  /* height of header */
+  left: 0;
+  right: 0;
+  background-color: #eaeaea;
+  padding: 0.75rem 1rem;
+  z-index: 999;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  margin-top: 120px;
+  /* header + search height */
+  height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  height: calc(100vh - 60px);
+  width: 250px;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+}
+
+.section-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  /* Prevent content from showing through */
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar.active {
+  display: block;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.main-content {
+  padding-top: 60px;
+  /* match the height of your header */
+}
+section {
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  margin-bottom: 0.5rem;
+}
+
+body.dark section h2 {
+  background: #1e1e1e;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #007acc;
+  color: white;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+body.dark header,
+body.dark footer {
+  background-color: #333;
+}
+
+body.dark .search-container {
+  background-color: #444;
+}
+
+body.dark .sidebar {
+  background-color: #2a2a2a;
+}
+
+body.dark .sidebar a {
+  color: #ddd;
+}
+
+pre {
+  white-space: pre;
+  overflow-x: auto;
+}

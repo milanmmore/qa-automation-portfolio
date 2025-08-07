@@ -1,0 +1,16 @@
+{
+  "name": "parabank-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserstack-cypress-cli": "^1.11.1",
+    "cypress": "^14.5.3"
+  }
+}
