@@ -1,0 +1,29 @@
+name: Run Cloud API Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman Collection
+        run: |
+          newman run api-tests/postman/cloud-api-tests.postman_collection.json \
+            --environment api-tests/postman/cloud-api-env.postman_environment.json \
+            --reporters cli,json \
+            --reporter-json-export api-tests/newman/report.json

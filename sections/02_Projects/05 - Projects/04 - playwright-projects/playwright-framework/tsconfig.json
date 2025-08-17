@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "dist"
+  },
+  "include": ["tests", "pages", "utils", "fixtures", "tests_extra/auth-check.spec.ts", "tests_extra/apiDemo.spec.ts", "tests_extra/testLogin.spec.ts", "tests_extra/login.spec.ts"]
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playwright Automation Framework</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        code,
+        pre {
+            background-color: #eef;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            white-space: pre-wrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎭 Playwright Automation Framework Documentation</h1>
+
+    <h2>📌 Overview</h2>
+    <p>This framework is built using <strong>Playwright</strong> with <strong>JavaScript/TypeScript</strong> to enable
+        fast, reliable, and cross-browser automation. It supports Chromium, Firefox, and WebKit, and integrates with
+        tools like <strong>Allure</strong>, <strong>GitHub Actions</strong>, and <strong>Docker</strong> for scalable
+        execution.</p>
+
+    <h2>🏗️ Architecture</h2>
+
+    <h3>🔹 Folder Structure</h3>
+    <pre><code>playwright-framework/
+│
+├── tests/               # Test scripts
+├── pages/               # Page Object Models
+├── utils/               # Reusable functions
+├── config/              # Environment configs
+├── reports/             # Allure or HTML reports
+├── node_modules/        # Dependencies
+├── playwright.config.ts # Global config
+└── package.json         # Project metadata
+</code></pre>
+
+    <h3>🔹 Design Pattern</h3>
+    <ul>
+        <li>Page Object Model (POM)</li>
+        <li>Modular structure</li>
+        <li>Config-driven execution</li>
+    </ul>
+
+    <h2>⚙️ Tools & Technologies</h2>
+    <table>
+        <tr>
+            <th>Tool</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Playwright</td>
+            <td>Web automation</td>
+        </tr>
+        <tr>
+            <td>TypeScript</td>
+            <td>Strong typing and scalability</td>
+        </tr>
+        <tr>
+            <td>Allure Report</td>
+            <td>Rich test reporting</td>
+        </tr>
+        <tr>
+            <td>GitHub Actions</td>
+            <td>CI/CD pipeline</td>
+        </tr>
+        <tr>
+            <td>Docker</td>
+            <td>Containerized execution</td>
+        </tr>
+    </table>
+
+    <h2>🧩 Key Components</h2>
+    <ul>
+        <li><strong>Test Scripts</strong>: Located in <code>/tests</code></li>
+        <li><strong>Page Objects</strong>: Encapsulate selectors and actions in <code>/pages</code></li>
+        <li><strong>Utilities</strong>: Common helpers in <code>/utils</code></li>
+        <li><strong>Configuration</strong>: <code>playwright.config.ts</code> and environment files</li>
+    </ul>
+
+    <h2>🧪 Test Data Strategy</h2>
+    <p>Use JSON or CSV files stored in <code>/config/testdata</code>, loaded dynamically via utility functions.</p>
+
+    <h2>📊 Reporting</h2>
+    <ul>
+        <li><strong>Allure Reports</strong> with screenshots and step logs</li>
+        <li>Optional: Playwright’s built-in HTML report</li>
+    </ul>
+
+    <h2>🚀 Execution Modes</h2>
+    <h3>Local</h3>
+    <pre><code>npx playwright test</code></pre>
+
+    <h3>Headless</h3>
+    <pre><code>npx playwright test --headed=false</code></pre>
+
+    <h3>CI/CD</h3>
+    <p>GitHub Actions workflow and Dockerfile for containerized runs</p>
+
+    <h2>🔐 Environment Setup</h2>
+
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Node.js 18+</li>
+        <li>Playwright installed via npm</li>
+    </ul>
+
+    <h3>Setup Steps</h3>
+    <pre><code>git clone https://github.com/milanmore/playwright-framework
+cd playwright-framework
+npm install
+npx playwright install
+</code></pre>
+
+    <h2>🧠 Troubleshooting & FAQs</h2>
+    <ul>
+        <li><strong>Issue</strong>: Browser not launching<br><strong>Fix</strong>: Run
+            <code>npx playwright install</code></li>
+        <li><strong>Issue</strong>: Timeout errors<br><strong>Fix</strong>: Increase timeout in
+            <code>playwright.config.ts</code></li>
+    </ul>
+
+    <h2>📬 Contribution Guidelines</h2>
+    <ul>
+        <li>Use feature branches</li>
+        <li>Follow naming conventions</li>
+        <li>Include test evidence in pull requests</li>
+    </ul>
+
+    <h2>📁 References</h2>
+    <ul>
+        <li><a href="https://playwright.dev/docs/intro" target="_blank">Playwright Docs</a></li>
+        <li><a href="https://docs.qameta.io/allure/" target="_blank">Allure Report</a></li>
+        <li><a href="https://docs.github.com/en/actions" target="_blank">GitHub Actions</a></li>
+        <li><a href="https://docs.docker.com/" target="_blank">Docker</a></li>
+    </ul>
+
+</body>
+
+</html>

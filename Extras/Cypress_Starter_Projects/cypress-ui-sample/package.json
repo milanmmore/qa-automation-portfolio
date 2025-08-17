@@ -1,0 +1,11 @@
+{
+  "name": "cypress-ui-sample",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.0"
+  }
+}

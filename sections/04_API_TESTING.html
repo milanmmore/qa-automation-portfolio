@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Testing</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        summary h3 {
+            display: inline;
+            cursor: pointer;
+            margin: 0;
+        }
+    
+        details {
+            margin-bottom: 20px;
+            border-left: 4px solid #007acc;
+            padding-left: 10px;
+            background-color: #f2f8ff;
+        }
+    
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .concept-block {
+        margin-top: 20px;
+        }
+
+        .concept-block h4 {
+            margin-bottom: 5px;
+            color: #007acc;
+        }
+        .tip {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+        details {
+margin-bottom: 20px;
+border-left: 4px solid #007acc;
+padding-left: 10px;
+background-color: #f2f8ff;
+}
+
+summary h3 {
+display: inline;
+cursor: pointer;
+margin: 0;
+color: #005a9c;
+}
+
+.concept-block h4 {
+margin-top: 0;
+color: #005a9c;
+}
+
+.concept-block h5 {
+margin-bottom: 5px;
+color: #007acc;
+}
+
+.concept-block code {
+background-color: #eee;
+padding: 2px 6px;
+border-radius: 4px;
+}
+
+.sub-content {
+margin-left: 20px;
+}
+
+.heading-main {
+color: #005a9c; /* Deep blue for h4 */
+}
+
+.heading-sub {
+color: #007acc; /* Lighter blue for h5 */
+}
+
+
+
+
+
+
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="banner-container">
+            <div class="banner-image"></div>
+            <div class="banner-text">
+                <h1>API Testing</h1>
+                <p>Milan More | QA Lead • Freelancer • Mentor & Lifelong Learner</p>
+            </div>
+            <button id="toggle-theme">🌙 Dark Mode</button>
+        </div>
+    </header>
+
+    <section id="intro" class="compact-docs">
+        <h2>Introduction to API Testing</h2>
+        <details open>
+        <summary>
+            <h3>What is API Testing?</h3>
+        </summary>
+        <p>
+            API testing validates the communication between software systems. It ensures data flows correctly, securely, and
+            efficiently—without relying on a UI. In real-world scenarios, APIs power everything from mobile apps to banking systems
+        </p>
+        </details>
+        <details>
+        <summary>
+            <h3>Functional Vs Non-functtional</h3>
+        </summary>
+        <p>
+            API testing is primarily classified as functional testing, as its core purpose is to verify whether the API performs its
+            intended operations correctly and consistently. This includes validating business logic, input/output handling, and
+            response accuracy.
+            
+            However, depending on the test objectives, API testing can also encompass non-functional testing types:
+
+            <p><strong>Performance Testing</strong> Evaluates how quickly and reliably the API responds under various load conditions. Example: Stress
+            testing a payment API during a festival sale to ensure it handles 10,000 concurrent transactions without degradation.</p>
+            
+            <p><strong>Security Testing</strong> Ensures the API is protected against unauthorized access, data leaks, and injection attacks. Example:
+            Validating that a DELETE /user/{id} endpoint is accessible only to admin roles and blocks SQL injection attempts.</p>
+            
+            <p><strong>Reliability Testing</strong> Confirms that the API delivers consistent results across repeated calls and edge scenarios. Example:
+            A weather API should return accurate temperature data for the same city across multiple requests.</p>
+            
+            <p><strong>Scalability Testing</strong> Assesses how well the API scales with increasing data volume or user load. Example: Testing a search
+            API with a growing product catalog to ensure response time remains acceptable.</p>
+            
+            <p><strong>Interoperability Testing</strong> Verifies that the API works seamlessly across platforms, devices, and third-party integrations.
+            Example: Ensuring a REST API returns consistent JSON responses when accessed via mobile, desktop, and IoT devices.</p>
+        </p>
+        </details>
+        <details>
+            <summary>
+                <h3>API testing Vs UI testing</h3>
+            </summary>
+        <p>
+            API testing focuses on the backend logic, while UI testing validates the user interface.
+            Their differences include:
+            <table>
+                <tr>
+                    <th>Aspect</th>
+                    <th>API Testing</th>
+                    <th>UI Testing</th>
+                </tr>
+                <tr>
+                    <td>Scope</td> 
+                    <td>Validates backend systems and business logic.</td>
+                    <td>Tests user interface interactions.</td>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td>Faster since it bypasses the graphical interface.</td> 
+                    <td>Slower due to rendering processes.</td>
+                </tr>
+                <tr>
+                    <td>Reliability</td>
+                    <td>API tests are more stable; less prone to flaky results caused by UI changes.</td>
+                    <td>Prone to instability if UI elements change.</td>
+                </tr>
+                <tr>
+                    <td>Example</td>
+                    <td>Verifying a “createOrder” API works correctly.</td>
+                    <td>Testing if the “Place Order” button functions properly.</td>
+                </tr>
+            </table>          
+        </p>
+        </details>
+        </section>
+
+        <section id="template">
+                    <details>
+                        <summary>
+                            <h3 class="heading-main">"add here>"</h3>
+                        </summary>
+                        <p>
+                        <div class="sub-content">
+                            <p>"add here""</p>
+                            <h4 class="heading-sub">🔹 add here </h4>
+                            <div class="sub-content">
+                                <p>
+                                </p>
+                                <p><strong>Example:</strong> add here</p>
+                            </div>
+                            <h4 class="heading-sub">🔹 add here</h4>
+                            <div class="sub-content">
+                                <p>
+                                </p>
+                                <p><strong>Example:</strong> add here</p>
+                            </div>
+                            <p class="tip"><Strong>Tips:</Strong>
+                            <p>
+                    
+                            </p>
+                            </p>
+                        </div>
+                        </p>
+                    </details>
+        </section>
+
+        <section id="funda" class="compact-docs">
+            <h2>Fundamentals of API Testing</h2>
+        <details>
+            <summary><h3>Key Concepts</h3></summary>
+            <p>
+            <div class="concept">
+                <strong>🔗 1. Endpoints</strong>
+                <p>The URL paths where APIs are accessed.</p>
+                <p><strong>Example:</strong> <pre><code>GET https://api.example.com/users/123</code></pre></p>
+                <p class="tip">Tip: Always document endpoints with required parameters and expected responses.</p>
+            </div>
+            
+            <div class="concept">
+                <strong>📤 2. HTTP Methods</strong>
+                <p>Define the type of operation the API performs:</p>
+                <ul>
+                    <li><strong>GET:</strong> Retrieve data</li>
+                    <li><strong>POST:</strong> Create new data</li>
+                    <li><strong>PUT:</strong> Update existing data</li>
+                    <li><strong>DELETE:</strong> Remove data</li>
+                </ul>
+                <p class="tip">Tip: Ensure the API adheres to RESTful conventions.</p>
+            </div>
+            
+            <div class="concept">
+                <strong>📦 3. Request Payloads & Parameters</strong>
+                <ul>
+                    <li><strong>Query Parameters:</strong> Appended to the URL (e.g., <pre><code>?userId=123</code></pre>)</li>
+                    <li><strong>Body Parameters:</strong> Sent in the request body (e.g., JSON for POST)</li>
+                </ul>
+                <p class="tip">Tip: Validate edge cases like missing, null, or invalid values.</p>
+            </div>
+            
+            <div class="concept">
+                <strong>📥 4. Responses & Status Codes</strong>
+                <p>APIs return structured data and HTTP status codes like:</p>
+                <ul>
+                    <li><pre><code>200 OK</code></pre>: Success</li>
+                    <li><pre><code>201 Created</code></pre>: Resource created</li>
+                    <li><pre><code>400 Bad Request</code></pre>: Client error</li>
+                    <li><pre><code>401 Unauthorized</code></pre>: Auth failure</li>
+                    <li><pre><code>500 Internal Server Error</code></pre>: Server crash</li>
+                </ul>
+                <p class="tip">Tip: Test all possible response scenarios, including error handling.</p>
+            </div>
+            
+            <div class="concept">
+                <strong>🧾 5. Headers</strong>
+                <p>Carry metadata like content type and authentication tokens.</p>
+                <p><strong>Example:</strong> <pre><code>Authorization: Bearer &lt;token&gt;</code></pre></p>
+                <p class="tip">Tip: Validate headers for correctness and completeness.</p>
+            </div>
+            
+            <div class="concept">
+                <strong>✅ 6. Assertions</strong>
+                <p>Validate API behavior by checking:</p>
+                <ul>
+                    <li>Status codes</li>
+                    <li>Response body content</li>
+                    <li>Response time</li>
+                </ul>
+                <p class="tip">Tip: Use tools like Postman, REST Assured, or JSON Schema Validator for automated assertions.</p>
+            </div>
+            
+            <div class="concept">
+                <strong>🔐 7. Authentication & Authorization</strong>
+                <p>APIs often require secure access:</p>
+                <ul>
+                    <li>API Keys</li>
+                    <li>OAuth2 Tokens</li>
+                    <li>JWTs</li>
+                </ul>
+                <p class="tip">Tip: Test role-based access and token expiry scenarios.</p>
+            </div>
+            
+            <div class="concept">
+                <strong>📊 8. Performance & Reliability</strong>
+                <p>Measure response time, throughput, and stability under load.</p>
+                <p><strong>Example:</strong> Ensure <pre><code>GET /weather</code></pre> responds within 200ms under 100 concurrent users.</p>
+                <p class="tip">Tip: Use JMeter or Gatling for load and stress testing.</p>
+            </div>
+            </p>
+        </details>
+        <details>
+            <summary><h3>Conceptual Diagram</h3></summary>
+        <p>
+        <img src="../assets/api-testing-diagram.png" alt="API Testing Conceptual Diagram" width="600">
+        </p>
+        </details>
+        <details>
+            <summary>
+                <h3>HTTP Status Codes</h3>
+            </summary>
+            <p>
+                HTTP defines these standard status codes that can be used to convey the results of a client’s request. The status codes
+                are divided into five categories.
+                <table>
+                    <tr>
+                        <th>
+                            "Status Code"
+                        </th>
+                        <th>
+                            "Description"
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            "1xx: Informational"
+                        </td>
+                        <td>
+                            "Communicates transfer protocol-level information."
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            "2xx: Success"
+                        </td>
+                        <td>
+                            "Indicates that the client’s request was accepted successfully."
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            "3xx: Redirection"
+                        </td>
+                        <td>
+                            "Indicates that the client must take some additional action in order to complete their request."
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            "4xx: Client Error"
+                        </td>
+                        <td>
+                            "This category of error status codes points the finger at clients."
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            "5xx: Server Error"
+                        </td>
+                        <td>
+                            "The server takes responsibility for these error status codes."
+                        </td>
+                    </tr>
+                </table>
+                <strong><p class="tip">Tip: You can refer to <a href="https://restfulapi.net/http-status-codes/">HTTP Status Codes</a> or  
+                    <a href="https://www.softwaretestinghelp.com/rest-api-response-codes/">Rest API Response Codes</a>  for full link of response Codes. </p></strong>
+            </p>
+        </details>
+
+    </section>
+
+    <section id="testing" class="compact-docs">
+            <h2>What to Test in API Testing</h2>
+            <details>
+            <summary><h3 class="heading-main">Functional Testing of APIs</h3></summary>
+            <p>
+                <div class="sub-content">
+                    <p>Functional testing ensures that an API behaves as expected when performing its core operations. It
+                        focuses on
+                        verifying endpoint responses, input handling, business logic enforcement, and service interactions.</p>
+        
+                    <h4 class="heading-sub">🔹 Endpoint Behavior Verification</h4>
+                    <p>Check whether each API endpoint returns the correct response for a given request.</p>
+                    <p><strong>Example:</strong> Validate that <pre><code>GET /user/{id}</code></pre> returns accurate user information for
+                        the
+                        specified ID.</p>
+        
+                    <h4 class="heading-sub">🔹 Input Handling Validation</h4>
+                    <p>Assess how the API processes different types of input data:</p>
+                    <ul>
+                        <li><strong>Valid input:</strong> Well-formed and complete data</li>
+                        <li><strong>Invalid input:</strong> Missing required fields or incorrect formats</li>
+                        <li><strong>Boundary input:</strong> Values at the edge of acceptable ranges</li>
+                    </ul>
+                    <p><strong>Example:</strong> Test a date filter API to ensure it rejects invalid formats like
+                        <pre><code>99-99-9999</code></pre>.
+                    </p>
+        
+                    <h4 class="heading-sub">🔹 Business Rule Enforcement</h4>
+                    <p>Verify that the API correctly applies the intended business rules and restrictions.</p>
+                    <p><strong>Example:</strong> Confirm that <pre><code>POST /applyDiscount</code></pre> only applies offers to qualifying
+                        products based on category or price.</p>
+        
+                    <h4 class="heading-sub">🔹 External Service Interaction</h4>
+                    <p>Evaluate how the API communicates with dependent systems or third-party services.</p>
+                    <p><strong>Example:</strong> When calling a payment processor, ensure the API handles success, failure, and
+                        timeout
+                        scenarios gracefully.</p>
+                    <p></p>
+                    <p class="tip"><strong>Tips:</strong>
+                        <p>• Use data-driven testing to validate multiple input combinations.</p>
+                        <p>• Automate functional tests with tools like REST Assured or Postman for efficiency.</p>
+                    </p>
+                </div>
+            </p>
+            </details>
+
+            <details>
+            <summary>
+                <h3 class="heading-main">What to Validate in API Responses</h3>
+            </summary>
+            <p>
+            <div class="sub-content">
+            <p>Validating API responses ensures that the returned data is accurate, complete, and conforms to expectations. This
+                helps catch issues early and improves reliability across integrations.</p>
+        
+            <h4 class="heading-sub">🔹 Status Code Validation</h4>
+            <p>Confirm that the API returns the correct HTTP status code for each scenario.</p>
+            <ul>
+                <li><pre><code>200 OK</code></pre>: Successful request</li>
+                <li><pre><code>404 Not Found</code></pre>: Resource doesn’t exist</li>
+                <li><pre><code>500 Internal Server Error</code></pre>: Server-side failure</li>
+            </ul>
+        
+            <h4 class="heading-sub">🔹 Response Body Validation</h4>
+            <p>Check that the response contains the expected fields and values.</p>
+            <p><strong>Example:</strong> For a user API, verify that fields like <pre><code>name</code></pre>, <pre><code>email</code></pre>, and
+                <pre><code>age</code></pre> are present and correctly typed.
+            </p>
+        
+            <h4 class="heading-sub">🔹 Schema Validation</h4>
+            <p>Ensure the structure of the response matches the defined schema (e.g., JSON Schema).</p>
+            <p class="tip"><strong>Tip:</strong> Use tools like <pre><code>JSON Schema Validator</code></pre> or <pre><code>Ajv</code></pre> to
+                automate schema
+                checks.</p>
+        
+            <h4 class="heading-sub">🔹 Data Accuracy</h4>
+            <p>Verify that the returned data matches what’s stored or expected.</p>
+            <p><strong>Example:</strong> If <pre><code>GET /product/{id}</code></pre> returns a price, confirm it matches the database
+                record.</p>
+        
+            <h4 class="heading-sub">🔹 Error Message Validation</h4>
+            <p>Check that error responses are clear, consistent, and secure.</p>
+            <p><strong>Example:</strong> If a required field is missing, the API should return a message like
+                <pre><code>"Missing parameter: email"</code></pre>.
+            </p>
+        
+            <p class="tip"><strong>Tip:</strong> Include assertions for all critical fields to avoid missed validations during
+                regression
+                testing.</p>
+        </div>
+            </p>
+            </details>
+
+            <details>
+            <summary>
+                        <h3 class="heading-main">Security Testing for APIs</h3>
+            </summary>
+            <p>
+            <div class="sub-content">
+                <p>Security testing ensures that APIs are protected against unauthorized access, data leaks, and malicious
+                    attacks. It validates authentication, authorization, data integrity, and input sanitization.</p>
+
+                <h4 class="heading-sub">🔹 Authentication Validation</h4>
+                    <div class="sub-content">
+                    <p>Verify that only authenticated users can access protected endpoints.</p>
+                    <p><strong>Example:</strong> Ensure <pre><code>GET /account</code></pre> returns <pre><code>401 Unauthorized</code></pre> when
+                    accessed without a valid token.</p>
+                    </div>
+
+                <h4 class="heading-sub">🔹 Authorization Checks</h4>
+                    <div class="sub-content">
+                    <p>Confirm that users can only perform actions permitted by their roles.</p>                        <p><strong>Example:</strong> Validate that a regular user cannot access
+                    <pre><code>DELETE /admin/user/{id}</code></pre>.
+                    </div>
+
+                <h4 class="heading-sub">🔹 Input Sanitization</h4>
+                    <div class="sub-content">
+                    <p>Test for injection vulnerabilities by sending malicious payloads.</p>
+                    <p><strong>Example:</strong> Attempt SQL injection via query parameters and ensure the API blocks it.</p>
+                    </div>
+
+                <h4 class="heading-sub">🔹 Token Expiry & Revocation</h4>
+                    <div class="sub-content">
+                        <p>Validate how the API handles expired or revoked tokens.</p>
+                        <p><strong>Example:</strong> Ensure that a revoked JWT no longer grants access to protected resources.</p>
+                    </div>
+
+                <h4 class="heading-sub">🔹 Rate Limiting & Throttling</h4>
+                    <div class="sub-content">
+                        <p>Check if the API restricts excessive requests to prevent abuse.</p>
+                        <p><strong>Example:</strong> Send 100 requests in rapid succession and confirm the API returns
+                            <pre><code>429 Too Many Requests</code></pre>.
+                        </p>
+                    </div>
+
+                <h4 class="heading-sub">🔹 Data Encryption</h4>
+                <div class="sub-content">
+                    <p>Ensure sensitive data is encrypted in transit (HTTPS) and at rest.</p>
+                    <p><strong>Example:</strong> Inspect headers and payloads to confirm no plain-text passwords are exposed.
+                    </p>
+                </div>
+
+                <p class="tip"><strong>Tips:</strong>
+                    <p>• Use tools like OWASP ZAP, Postman, and Burp Suite to automate and simulate security attacks.</p>
+                    <p>• Include both manual and automated security tests for more test coverage.</p>
+                </p>
+            </div>
+            </p>
+        </details>
+        <details>
+            <summary>
+                <h3 class="heading-main">Interoperability Testing</h3>
+            </summary>
+            <p>
+                <div class="sub-content">
+                <p>Interoperability Testing tests if the API work correctly with other systems, platforms, and
+                applications.</p>
+                <h4 class="heading-sub">🔹 Validate Protocol Compatibility</h4>
+                <div class="sub-content">
+                <p>
+                    Check API compatibility across HTTP/HTTPS, SOAP or gRPC protocols.
+                </p>
+                <p><strong>Example:</strong> Test that a REST API supports both JSON and XML response
+                formats, if required.</p>
+
+                </div>
+                <h4 class="heading-sub">🔹 Integration Scenarios:</h4>
+                <div class="sub-content">
+                    <p>
+                        Test interactions between APIs and third-party services. 
+                    </p>
+                    p><strong>Example:</strong> Verify that a payment API integrates correctly with a third-party gateway like
+                    Stripe.</p>
+                </div>
+                <h4 class="heading-sub">🔹 Cross-Platform Testing</h4>
+                <div class="sub-content">
+                    <p>
+                        Test API accessibility across different operating systems,
+                        browsers, or devices.
+                    </p>
+                    <p><strong>Example:</strong> Verify that the API has consistent behavior when
+                    accessed via Windows, Linux, or macOS.</p>
+                </div>
+                </div>
+            </p>
+            <p class="tip"><strong>Tips:</strong></p>
+            <p>• Use mock servers to simulate third-party APIs during testing.</p>
+            <p>• Validate response handling for various supported data formats (e.g., JSON, XML).</p>
+        </details>
+
+        <details>
+            <summary>
+                <h3 class="heading-main">Contract Testing of APIs</h3>
+            </summary>
+            <p>
+            <div class="sub-content">
+                <p>Contract Testing tests if the API adheres to agreed-upon specifications between providers
+                (backend developers) and consumers (frontend developers or external systems).</p>
+                <h4 class="heading-sub">🔹 Define the Contract:</h4>
+                <div class="sub-content">
+                    <p>
+                        Use specifications like OpenAPI (Swagger) to document expected
+                        request/response structures.
+                    </p>
+                    <p><strong>Example:</strong> A GET /users API contract may specify that id
+                    is an integer and name is a string.</p>
+                </div>
+                <h4 class="heading-sub">🔹 Validate Provider Implementation:</h4>
+                <div class="sub-content">
+                    <p>
+                        Verify the API provider adheres to the defined
+                        contract. 
+                    </p>
+                    <p><strong>Example:</strong>Verify that all fields in the contract are present in the actual API
+                    response.</p>
+                </div>
+                <h4 class="heading-sub">🔹 Test Consumer Compatibility:</h4>
+                <div class="sub-content">
+                    <p>
+                        Verify that consumers can successfully interact with
+                        the API as per the contract.
+                    </p>
+                    <p><strong>Example:</strong>Check that a frontend application can parse and
+                    display data from the API correctly.</p>
+                </div>
+                <h4 class="heading-sub">🔹 Common Tools used for contract Testing</h4>
+                <div class="sub-content">
+                    <p>
+                        • PACT: A widely-used framework for consumer-driven contract testing.
+                    </p>
+                    <p>
+                        • Postman: For validating API responses against schema definitions.
+                    </p>
+                </div>
+                <p class="tip"><Strong>Tips:</Strong>
+                <p>
+                • Treat contracts as living documents and update them for every API change.
+                </p>
+                <p>• Automate contract testing in CI/CD pipelines to detect issues early.</p>
+                </p>
+                
+                
+            </div>
+            </p>
+        </details>
+        <details>
+        <summary>
+            <h3 class="heading-main">Performance Testing of APIs</h3>
+        </summary>
+        <p>
+        <div class="sub-content">
+        <p>API performance testing evaluates how efficiently and reliably an API responds under various conditions. It
+        helps identify bottlenecks, scalability limits, and stability issues before they impact users.</p>
+
+        <h4 class="heading-sub">🔹 Response Time</h4>
+        <div class="sub-content">
+        <p>Measure how quickly the API returns a response after receiving a request.</p>
+        <p><strong>Example:</strong> Ensure <pre><code>GET /products</code></pre> responds within 200ms under normal load.</p>
+        </div>
+
+        <h4 class="heading-sub">🔹 Throughput</h4>
+        <div class="sub-content">
+        <p>Evaluate how many requests the API can handle per second or minute.</p>
+        <p><strong>Example:</strong> Test <pre><code>POST /checkout</code></pre> to confirm it supports 500 transactions per
+            minute during peak hours.</p>
+        </div>
+
+        <h4 class="heading-sub">🔹 Concurrent Users</h4>
+        <div class="sub-content">
+            <p>Assess how the API performs when accessed by multiple users simultaneously.</p>
+            <p><strong>Example:</strong> Simulate 1000 concurrent users hitting <pre><code>GET /search</code></pre> and monitor
+                latency.</p>
+        </div>
+
+        <h4 class="heading-sub">🔹 Scalability</h4>
+        <div class="sub-content">
+            <p>Test how well the API scales with increasing data volume or user load.</p>
+            <p><strong>Example:</strong> Gradually increase load on <pre><code>GET /reports</code></pre> and observe how response
+                time changes.</p>
+        </div>
+
+        <h4 class="heading-sub">🔹 Stability & Reliability</h4>
+        <div class="sub-content">
+            <p>Verify that the API remains consistent and error-free under sustained load.</p>
+            <p><strong>Example:</strong> Run a 1-hour soak test on <pre><code>GET /status</code></pre> and ensure no memory leaks
+                or crashes occur.</p>
+        </div>
+
+        <h4 class="heading-sub">🔹 Error Handling Under Load</h4>
+        <div class="sub-content">
+            <p>Check how gracefully the API handles failures when under stress.</p>
+            <p><strong>Example:</strong> During a spike test, ensure <pre><code>POST /payment</code></pre> returns meaningful error
+                messages when backend services fail.</p>
+        </div>
+
+            <h4 class="heading-sub">🔹 Load, Stress, Spike Testing</h4>
+            <div class="sub-content">
+                <p>Assess how the API performs under expected user load and peak traffic.</p>
+                <p>Evaluate how the API handles sudden, sharp increases in traffic.</p>
+                <p>Push the API beyond its normal limits to identify its breaking point and recovery behavior.</p>
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>Continuously increase request volume to <pre><code>GET /orders</code></pre> until the API fails, then monitor
+                        error rates and recovery time.</li>
+                    <li>Simulate 100 concurrent users sending <pre><code>POST /login</code></pre> requests to verify stability and
+                        response time.</li>
+                    <li>Simulate a flash sale scenario where thousands of users hit <pre><code>POST /checkout</code></pre> within
+                        seconds.</li>
+                </ul>
+            </div>
+
+            <h4 class="heading-sub">🔹 Resource Usage Monitoring</h4>
+            <div class="sub-content">
+                <p>Track server-side resource consumption during API operations (CPU, memory, disk I/O).</p>
+                <p><strong>Example:</strong> Monitor memory usage during a bulk upload via <pre><code>POST /uploadBulkData</code></pre>
+                    to
+                    ensure it stays within safe limits.</p>
+            </div>
+
+            <h4 class="heading-sub">🔹 Caching Effectiveness</h4>
+            <div class="sub-content">
+                <p>Verify that the API uses caching to reduce load and improve response times for frequently accessed data.
+                </p>
+                <p><strong>Example:</strong> Confirm that repeated requests to <pre><code>GET /product/image</code></pre> are served
+                    from cache
+                    instead of triggering backend calls.</p>
+            </div>
+
+            <p class="tip"><strong>Tips:</strong>
+                <p>• Test with both expected and peak traffic to prepare for usage spikes.</p>
+                <p>• Use realistic data to simulate production-like scenarios.</p>
+                <p>• Use tools like JMeter, Gatling, or k6 to simulate load and monitor performance metrics in real time.</p>
+            </p>
+        </div>
+        </p>
+        </details>
+        </section>
+
+        <section id="Tools" class="compact-docs">
+        <h2>Tools</h2>
+        <details>
+            <summary>      
+                <h3>Postman for manual and automated testing</h3>
+            </summary>
+        <p>
+        <div class="sub-content">
+            <p>Postman is a powerful API testing tool that has a user-friendly interface for designing,
+                executing, and automating API test cases. It’s widely used because it supports various API
+                types (REST, SOAP, GraphQL) and enables both manual and automated testing.</p>
+
+    <h4 class="heading-main">🔹 Features & Best Practices</h4>
+    <div class="sub-content">
+        <h4 class="heading-sub">📌 Features of Postman:</h4>
+        <ul>
+            <li>
+                <strong>Collections and Requests:</strong> Organize test cases into collections for reusability.<br>
+                <em>Example:</em> Group all CRUD (Create, Read, Update, Delete) operations for a user API in a
+                collection.
+            </li>
+            <li>
+                <strong>Environment Management:</strong> Use variables to switch between environments like development,
+                staging, and production.<br>
+                <em>Example:</em> Define <pre><code>{{base_url}}</code></pre> for different environments to avoid hardcoding
+                endpoints.
+            </li>
+            <li>
+                <strong>Built-in Scripting:</strong> Use JavaScript for pre-request and test scripts to validate API
+                responses.<br>
+                <em>Example:</em> Use assertions like <pre><code>pm.expect(response.status).to.eql(200);</code></pre>
+            </li>
+            <li>
+                <strong>Automated Testing with Newman:</strong> Run collections programmatically in CI/CD pipelines
+                using Newman, Postman’s CLI tool.
+            </li>
+        </ul>
+
+        <h4 class="heading-sub">✅ Best Practices for Using Postman:</h4>
+        <ul>
+            <li>
+                <strong>Use Version Control:</strong> Export and version collections in Git to track changes.
+            </li>
+            <li>
+                <strong>Data-Driven Testing:</strong> Use CSV/JSON files for parameterizing tests to cover multiple
+                scenarios.<br>
+                <em>Example:</em> Test the <pre><code>POST /register</code></pre> API with various user data combinations.
+            </li>
+            <li>
+                <strong>Documentation:</strong> Generate API documentation directly from Postman collections for
+                seamless collaboration.
+            </li>
+        </ul>
+    </div>
+
+
+            <h4 class="heading-main">🔹 Postman Installation and Setup</h4>
+                <div class="sub-content">
+                <h4 class="heading-sub">🔹 Step 1: Download Postman</h4>
+                <ul>
+                    <li>Visit the official website: <a href="https://www.postman.com/downloads/" target="_blank">Postman
+                            Downloads</a></li>
+                    <li>Select your operating system (Windows, macOS, Linux).</li>
+                    <li>Download and run the installer.</li>
+                </ul>
+        
+                <h4 class="heading-sub">🔹 Step 2: Launch and Sign In</h4>
+                <ul>
+                    <li>Open Postman after installation.</li>
+                    <li>Sign in with your Postman account or create a new one.</li>
+                    <li>You can also use Postman without signing in (offline mode).</li>
+                </ul>
+        
+                <h4 class="heading-sub">🔹 Step 3: Create a New Collection</h4>
+                <ul>
+                    <li>Click on <strong>Collections</strong> in the left sidebar.</li>
+                    <li>Click <strong>New Collection</strong> and give it a name (e.g., Reqres API Tests).</li>
+                    <li>Add requests to this collection for organized testing.</li>
+                </ul>
+        
+                <h4 class="heading-sub">🔹 Step 4: Add Your First Request</h4>
+                <ul>
+                    <li>Click <strong>New</strong> → <strong>Request</strong>.</li>
+                    <li>Enter the API endpoint (e.g., <pre><code>https://reqres.in/api/users</code></pre>).</li>
+                    <li>Select the method (GET, POST, etc.), add headers and body if needed.</li>
+                    <li>Click <strong>Send</strong> to execute the request and view the response.</li>
+                </ul>
+        
+                <h4 class="heading-sub">🔹 Step 5: Set Up a Workspace (optional)</h4>
+                <ul>
+                    <li>Create a new workspace to organize your API projects.</li>
+                    <li><strong>Example:</strong> Use a dedicated workspace for a specific project like E-Commerce APIs.</li>
+                </ul>
+        
+                <h4 class="heading-sub">🔹 Step 6: Import API Specifications (optional)</h4>
+                <ul>
+                    <li>If your API provides a Swagger or OpenAPI specification,
+                        import it into Postman.</li>
+                    <p class="tip">
+                        <strong>Tip:</strong> Use the "Import" button to upload JSON/YAML files or
+                        provide the URL of the API specification.
+                    </p>
+                </ul>
+        
+                <h4 class="heading-sub">🔹 Step 7: Set Up Environment Variables(optional)</h4>
+                <ul>
+                    <li>Define environments (e.g., Development, QA,
+                        Production) with variables like {{baseUrl}} or {{authToken}}.</li>
+                    <li><strong>Example:</strong>
+                        <p>o Development: baseUrl = https://dev-api.example.com</p>
+                        <p>o Production: baseUrl = https://api.example.com</p>
+                    </li>
+                    <p class="tip">
+                        <strong>Tip:</strong> Use Postman’s built-in "Environment" feature to switch contexts easily.
+                    </p>
+                </ul>
+                <h4 class="heading-sub">🔹 Step 8: Save and Reuse</h4>
+                <ul>
+                    <li>Save requests to your collection for future use.</li>
+                    <li>Use environments to manage variables like base URLs and tokens.</li>
+                </ul>
+                </div>
+            <h4 class="heading-main">🔹 Create and manage test collections</h4>
+            <p>Collections in Postman are a way to organize and automate API tests.</p>
+            <div class="sub-content">
+                <h4 class="heading-sub">🔹 Creating a New Collection</h4>
+                <ul>
+                    <li>Use the "New Collection" button to group related API
+                        requests.</li>
+                    <li><strong>Example:</strong>Create a collection named User Management APIs to store
+                        endpoints like GET /users, POST /users, etc.</li>
+                </ul>
+                <h4 class="heading-sub">🔹 Organizing Requests into Folders</h4>
+                <ul>
+                    <li>Use folders within a collection to categorize
+                    requests.</li>
+                    <li><strong>Example:</strong>
+                        <p>a. Authentication: POST /login, POST /logout</p>
+                        <p>b. User Operations: GET /users, PUT /users/{id}</p>
+                    </li>
+                </ul>
+                <h4 class="heading-sub">🔹 Adding Test Cases to Collections</h4>
+                <ul>
+                    <li>For each request in a collection, write test scripts
+                    to automate validations.
+                    </li>
+                </ul>
+                <h4 class="heading-sub">🔹 Setting Up Pre-request Scripts</h4>
+                <ul>
+                    <li>Use pre-request scripts to handle prerequisites for
+                    API calls.</li>
+                    <li><strong>Example:</strong>Automatically add the authToken to request headers.
+                    <pre><code>
+                    pm.request.headers.add({ key: "Authorization", value: `Bearer ${pm.environment.get("authToken")}` });
+                    </code></pre>
+                    </li>
+                </ul>
+                <h4 class="heading-sub">🔹 Running Collections</h4>
+                <ul>
+                    <li>Use Postman’s "Collection Runner" to execute all requests in a collection sequentially</li>
+                    <li><strong>Example:</strong>Automate the execution of all CRUD operations for
+                    user management.
+                    </li>
+                </ul>
+                <h4 class="heading-sub">🔹 Generating Reports</h4>
+                <ul>
+                    <li>Use tools like Newman (Postman’s command-line tool) to execute
+                    collections and generate reports.</li>
+                    <li><strong>Command:</strong>
+                        <pre><code>
+                            newman run UserManagementCollection.postman_collection.json -e DevEnvironment.postman_environment.json -r html
+                        </code></pre>
+                    </li>
+                </ul>
+                <p>   </p>
+
+                    <p class="tip"><strong>Tips:</strong> 
+                        <p>• Regularly update collections to reflect API changes.</p>
+                        <p>• Use descriptive names for requests and variables.</p>
+                        <p>• Share collections with your team members for reuse.</p>• 
+                    </p>
+            </div>
+            <h4 class="heading-main">🔹 Test scripts to autoomate Validations</h4>
+            <p>Postman allows writing test scripts using JavaScript to automate checks on API responses.</p>
+            <div class="sub-content">
+                <h4 class="heading-sub">🔹 Status Code Validation</h4>
+                <p>
+                    Validate the response status coodes
+                    <pre><code>
+                        pm.test("Status code is 200", function () {
+                        pm.response.to.have.status(200);
+                        });
+                    </code></pre>
+                </p>
+                <h4 class="heading-sub">🔹 Response Body Validation</h4>
+                <p>
+                    Verify a specific field in the response body.
+                    <pre><code>
+                        pm.test("Verify user name", function () {
+                        const responseData = pm.response.json();
+                        pm.expect(responseData.name).to.eql("John Doe");
+                        });
+                    </code></pre>
+                </p>
+                <h4 class="heading-sub">🔹 Header Validation</h4>
+                <p>
+                    Test that the Content-Type header is correct.
+                    <pre><code>
+                        pm.test("Content-Type is JSON", function () {
+                        pm.response.to.have.header("Content-Type", "application/json");
+                        });
+                    </code></pre>
+                </p>
+                <h4 class="heading-sub">🔹 Dynamic Data Handling</h4>
+                <p>
+                    Extract values from one API response and use them in another request.
+                    <pre><code>
+                        pm.environment.set("authToken", pm.response.json().token);
+                    </code></pre>
+                </p>
+
+                <h4 class="heading-sub">🔹 Chaining Requests</h4>
+                <p>
+                    Automate a workflow by chaining multiple API calls. 
+                    Example: Use the extracted authToken in subsequent requests.
+                </p>
+
+                <h4 class="heading-sub">🔹 Error Handling and Debugging</h4>
+                <p>
+                    Use try-catch blocks for complex scripts to handle exceptions gracefully.
+                    <pre><code>
+                        try {
+                        // Validation logic
+                        } catch (e) {
+                        console.error("Error in script: ", e.message);
+                        }
+                    </code></pre>
+                </p> 
+                <h4 class="heading-sub">🔹 Response Time Check</h4>
+                <p>
+                    Checks Performace thresholds.
+                    <pre><code>
+                        pm.test("Response time is under 500ms", function () {
+                        pm.expect(pm.response.responseTime).to.be.below(500);
+                        });
+                    </code></pre>
+                </p>
+                <h4 class="heading-sub">🔹 JSON Schema Validation</h4>
+                <p>
+                    used for  Structural validation of response bodies
+                    <pre><code>
+                        const schema = {
+                        "type": "object",
+                        "required": ["id", "name", "email"],
+                        "properties": {
+                        "id": { "type": "number" },
+                        "name": { "type": "string" },
+                        "email": { "type": "string", "format": "email" }
+                        }
+                        };
+                        
+                        pm.test("Response matches schema", function () {
+                        pm.response.to.have.jsonSchema(schema);
+                        });
+                    </code></pre> 
+                </p>
+                <h4 class="heading-sub">🔹 Field Value Assertion</h4>
+                <p>Checks specific value from response.</p>
+                <p>
+                    <pre><code>
+                        pm.test("User name is John Doe", function () { <br>
+                        const jsonData = pm.response.json(); <br>
+                         pm.expect(jsonData.name).to.eql("John Doe"); <br>
+                         });
+                    </code></pre>
+                </p>
+                <h4 class="heading-sub">🔹 Loop Through Array Items</h4>
+                <p>
+                    Bulk validation in paginated or list responses
+                    <pre><code>
+                        pm.test("All users have valid emails", function () {
+                            const users = pm.response.json().data;
+                            users.forEach(user => {
+                                pm.expect(user.email).to.match(/^\S+@\S+\.\S+$/);
+                            });
+                        });
+                    </code></pre>
+                </p>
+                <h4 class="heading-sub">🔹 Save Response Data to Environment Variable</h4>
+                <p>
+                    for chaining request. e.g. use userId (env. variable) in next request.
+                    <pre><code>
+                        const jsonData = pm.response.json();
+                        pm.environment.set("userId", jsonData.id);
+                    </code></pre>
+                </p>
+                <h4 class="heading-sub">🔹 Date Assertions and value settings</h4>
+                <p>
+                    <ul>
+                        <li>
+                            Assert date received in response data (response data field name is Date) is today.
+                            <pre><code>
+pm.test("Date is today", function () {
+const jsonData = pm.response.json();
+const responseDate = new Date(jsonData.date).toDateString();
+const today = new Date().toDateString();
+pm.expect(responseDate).to.eql(today);
+});
+                            </code></pre>
+                        </li>
+                        <li>
+                        Save today's date to environment variable.
+                            <pre><code>
+const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+pm.environment.set("todayDate", today);                        
+                            </code></pre>
+                        </li>
+                        <li>
+                            Set future/past date dynamically
+                            <pre><code>
+const futureDate = new Date();
+futureDate.setDate(futureDate.getDate() + 7); // 7 days ahead
+pm.environment.set("futureDate", futureDate.toISOString().split("T")[0]);
+
+                            </code></pre>
+                        </li>
+
+                        <li>
+                            Assert date received in response data (response data field name is Trans_Date) to specific date.
+                                <pre><code>
+
+                                </code></pre>
+                        </li>
+                    </ul>
+                </p>
+
+                <h4 class="heading-sub">🔹 Dynamic Random Number Generation</h4>
+                <p>
+                    <ul>
+                        <li>
+                            Set random number between 1000–9999
+                            <pre><code>
+                                                    const randomNum = Math.floor(Math.random() * 9000) + 1000;
+                                                    pm.environment.set("randomNumber", randomNum);
+                        </li>
+                        <li>
+                        Update number field in request body (Pre-request script) & Use {{userAge}} in your request body.
+                        <pre><code>
+                            const randomAge = Math.floor(Math.random() * 50) + 18;
+                            pm.environment.set("userAge", randomAge);
+                        </code></pre>
+                        </li>
+                    </ul>
+                    
+                    </code></pre>
+                </p>
+                <h4 class="heading-sub">🔹 Dynamic String Generation</h4>
+                <p>
+                    Generate random alphanumeric string & Use {{randomString}} in your request body or headers.
+                    <pre><code>
+                        function generateRandomString(length) {
+                        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                        let result = '';
+                        for (let i = 0; i < length; i++) { result +=chars.charAt(Math.floor(Math.random() * chars.length)); } return result; }
+                            pm.environment.set("randomString", generateRandomString(10));
+                    </code></pre>
+
+                </p>
+                <h4 class="heading-sub">🔹 Random Email Generator</h4>
+                <p>
+                    Create Pre-request Script as follows:
+                    <pre><Code>
+                        function generateRandomString(length) {
+                        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+                        return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
+                        }
+                        
+                        const randomEmail = `${generateRandomString(8)}@example.com`;
+                        pm.environment.set("randomEmail", randomEmail);
+
+                    </Code></pre>
+                    Use {{randomEmaiil}} in your request boody, headers, or parameters.
+                    <pre><code>
+                        {
+                        "name": "Test User",
+                        "email": "{{randomEmail}}"
+                        }
+                    </code></pre>
+                </p>
+         </div>
+        </div>
+        </p>
+        </details>
+
+        <details>
+            <summary>
+                <h3>REST Assured for Java-based automation</h3>
+            </summary>
+            <p>
+            </p>
+        </details>
+        <details>
+            <summary>
+                <h3>Cypress for Javascript-based automation</h3>
+            </summary>
+            <p>
+            </p>
+        </details>
+        <details>
+            <summary>
+                <h3>Playwright for Typescript-based automation</h3>
+            </summary>
+            <p>
+            </p>
+        </details>
+        <details>
+            <summary>
+                <h3>SoapUI for SOAP services</h3>
+            </summary>
+            <p>
+            </p>
+        </details>
+    </section>
+
+    <section id="Testcases" class="compact-docs">
+        <h2>API Testcases</h2>
+    <details>
+    <summary>
+        <h3>Important Test Scenarios</h3></summary>
+        <p>
+            Typical API test cases include:
+            <p>• CRUD operations</p>
+            <p>• Authentication flows</p>
+            <p>• Pagination and filtering These help ensure your API handles real-world scenarios</p>
+        </p>
+    </details>
+    <details>
+        <summary>
+            <h3 class="heading-main">best practices</h3>
+        </summary>
+        <p>
+            <div class="sub-content">
+            <p>Writing effective API test cases needs a methodical approach. Here are some best
+            practices:</p>
+            <h4 class="heading-sub">🔹 Understand the API Specification</h4>
+                <div class="sub-content">
+                    <p>Study the API documentation, including endpoint
+                    definitions, request/response formats, and authentication mechanisms.</p>
+                    <p><strong>Example:</strong> For a GET /user/{id} API, understand its parameters (id), response structure, and
+                    expected error codes.</p>
+                </div>
+
+            <h4 class="heading-sub">🔹 Identify Test Scenarios:</h4>
+            <div class="sub-content">
+                <p>Convert the API’s functionality into testable scenarios:</p>
+                <p>o Positive test cases: Validate the expected behavior for valid inputs.</p>
+                <p>o Negative test cases: Test if the API handles invalid inputs gracefully.</p>
+                <p>o Edge cases: Test boundary values to identify vulnerabilities.</p>
+                <p><strong>Example:</strong> For a pagination API, test scenarios include valid page numbers, invalid
+                page numbers (negative values), and boundary values (e.g., maximum allowed page).</p>
+            </div>
+
+            <h4 class="heading-sub">🔹 Use a Modular Approach:</h4>
+            <div class="sub-content">
+                <p>Create reusable test scripts for common actions like
+                authentication or header validation.</p>
+                <p><strong>Example:</strong> Write a reusable function to generate a
+                valid authorization token for secure APIs.</p>
+            </div>
+
+            <h4 class="heading-sub">🔹 Use Assertions:</h4>
+            <div class="sub-content">
+                <p>Verify key aspects like status codes, response time, response structure,
+                and data accuracy.</p>
+                <p><strong>Example:</strong> Assert that the response time for GET /products is under
+                200ms.</p>
+            </div>
+
+            <h4 class="heading-sub">🔹 Automate Wherever Possible:</h4>
+            <div class="sub-content">
+                <p>Use tools like REST Assured or Postman to automate
+                test case execution for scalability and efficiency.</p>
+                <p><strong>Example:</strong> Automate regression tests
+                for frequently changing APIs to minimize manual effort.</p>
+            </div>
+
+            <h4 class="heading-sub">🔹 Prioritize Test cases:</h4>
+            <div class="sub-content">
+                <p>Prioritize test cases based on business impact and API complexity. High-priority features
+                should have extensive test coverage.</p>
+                </div>
+            </div>
+        </p>               
+    </details>
+
+    <details>
+        <summary>
+            <h3 class="heading-main">Define inputs and expected outputs</h3>
+        </summary>
+        <p>
+            <h4 class="heading-sub">🔹 Inputs:</h4>
+        <div class="sub-content">
+<ul>
+    <li>Define the parameters required by the API:
+        <ul>
+            <li><strong>Mandatory Parameters:</strong> Verify that all required fields are provided.</li>
+            <li><strong>Optional Parameters:</strong> Test the API behavior when optional parameters are included or
+                excluded.</li>
+        </ul>
+    </li>
+    <li>Test with various input types:
+        <ul>
+            <li><strong>Valid inputs:</strong> Proper data types and formats.</li>
+            <li><strong>Invalid inputs:</strong> Incorrect data types, missing fields, and null values.</li>
+        </ul>
+    </li>
+    <li><strong>Example:</strong> For a <pre><code>POST /createUser</code></pre> API, inputs may include:
+        <pre>{
+"name": "John Doe",
+"email": "john.doe@example.com",
+"age": 30
+}</pre>
+    </li>
+</ul>
+</div>
+<h4 class="heading-sub">🔹 Expected Outputs:</h4>
+<div class="sub-content">
+<ul>
+    <li>Define the expected API responses for various scenarios:
+        <ul>
+            <li><strong>Status Codes:</strong> Verify that the API returns correct HTTP status codes for each scenario
+                (e.g., 200 for success, 400 for bad request).</li>
+            <li><strong>Response Data:</strong> Specify the structure and values of the response body.</li>
+            <li><strong>Headers:</strong> Verify essential headers like <pre><code>Content-Type</code></pre> and
+                <pre><code>Authorization</code></pre>.</li>
+        </ul>
+    </li>
+    <li><strong>Example:</strong> For the <pre><code>POST /createUser</code></pre> API, the expected output for valid inputs might
+        be:
+        <pre>{
+"id": 101,
+"message": "User created successfully."
+}</pre>
+    </li>
+</ul>
+</div>
+        </p>
+    </details>
+    <details>
+        <summary>
+            <h3>Testcase Template</h3>
+        </summary>
+        <p>
+            A structured template enables writing test cases that are complete, reusable, and easy
+            to understand. Below is a suggested template:
+<table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Test Case ID</td>
+            <td>Unique identifier for the test case.</td>
+        </tr>
+        <tr>
+            <td>API Endpoint</td>
+            <td>Specify the API endpoint being tested (e.g., GET /user/{id}).</td>
+        </tr>
+        <tr>
+            <td>Test Scenario</td>
+            <td>Brief description of the test objective.</td>
+        </tr>
+        <tr>
+            <td>Preconditions</td>
+            <td>Any setup required before executing the test (e.g., authentication tokens).</td>
+        </tr>
+        <tr>
+            <td>Test Data</td>
+            <td>Inputs required for the test case (e.g., query parameters or request body).</td>
+        </tr>
+        <tr>
+            <td>Test Steps</td>
+            <td>Detailed steps to execute the test.</td>
+        </tr>
+        <tr>
+            <td>Expected Result</td>
+            <td>Describe the expected API response (status codes, response body, etc.).</td>
+        </tr>
+        <tr>
+            <td>Actual Result</td>
+            <td>Record the actual response received during testing.</td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>Pass/Fail result of the test case.</td>
+        </tr>
+        <tr>
+            <td>Remarks</td>
+            <td>Any additional observations or notes.</td>
+        </tr>
+    </tbody>
+</table>
+
+            <p class="tip">Tip: You can use tools like Excel, Jira, or test management software to document and track test
+            cases systematically.
+            </p>
+        </p>
+
+
+
+    </details>
+    </section>
+
+    <section id="Advanced" class="compact-docs">
+        <h2>Advanced Topics</h2>
+        <details>
+            <summary>
+                <h3>Parameterization for data-driven testing</h3>
+            </summary>
+            <p>
+            </p>
+        </details>
+
+        <details>
+            <summary>
+                <h3>Mocking to simulate unavailable endpoints</h3>
+            </summary>
+            <p>
+            </p>
+        </details>
+        <details>
+            <summary>
+                <h3>CI/CD integration for automated test runs</h3>
+            </summary>
+            <p>
+            </p>
+        </details>
+    </section>
+
+<section id="Projects" class="compact-docs">
+    <h2>Projects, Tutorials & Demos</h2>
+    <details>
+        <summary>
+            <h3>🧪 Projects</h3>
+        </summary>
+        <p>
+        <ul>
+            <li><a href="sections/projects.html">QA Projects</a></li>
+            <li><a href="sections/tools-demos.html">Postman Demo</a></li>
+        </ul>
+        </p>
+    </details>
+
+        <details>
+            <summary>
+                <h3>🧪 Tutorials</h3>
+            </summary>
+            <p>
+            <ul>
+                <li><a href="sections/projects.html">QA Projects</a></li>
+                <li><a href="sections/tools-demos.html">Postman Demo</a></li>
+            </ul>
+            </p>
+        </details>
+
+            <details>
+                <summary>
+                    <h3>🧪 Demos</h3>
+                </summary>
+                <p>
+                <ul>
+                    <li><a href="sections/projects.html">QA Projects</a></li>
+                    <li><a href="sections/tools-demos.html">Postman Demo</a></li>
+                </ul>
+                </p>
+            </details>
+</section>
+
+    <section id="Docs" class="compact-docs">
+        <h2>📚Documents</h2>
+        <details>
+            <summary>
+        <h3>🔍 reference Documents</h3></summary>
+        <p>
+        <ul>
+            <li><a href="sections/testplan.html">API Testing Flow</a></li>
+            <li><a href="sections/testcases.html">API Testing Notes</a></li>
+            <li><a href="sections/bug-report.html">API Testing Automation Framwork</a></li>
+            <li><a href="sections/test-summary.html">RestAssured Framewoork & Architecture</a></li>
+        </ul>
+    </p>
+    </details>
+
+    <details>
+    <summary>
+        <h3>📘 Learning Resources</h3></summary>
+        <p>
+        <ul>
+            <li><a href="sections/tutorials.html">Tutorials</a></li>
+            <li><a href="sections/cheatsheets.html">Notes & CheatSheets</a></li>
+        </ul>
+        </p>
+</details>
+</section>
+
+        <!--h3>📬 Contact</h3>
+        <ul>
+            <li><a href="contact.html">Contact & Connect</a></li>
+        </ul> -->
+        <section id="Other" class="compact-docs">
+            <h2>Other</h2>
+            <details>
+                <summary>
+                    <h3>Error Codes</h3></summary>
+                <p>
+                    Understanding HTTP error codes is crucial.
+                    • 200: OK
+                    • 400: Bad Request
+                    • 401: Unauthorized
+                    • 500: Internal Server Error These codes help diagnose issues quickly
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Interview Preparation</h3>
+                </summary>
+                <p>
+                    For interviews, focus on:
+                    • API testing concepts
+                    • Tools like Postman and REST Assured
+                    • Sample questions like: 'How do you validate a response?' or 'What’s the difference between PUT and PATCH?'
+                </p>
+            </details>
+            
+            <details>
+                <summary>
+                    <h3>QA checklist</h3>
+                </summary>
+                <p>
+                    ✅ Validate endpoints and methods
+                    ✅ Use assertions for response data
+                    ✅ Automate with CI/CD
+                    ✅ Generate HTML reports
+                    ✅ Follow clean coding practices
+                </p>
+            </details>
+        </section>
+
+    <footer>
+        <p>📧 <a href="mailto:milanmmore@gmail.com">milanmmore@gmail.com</a> |
+            🔗 <a href="https://www.linkedin.com/in/milanmore">LinkedIn</a> |
+            🐙 <a href="https://github.com/milanmore">GitHub</a>
+        </p>
+        <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-theme');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        });
+    </script>
+</body>
+
+</html>

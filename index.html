@@ -5,145 +5,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Milan More | QA Automation Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #34495e;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        h2 {
-            color: #2c3e50;
-        }
-
-        .project {
-            background-color: white;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
 </head>
 
 <body>
     <header>
-        <h1>Milan Milind More</h1>
-        <p>QA Lead | Automation Specialist | Mentor</p>
+        <div class="banner-container">
+            <div class="banner-image"></div>
+            <div class="banner-text">
+                <h1>Milan More | QA Automation Portfolio</h1>
+                <p>QA Lead • Freelancer • Mentor & Lifelong Learner</p>
+            </div>
+            <button id="toggle-theme">🌙 Dark Mode</button>
+        </div>
     </header>
 
-    <nav>
-        <a href="#summary">Summary</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#resources">Resources</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="summary">
-        <h2>Professional Summary</h2>
-        <p>18+ years of experience in QA, automation, performance testing, and team leadership. ISTQB Certified Test
-            Analyst and Manager. Passionate about mentoring and sharing knowledge with the QA community.</p>
+    <section id="intro">
+        <h2>Welcome</h2>
+        <p>
+            I'm Milan, a QA professional with 18+ years of experience in software testing and automation.
+            Coming from a non-IT background, I’ve built a fulfilling career in QA and now aim to help testers of all
+            levels learn new tools, overcome challenges, and grow confidently—especially with the power of Generative
+            AI.
+        </p>
     </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
+    <section id="toc">
+        <h2>📚 Table of Contents</h2>
+
+        <h3>👤 About</h3>
         <ul>
-            <li><strong>Automation:</strong> Selenium, Cypress, Playwright, Cucumber</li>
-            <li><strong>API Testing:</strong> Postman, REST Assured, SoapUI</li>
-            <li><strong>Performance:</strong> JMeter, LoadRunner</li>
-            <li><strong>Security:</strong> OWASP, Penetration Testing</li>
-            <li><strong>CI/CD:</strong> Jenkins, Git, Docker</li>
-            <li><strong>Languages:</strong> Java, Shell Scripting</li>
-            <li><strong>Tools:</strong> IntelliJ, VS Code, Eclipse</li>
-            <li><strong>Agile:</strong> Scrum, Kanban</li>
+            <li><a href="about1.html">My QA Journey</a></li>
         </ul>
-    </section>
 
-    <section id="projects">
-        <h2>Highlighted Projects</h2>
-
-        <div class="project">
-            <h3>KYCC/Renovo – American Express</h3>
-            <p>Automated KYC refresh workflows using Selenium, Postman, and Cucumber. Led API testing and framework
-                development.</p>
-        </div>
-
-        <div class="project">
-            <h3>VDS – Cisco Netacad</h3>
-            <p>Built BDD automation framework for assessment delivery platform. Integrated with Rally and Jenkins.</p>
-        </div>
-
-        <div class="project">
-            <h3>AxxiTRIALS – Clinical Trial Management</h3>
-            <p>Led QA efforts for global clinical trial platform. Automated tests and conducted API testing with SoapUI.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>ACI CFG – Self-Service Banking</h3>
-            <p>Tested advanced banking applications across multiple channels. Used Sahi and Quality Centre for
-                automation and defect tracking.</p>
-        </div>
-    </section>
-
-    <section id="resources">
-        <h2>Resources for QA Freshers</h2>
+        <h3>🔍 Test Documentation</h3>
         <ul>
-            <li><a href="https://github.com/your-github-profile" target="_blank">GitHub Portfolio</a> – Sample
-                automation frameworks and API test collections</li>
-            <li><a href="https://youtube.com/your-channel" target="_blank">YouTube Tutorials</a> – Cypress, Playwright,
-                and QA best practices</li>
-            <li><a href="mailto:your.email@example.com">Mentorship & Guidance</a> – Reach out for career advice or
-                project reviews</li>
+            <li><a href="sections/testplan.html">Test Plan</a></li>
+            <li><a href="sections/testcases.html">Test Cases</a></li>
+            <li><a href="sections/bug-report.html">Bug Report</a></li>
+            <li><a href="sections/test-summary.html">Test Summary</a></li>
         </ul>
-    </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
+        <h3>🧪 Projects & Demos</h3>
+        <ul>
+            <li><a href="sections/projects.html">QA Projects</a></li>
+            <li><a href="sections/tools-demos.html">QA Tools Demos</a></li>
+        </ul>
+
+        <h3>📘 Learning Resources</h3>
+        <ul>
+            <li><a href="sections/tutorials.html">Tutorials</a></li>
+            <li><a href="sections/cheatsheets.html">Notes & CheatSheets</a></li>
+        </ul>
+
+        <h3>🌐 API & Mobile Testing</h3>
+        <ul>
+            <li><a href="sections/04_API_TESTING.html">API Testing</a></li>
+            <li><a href="sections/05_mobile-testing.html">Mobile Testing</a></li>
+        </ul>
+
+        <h3>🛠️ Cloud QA Automation</h3>
+        <ul>
+            <li><a href="sections/terraform_terratest.html">Terraform & Terratest</a></li>
+            <li><a href="sections/api-tests.html">API Tests</a></li>
+            <li><a href="sections/ui-tests.html">UI Tests</a></li>
+            <li><a href="sections/ci-cd.html">CI/CD</a></li>
+            <li><a href="sections/docs.html">Documentation</a></li>
+        </ul>
+
+
+        <h3>🤖 Generative AI</h3>
+        <ul>
+            <li><a href="sections/generative-ai.html">Generative AI for Testers</a></li>
+        </ul>
+
+        <h3>📬 Contact</h3>
+        <ul>
+            <li><a href="contact.html">Contact & Connect</a></li>
+        </ul>
     </section>
 
     <footer>
+        <p>📧 <a href="mailto:milanmmore@gmail.com">milanmmore@gmail.com</a> |
+            🔗 <a href="https://www.linkedin.com/in/milanmore">LinkedIn</a> |
+            🐙 <a href="https://github.com/milanmore">GitHub</a>
+        </p>
         <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
     </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-theme');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Key Concepts in API Testing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            color: #005a9c;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border: 2px solid #333;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .diagram {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #eef;
+            border: 1px dashed #005a9c;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔍 Key Concepts in API Testing</h1>
+
+    <ul>
+        <li><strong>Endpoints</strong>: URLs where APIs are accessed (e.g., <code>GET /users/{id}</code>)</li>
+        <li><strong>HTTP Methods</strong>: GET, POST, PUT, DELETE for CRUD operations</li>
+        <li><strong>Request Payloads & Parameters</strong>: Query strings and JSON bodies</li>
+        <li><strong>Responses & Status Codes</strong>: Validate <code>200 OK</code>, <code>400 Bad Request</code>, etc.
+        </li>
+        <li><strong>Headers</strong>: Metadata like <code>Authorization</code> and <code>Content-Type</code></li>
+        <li><strong>Assertions</strong>: Check status codes, response body, and performance</li>
+        <li><strong>Authentication & Authorization</strong>: API keys, OAuth2, JWTs</li>
+        <li><strong>Performance & Reliability</strong>: Load, stress, and spike testing</li>
+    </ul>
+
+    <h2>🧪 Sample API Test Cases</h2>
+
+    <table>
+        <tr>
+            <th>Test Case ID</th>
+            <th>Scenario</th>
+            <th>Method</th>
+            <th>Expected Status</th>
+        </tr>
+        <tr>
+            <td>TC_API_001</td>
+            <td>Fetch user details</td>
+            <td>GET</td>
+            <td>200 OK</td>
+        </tr>
+        <tr>
+            <td>TC_API_002</td>
+            <td>Login with valid credentials</td>
+            <td>POST</td>
+            <td>200 OK + Token</td>
+        </tr>
+        <tr>
+            <td>TC_API_003</td>
+            <td>Login with invalid password</td>
+            <td>POST</td>
+            <td>401 Unauthorized</td>
+        </tr>
+        <tr>
+            <td>TC_API_004</td>
+            <td>Delete user without admin role</td>
+            <td>DELETE</td>
+            <td>403 Forbidden</td>
+        </tr>
+    </table>
+
+    <h2>📊 Conceptual Diagram</h2>
+    <div class="diagram">
+        <p><em>Diagram Placeholder:</em> API Client → API Gateway → Backend Services</p>
+        <p>Use tools like draw.io or Mermaid to visualize request flow, authentication, and response lifecycle.</p>
+    </div>
+
+</body>
+
+</html>
