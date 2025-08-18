@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Coding Exercise – Prime Check</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    body { 
+      font-family: Arial, 
+      sans-serif; 
+      padding: 30px; 
+      background-color: #f9f9f9; 
+      line-height: 1.6; 
+    }
+    h1, h2 {
+      text-align: center; 
+      margin: 10px 0; 
+    }
+    .challenge-description { 
+      text-align: center; 
+      max-width: 600px; 
+      margin: 0 auto 20px; 
+      font-size: 16px; 
+    }
+    .difficulty-info { 
+      text-align: center; 
+      font-style: italic; 
+      margin-bottom: 10px; 
+      color: #555; 
+    }
+    .main-container { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: flex-start; 
+      gap: 30px; 
+      margin-top: 30px; 
+      flex-wrap: wrap; 
+    }
+    article, section { 
+      width: 48%; 
+    }
+    figure { 
+      text-align: center; 
+   }
+    img { 
+      max-width: 100%; 
+      border: 2px solid #ccc; 
+      border-radius: 8px; 
+    }
+    figcaption {
+      margin-top: 10px; 
+      font-size: 0.95em; 
+      color: #555; 
+    }
+    .button-container {
+      margin-bottom: 10px; 
+    }
+    button { 
+      padding: 10px 20px; 
+      font-size: 16px; background-color: #007BFF; color: white; border: none; border-radius: 6px; cursor: pointer; margin-right: 10px; 
+    }
+    button:hover {
+      background-color: #0056b3; 
+    }
+    .download-link {
+      font-size: 16px; 
+      color: #007BFF; 
+      text-decoration: underline; 
+      margin-left: 10px; 
+    }
+
+    .download-link:hover {
+       color: #0056b3; 
+    }
+    textarea {
+      width: 100%; 
+      font-family: monospace; 
+      font-size: 14px; 
+      padding: 10px; 
+      border: 2px solid #ccc; 
+      border-radius: 8px; 
+      background-color: #fff; 
+      margin-bottom: 20px; 
+    }
+    #solutionBox {
+       height: 300px; 
+       display: none; 
+    }
+    #runInstructions { 
+       height: 180px; 
+       display: none; 
+    }
+    pre.sample-io { 
+       background: #eee; 
+       padding: 10px; 
+       border-radius: 6px; 
+       font-size: 14px; 
+       margin: 15px auto; 
+       max-width: 300px; 
+       text-align: center; 
+    }
+    #hintBox { 
+       display: none; 
+       background-color: #fff6d6; 
+       border: 1px solid #ffcc66; 
+       padding: 10px; 
+       margin-top: 10px; 
+       border-radius: 6px; 
+       font-style: italic; 
+       color: #555; 
+    }
+    @media (max-width: 768px) {
+      .main-container { flex-direction: column; }
+      article, section { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Coding Exercise</h1>
+  <h2>Prime Check</h2>
+
+  <div class="challenge-description">
+    Write a JavaScript function that checks whether a given number is prime.
+  </div>
+
+  <div class="difficulty-info">
+    🔍 Difficulty: Easy | 💡 Focus: Logic & Number manipulation
+  </div>
+
+  <pre class="sample-io">
+Input: 7  
+Output: true
+  </pre>
+
+  <div class="main-container">
+    <article>
+      <figure>
+        <img src="assets/02_primeCheck.png" alt="Visual breakdown of Prime Check" />
+        <figcaption>Visual representation of the logic</figcaption>
+      </figure>
+    </article>
+
+    <section>
+      <div class="button-container">
+        <button onclick="loadSolution('https://milanmmore.github.io/JavascriptTutorials/assignments/02_str_num_math_func/numbers/js/02_primeCheck.js')">Solution</button>
+        <button onclick="resetView()">Reset</button>
+        <button onclick="toggleHints()">Show Hint</button>
+        <a class="download-link" href="https://milanmmore.github.io/JavascriptTutorials/assignments/02_primeCheck.js" download>Download JS File</a>
+      </div>
+
+      <div id="hintBox">
+        💡 Hint: A prime number is only divisible by 1 and itself. Loop from 2 to sqrt(n) and check for divisibility.
+      </div>
+
+      <textarea id="solutionBox" readonly></textarea>
+
+      <textarea id="runInstructions" readonly>
+Instructions to run JS code locally:
+
+1. Open any text editor (VS Code, Sublime, Notepad++).
+2. Paste the code and save it as 02_primeCheck.js.
+3. Create an HTML file like this:
+   <script src="02_primeCheck.js"></script>
+4. Open the HTML in your browser.
+5. View output using DevTools console (F12 → Console).
+      </textarea>
+    </section>
+  </div>
+
+  <script src="common.js"></script>
+</body>
+</html>

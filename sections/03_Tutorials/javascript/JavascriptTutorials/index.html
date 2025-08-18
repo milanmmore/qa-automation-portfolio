@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Learning Roadmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 JavaScript Learning Roadmap</h1>
+    <button onclick="document.body.classList.toggle('dark')">🌓 Toggle Dark Mode</button>
+    <span class="hamburger" onclick="document.querySelector('.sidebar').classList.toggle('active')">☰ Menu</span>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#basics" data-target="basics">📘 JavaScript Basics</a></li>
+        <li><a href="#advanced" data-target="advanced">🚀 Advanced Concepts</a></li>
+        <li><a href="#dom" data-target="dom">🏗️ DOM Manipulation</a></li>
+        <li><a href="#oop" data-target="oop">🧱 Object-Oriented JS</a></li>
+        <li><a href="#testing" data-target="testing">🧪 Testing</a></li>
+        <li><a href="#challenges" data-target="challenges">🎯 Assignment Challenges</a></li>
+        <li><a href="#browser" data-target="browser">🧩 JS in the Browser</a></li>
+        <li><a href="#modules" data-target="modules">📦 Modules & Tools</a></li>
+        <li><a href="#security" data-target="security">🛡️ Security Essentials</a></li>
+        <li><a href="#design-patterns" data-target="design-patterns">🧠 Design Patterns</a></li>
+        <li><a href="#projects" data-target="projects">🕹️ Mini Projects</a></li>
+        <li><a href="#certification" data-target="certification">🎓 Certification Path</a></li>
+        <li><a href="#references" data-target="references">🔗 References</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <input type="text" id="search" placeholder="🔍 Search topics..." />
+
+      <section id="basics">
+        <h2>📘 JavaScript Basics</h2>
+        <details open>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="#">Introduction to JavaScript</a></li>
+            <li><a href="#">Variables and Data Types</a></li>
+            <li><a href="#">Loops and Conditionals</a></li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="advanced">
+        <h2>🚀 JavaScript Advanced Concepts</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="#">Promises and Async/Await</a></li>
+            <li><a href="#">Callbacks and Event Handling</a></li>
+            <li><a href="#">Error Handling and Debugging</a></li>
+            <li><a href="#">Closures and Scopes</a></li>
+            <li><a href="#">ES6+ Features</a></li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="dom">
+        <h2>🏗️ DOM Manipulation</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="#">Understanding the DOM</a></li>
+            <li><a href="#">Selecting Elements</a></li>
+            <li><a href="#">Adding/Removing Elements</a></li>
+            <li><a href="#">Event Listeners</a></li>
+            <li><a href="#">Browser APIs</a></li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="oop">
+        <h2>🧱 Object-Oriented JavaScript</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="#">Classes and Prototypes</a></li>
+            <li><a href="#">Inheritance and Encapsulation</a></li>
+            <li><a href="#">Modules</a></li>
+            <li><a href="#">Frameworks Overview</a></li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="testing">
+        <h2>🧪 Testing in JavaScript</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li><a href="#">Testing Frameworks</a></li>
+            <li><a href="#">Unit Testing with Jest/Mocha</a></li>
+            <li><a href="#">Automation Importance</a></li>
+          </ul>
+        </details>
+      </section>
+
+<section id="challenges">
+        <h2>🎯 Assignment Challenges</h2>
+        <details open>
+          <summary><strong>Explore Challenge Categories</strong></summary>
+          <div class="challenge-category">
+            <h3>🔁 Loops & Conditions</h3>
+            <ul>
+              <li><a href="assignments/printNumbers.html" target="_blank">Print Numbers 1–10</a></li>
+              <li><a href="assignments/multiplicationTable.html" target="_blank">Multiplication Table</a></li>
+              <li><a href="assignments/printArrayElements.html" target="_blank">Print Array Elements</a></li>
+              <li><a href="assignments/fizzBuzz.html" target="_blank">FizzBuzz</a></li>
+              <li><a href="assignments/sumOfNumbers.html" target="_blank">Sum of Numbers (While Loop)</a></li>
+              <li><a href="assignments/evenOrOdd.html" target="_blank">Even or Odd</a></li>
+              <li><a href="assignments/largestNumber.html" target="_blank">Find Largest Number</a></li>
+              <li><a href="assignments/dayOfWeek.html" target="_blank">Day of the Week</a></li>
+              <li><a href="assignments/gradeEvaluation.html" target="_blank">Grade Evaluation</a></li>
+              <li><a href="assignments/printObjectProperties.html" target="_blank">Print Object Properties</a></li>
+            </ul>
+          </div>
+
+          <div class="challenge-category">
+            <h3>✂️ String Problems</h3>
+            <ul>
+              <li><a href="assignments/strings/01_reverse_string.html" target="_blank">Reverse a String</a></li>
+              <li><a href="assignments/strings/02_palindrome_check.html" target="_blank">Palindrome Check</a></li>
+              <li><a href="assignments/strings/03_count_vowels.html" target="_blank">Count Vowels</a></li>
+              <li><a href="assignments/strings/04_longestWord.html" target="_blank">Find Longest Word</a></li>
+              <li><a href="assignments/strings/05_replaceSpaces.html" target="_blank">Replace Spaces</a></li>
+            </ul>
+          </div>
+
+          <div class="challenge-category">
+            <h3>🔢 Number Problems</h3>
+            <ul>
+              <li><a href="assignments/numbers/01_reverseNumber.html" target="_blank">Reverse a Number</a></li>
+              <li><a href="assignments/numbers/02_primeCheck.html" target="_blank">Prime Check</a></li>
+              <li><a href="assignments/numbers/03_factorial.html" target="_blank">Factorial</a></li>
+              <li><a href="assignments/numbers/04_sumOfDigits.html" target="_blank">Sum of Digits</a></li>
+              <li><a href="assignments/numbers/05_armstrongCheck.html" target="_blank">Armstrong Number</a></li>
+            </ul>
+          </div>
+
+          <div class="challenge-category">
+            <h3>🧮 Function Problems</h3>
+            <ul>
+              <li><a href="assignments/maxOfThree.html" target="_blank">Max of Three</a></li>
+              <li><a href="assignments/leapYearCheck.html" target="_blank">Leap Year Check</a></li>
+              <li><a href="assignments/titleCase.html" target="_blank">Title Case</a></li>
+              <li><a href="assignments/fibonacci.html" target="_blank">Fibonacci Series</a></li>
+              <li><a href="assignments/powerCalculation.html" target="_blank">Power Calculation</a></li>
+            </ul>
+          </div>
+
+          <div class="challenge-category">
+            <h3>📐 Math Functions</h3>
+            <ul>
+              <li><a href="assignments/rounding.html" target="_blank">Rounding</a></li>
+              <li><a href="assignments/randomInteger.html" target="_blank">Random Integer</a></li>
+              <li><a href="assignments/squareRoot.html" target="_blank">Square Root</a></li>
+              <li><a href="assignments/absoluteDifference.html" target="_blank">Absolute Difference</a></li>
+              <li><a href="assignments/minMaxArray.html" target="_blank">Min & Max in Array</a></li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+
+      <section id="browser">
+        <h2>🧩 JavaScript in the Browser</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li>Events and DOM lifecycle</li>
+            <li>Forms & Validation</li>
+            <li>Browser Storage (local/session)</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="modules">
+        <h2>📦 Modules and Build Tools</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li>ES Modules (import/export)</li>
+            <li>Webpack Basics</li>
+            <li>Using npm packages</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="security">
+        <h2>🛡️ Security Essentials</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li>Input Validation & Sanitization</li>
+            <li>Preventing XSS/CSRF</li>
+            <li>CORS Concepts</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="design-patterns">
+        <h2>🧠 Design Patterns in JavaScript</h2>
+        <details>
+          <summary><strong>Topics Covered</strong></summary>
+          <ul>
+            <li>Singleton, Factory, Observer</li>
+            <li>Practical Examples</li>
+            <li>When/Why to Use Patterns</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="projects">
+        <h2>🕹️ Mini Projects</h2>
+        <details>
+          <summary><strong>Projects List</strong></summary>
+          <ul>
+            <li>🧮 Calculator</li>
+            <li>🌦️ Weather App (with API)</li>
+            <li>📝 TODO List with localStorage</li>
+            <li>⌨️ Typing Speed Game</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="certification">
+        <h2>🎓 Certification Path</h2>
+        <details>
+          <summary><strong>Certification Checklist</strong></summary>
+          <ul>
+            <li>Checklist of Skills Covered</li>
+            <li>Sample Exams / Mock Interviews</li>
+            <li>Badge System for Completion</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="references">
+        <h2>🔗 References</h2>
+        <details>
+          <summary><strong>Reference Links</strong></summary>
+          <ul>
+            <li>no links added yet</li>
+          </ul>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>Made by Milan More | <a href="https://milanmmore.github.io/JavascriptTutorials/" target="_blank">View on GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

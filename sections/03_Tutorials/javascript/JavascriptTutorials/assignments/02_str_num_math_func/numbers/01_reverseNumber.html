@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Coding Exercise – Reverse a Number</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .challenge-description {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      font-size: 16px;
+    }
+
+    .difficulty-info {
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    article, section {
+      width: 48%;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      margin-top: 10px;
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .button-container {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .download-link {
+      font-size: 16px;
+      color: #007BFF;
+      text-decoration: underline;
+      margin-left: 10px;
+    }
+
+    .download-link:hover {
+      color: #0056b3;
+    }
+
+    textarea {
+      width: 100%;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      margin-bottom: 20px;
+    }
+
+    #solutionBox {
+      height: 300px;
+      display: none;
+    }
+
+    #runInstructions {
+      height: 180px;
+      display: none;
+    }
+
+    pre.sample-io {
+      background: #eee;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin: 15px auto;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    #hintBox {
+      display: none;
+      background-color: #fff6d6;
+      border: 1px solid #ffcc66;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      font-style: italic;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+      }
+
+      article, section {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1>JavaScript Coding Exercise</h1>
+  <h2>Reverse a Number</h2>
+
+  <div class="challenge-description">
+    In this challenge, you will write a JavaScript function that takes a number and returns its reverse. For example, if given <code>12345</code>, the output should be <code>54321</code>.
+  </div>
+
+  <div class="difficulty-info">
+    🔍 Difficulty: Easy | 💡 Focus: String & Number manipulation
+  </div>
+
+  <pre class="sample-io">
+Input: 12345  
+Output: 54321
+  </pre>
+
+  <div class="main-container">
+    <article>
+      <figure>
+        <img src="assets/01_reverseNumber.png" alt="Visual breakdown of reversing digits in a number from left to right" />
+        <figcaption>Visual representation of the number reversal logic</figcaption>
+      </figure>
+    </article>
+
+    <section>
+      <div class="button-container">
+        <button onclick="loadSolution()">Solution</button>
+        <button onclick="resetView()">Reset</button>
+        <button onclick="toggleHints()">Show Hint</button>
+        <a class="download-link" href="https://milanmmore.github.io/JavascriptTutorials/assignments/02_str_num_math_funcnumbers/js/01_reverseNumber.js" download>Download JS File</a>
+      </div>
+
+      <div id="hintBox">
+        💡 Hint: Use a loop to extract each digit from the number by using modulo (%) and division (/). Build the reversed number by multiplying the result so far by 10 and adding the next digit. Also remember to preserve the original sign (+/-) using Math.sign().
+      </div>
+
+      <textarea id="solutionBox" readonly></textarea>
+
+      <textarea id="runInstructions" readonly>
+Instructions to run JS code locally:
+
+1. Open any text editor (VS Code, Sublime, Notepad++).
+2. Paste the code and save it as reverseNumber.js.
+3. Create an HTML file like this:
+   <script src="js/reverseNumber.js"></script>
+4. Open the HTML in your browser.
+5. View output using DevTools console (F12 → Console).
+      </textarea>
+    </section>
+  </div>
+  <script src="../../../common.js"></script>
+  <!--script>
+    
+    async function loadSolution() {
+      try {
+        const res = await fetch('https://raw.githubusercontent.com/milanmmore/javascriptTutorials/main/assignments/01_reverseNumber.js');
+        if (!res.ok) throw new Error('Network response was not ok');
+        const code = await res.text();
+        document.getElementById('solutionBox').value = code;
+        document.getElementById('solutionBox').style.display = 'block';
+        document.getElementById('runInstructions').style.display = 'block';
+      } catch (err) {
+        alert('Error loading solution file.');
+        console.error(err);
+      }
+    }
+
+    function resetView() {
+      document.getElementById('solutionBox').style.display = 'none';
+      document.getElementById('solutionBox').value = '';
+      document.getElementById('runInstructions').style.display = 'none';
+      document.getElementById('hintBox').style.display = 'none';
+    }
+
+    function toggleHints() {
+      const hint = document.getElementById('hintBox');
+      hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+    }
+  </script> -->
+
+</body>
+</html>
