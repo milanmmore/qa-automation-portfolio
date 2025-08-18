@@ -5,102 +5,286 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Milan More | QA Automation Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+
+    <!-- SEO -->
+    <meta name="description"
+        content="QA Automation Portfolio of Milan More. QA Lead with 18+ years of experience in software testing, automation frameworks, and Generative AI in QA." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Milan More | QA Automation Portfolio" />
+    <meta property="og:description" content="QA Lead | Automation | API | Mobile | Generative AI in Testing" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/portfolio-banner.png" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <header>
-        <div class="banner-container">
-            <div class="banner-image"></div>
-            <div class="banner-text">
-                <h1>Milan More | QA Automation Portfolio</h1>
-                <p>QA Lead • Freelancer • Mentor & Lifelong Learner</p>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header / Hero -->
+    <header class="banner-container">
+        <div class="banner-text hero-card">
+            <h1>Milan Milind More</h1>
+            <p class="tagline">
+                <span class="highlight"><strong>If I could do it, so can you!</strong></span><br>
+                <!--div class="highlight-text">
+                    If I could do it, so can you!
+                </div><br>-->
+                QA Lead • Automation • Generative AI in QA
+            </p>
+            <div class="cta-buttons">
+                <a href="about.html" class="btn-primary">About Me</a>
+                <a href="#toc" class="btn-primary">Explore Portfolio</a>
+                <!--a href="#contact" class="btn-secondary">Connect</a> -->
+                <a href="#connect" class="connect-button">Connect</a>
             </div>
-            <button id="toggle-theme">🌙 Dark Mode</button>
         </div>
+        <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
     </header>
 
-    <section id="intro">
-        <h2>Welcome</h2>
-        <p>
-            I'm Milan, a QA professional with 18+ years of experience in software testing and automation.
-            Coming from a non-IT background, I’ve built a fulfilling career in QA and now aim to help testers of all
-            levels learn new tools, overcome challenges, and grow confidently—especially with the power of Generative
-            AI.
-        </p>
-    </section>
 
-    <section id="toc">
-        <h2>📚 Table of Contents</h2>
+    <main id="content" class="container">
+        <!-- Intro Section -->
+        <section id="intro">
+            <h2>Welcome</h2>
+            <p>
+                I'm <strong>Milan More</strong>, a QA Lead with <strong>18+ years in software testing and automation</strong>.
+                From a non-IT background to leading global QA teams, I’ve built my career around problem-solving
+                and continuous learning.
+            </p>
+        </section>
+        
+        <section id="skills">
+            <h2>My Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="card" data-skill="UI Testing">
+                    <h3>UI Testing</h3>
+                    <p>Proficient in Selenium, Cypress, and cross-browser testing strategies.</p>
+                    <div class="skill-bar">
+                        <div class="skill-percentage">85%</div>
+                    </div>
+                </div>
+                <div class="card" data-skill="Automation Frameworks">
+                    <h3>Automation Frameworks</h3>
+                    <p>Designing modular and scalable test automation frameworks.</p>
+                    <div class="skill-bar">
+                        <div class="skill-percentage">80%</div>
+                    </div>
+                </div>
+                <div class="card" data-skill="API Testing">
+                    <h3>API Testing</h3>
+                    <p>Proficient in Postman, RestAssured, and API automation strategies.</p>
+                    <div class="skill-bar">
+                        <div class="skill-percentage">80%</div>
+                    </div>
+                </div>
+                <div class="card" data-skill="Mobile Testing">
+                    <h3>Mobile Testing</h3>
+                    <p>Testing on Android/iOS devices using Appium and cloud labs.</p>
+                    <div class="skill-bar">
+                        <div class="skill-percentage">70%</div>
+                    </div>
+                </div>
+                <div class="card" data-skill="Generative AI in QA">
+                    <h3>Generative AI in QA</h3>
+                    <p>Applying AI tools to accelerate testing and improve coverage.</p>
+                    <div class="skill-bar">
+                        <div class="skill-percentage">60%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h3>👤 About</h3>
-        <ul>
-            <li><a href="about1.html">My QA Journey</a></li>
-        </ul>
+        <!-- TOC Section -->
+        <section id="toc">
+            <h2>Explore My Portfolio</h2>
+            <div class="accordion">
+                <!-- Accordion items same as before -->
+                <div class="accordion">
+                    <details>
+                        <summary>
+                            <h3><i class="fas fa-desktop"></i> UI Testing</h3>
+                        </summary>
+                        <ul>
+                            <li><a href="02_UI_TESTING.html"><i class="fas fa-book-open"></i> UI Testing Overview</a></li>
+                            <li><a href="projects/ui_project1.html"><i class="fas fa-flask"></i> UI Project Example</a></li>
+                        </ul>
+                    </details>
 
-        <h3>🔍 Test Documentation</h3>
-        <ul>
-            <li><a href="sections/testplan.html">Test Plan</a></li>
-            <li><a href="sections/testcases.html">Test Cases</a></li>
-            <li><a href="sections/bug-report.html">Bug Report</a></li>
-            <li><a href="sections/test-summary.html">Test Summary</a></li>
-        </ul>
+                    <details>
+                        <summary>
+                            <h3><i class="fas fa-cogs"></i> Automation Frameworks</h3>
+                        </summary>
+                        <ul>
+                            <li><a href="03_AUTOMATION.html"><i class="fas fa-sitemap"></i> Framework Concepts</a></li>
+                            <li><a href="projects/framework_demo.html"><i class="fas fa-code"></i> Framework Demo</a></li>
+                        </ul>
+                    </details>
 
-        <h3>🧪 Projects & Demos</h3>
-        <ul>
-            <li><a href="sections/projects.html">QA Projects</a></li>
-            <li><a href="sections/tools-demos.html">QA Tools Demos</a></li>
-        </ul>
+                    <details>
+                        <summary>
+                            <h3><i class="fas fa-plug"></i> API Testing</h3>
+                        </summary>
+                        <ul>
+                            <li><a href="04_API_TESTING.html"><i class="fas fa-book"></i> API Testing Guide</a></li>
+                            <li><a href="projects/api_demo.html"><i class="fas fa-flask"></i> API Testing Demo</a></li>
+                        </ul>
+                    </details>
 
-        <h3>📘 Learning Resources</h3>
-        <ul>
-            <li><a href="sections/tutorials.html">Tutorials</a></li>
-            <li><a href="sections/cheatsheets.html">Notes & CheatSheets</a></li>
-        </ul>
+                    <details>
+                        <summary>
+                            <h3><i class="fas fa-mobile-alt"></i> Mobile Testing</h3>
+                        </summary>
+                        <ul>
+                            <li><a href="05_MOBILE_TESTING.html"><i class="fas fa-book"></i> Mobile Testing Guide</a></li>
+                            <li><a href="projects/mobile_demo.html"><i class="fas fa-vial"></i> Mobile Testing Demo</a></li>
+                        </ul>
+                    </details>
 
-        <h3>🌐 API & Mobile Testing</h3>
-        <ul>
-            <li><a href="sections/04_API_TESTING.html">API Testing</a></li>
-            <li><a href="sections/05_mobile-testing.html">Mobile Testing</a></li>
-        </ul>
+                    <details>
+                        <summary>
+                            <h3><i class="fas fa-rocket"></i> Advanced QA Topics</h3>
+                        </summary>
+                        <ul>
+                            <li><a href="07_CLOUD_TESTING.html"><i class="fas fa-cloud"></i> Cloud Testing</a></li>
+                            <li><a href="06_AI_IN_QA.html"><i class="fas fa-robot"></i> Generative AI in QA</a></li>
+                            <li><a href="references.html"><i class="fas fa-bookmark"></i> References & Resources</a></li>
+                        </ul>
+                    </details>
 
-        <h3>🛠️ Cloud QA Automation</h3>
-        <ul>
-            <li><a href="sections/terraform_terratest.html">Terraform & Terratest</a></li>
-            <li><a href="sections/api-tests.html">API Tests</a></li>
-            <li><a href="sections/ui-tests.html">UI Tests</a></li>
-            <li><a href="sections/ci-cd.html">CI/CD</a></li>
-            <li><a href="sections/docs.html">Documentation</a></li>
-        </ul>
+                    <details>
+                        <summary>
+                            <h3><i class="fas fa-chalkboard-teacher"></i> Tutorials</h3>
+                        </summary>
+                        <ul>
+                            <li><a href="tutorials.html"><i class="fas fa-list"></i> Step-by-step Tutorials</a></li>
+                            <li><a href="projects/tutorial_demo.html"><i class="fas fa-lightbulb"></i> Tutorial Demo Project</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <h3><i class="fas fa-project-diagram"></i> Sample Projects</h3>
+                        </summary>
+                        <ul>
+                            <li><a href="projects.html"><i class="fas fa-folder-open"></i> Project Showcase</a></li>
+                        </ul>
+                    </details>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+<section id="connect" class="connect-section">
+    <h2>Let’s Connect</h2>
+    <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+    <div class="connect-cards">
+        <div class="card">
+            <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                <i class="fas fa-envelope"></i>
+                <span>Email Me</span>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+        <!--div class="card">
+            <a href="tel:+1234567890" class="connect-link">
+                <i class="fas fa-phone"></i>
+                <span>Call Me</span>
+            </a>
+        </div>-->
+    </div>
+</section>
 
 
-        <h3>🤖 Generative AI</h3>
-        <ul>
-            <li><a href="sections/generative-ai.html">Generative AI for Testers</a></li>
-        </ul>
 
-        <h3>📬 Contact</h3>
-        <ul>
-            <li><a href="contact.html">Contact & Connect</a></li>
-        </ul>
-    </section>
+        <!--section id="contact">
+            <h2>Connect With Me</h2>
+            <ul>
+                <li>📧 <a href="mailto:milan@example.com">milan@example.com</a></li>
+                <li>🔗 <a href="https://linkedin.com/in/milanmmore" target="_blank">LinkedIn</a></li>
+                <li>💻 <a href="https://github.com/milanmore" target="_blank">GitHub</a></li>
+                <li>📄 <a href="assets/downloads/MilanMore_Resume.pdf" download>Download Resume (PDF)</a></li>
+            </ul>
+        </section> -->
 
-    <footer>
-        <p>📧 <a href="mailto:milanmmore@gmail.com">milanmmore@gmail.com</a> |
-            🔗 <a href="https://www.linkedin.com/in/milanmore">LinkedIn</a> |
-            🐙 <a href="https://github.com/milanmore">GitHub</a>
-        </p>
-        <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+
+        <!--section id="contact" class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>I’d love to hear from you! Whether it’s a project, a question, or just to say hello, feel free to reach out.</p>
+            <div class="contact-options">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:youremail@example.com">youremail@example.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+1234567890">+123 456 7890</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://linkedin.com/in/yourprofile" target="_blank">Connect on LinkedIn</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/yourprofile" target="_blank">View GitHub Profile</a></p>
+                </div>
+            </div>
+        </section> -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Milan Milind More | QA Automation Portfolio</p>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        const toggleBtn = document.getElementById('toggle-theme');
+        // Set current year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Dark Mode Toggle
+        const toggleBtn = document.getElementById('darkModeToggle');
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
         });
     </script>
+    <script>
+        // Adjust main content top based on header height
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerOffset = document.querySelector('.banner-container').offsetHeight;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>

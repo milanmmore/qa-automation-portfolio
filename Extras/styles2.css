@@ -1,0 +1,406 @@
+/* ---------------- Reset & Base Styles ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ---------------- Header / Banner ---------------- */
+header.banner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    /* remove extra padding */
+}
+
+
+
+body.dark-mode header.banner-container {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.banner-text h1 {
+    font-size: 2.4rem;
+    margin: 0;
+}
+
+.banner-text .tagline {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* ---------------- Hero Card ---------------- */
+.hero-card {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.hero-card .cta-buttons {
+    margin-top: 1rem;
+}
+
+.hero-card .cta-buttons a {
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    margin: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+}
+
+.btn-secondary {
+    background-color: #e0f7fa;
+    color: #0077b6;
+}
+
+.btn-secondary:hover {
+    background-color: #b2ebf2;
+}
+
+/* ---------------- Sections ---------------- */
+section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeUp 1s ease-in;
+}
+
+h2 {
+    color: #1a237e;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+h3 {
+    margin-top: 1.5rem;
+    color: #0d47a1;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* ---------------- Skills / Cards ---------------- */
+.skills {
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skills-grid .card {
+    background: #ffffff;
+    color: #333;
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: #0077b6;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* ---------------- Accordion / TOC ---------------- */
+.accordion details {
+    background: #f9fbff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.accordion details[open] {
+    background: #eef5ff;
+    border-left: 4px solid #2563eb;
+}
+
+.accordion summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion h3 {
+    font-size: 1.1rem;
+    color: #0d47a1;
+    margin: 0;
+    display: inline-block;
+}
+
+.accordion ul {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.accordion li {
+    margin: 0.3rem 0;
+}
+
+.accordion a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.accordion a:hover {
+    text-decoration: underline;
+}
+
+.accordion h3 i {
+    color: #2563eb;
+    margin-right: 8px;
+}
+
+.accordion a i {
+    margin-right: 6px;
+    color: #0077b6;
+}
+
+.accordion a:hover i {
+    color: #03045e;
+}
+
+/* ---------------- Footer ---------------- */
+footer.site-footer {
+    text-align: center;
+    padding: 1rem;
+    background: #e0f7fa;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #0077b6;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+/* ---------------- Dark Mode ---------------- */
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+body.dark-mode .accordion summary,
+body.dark-mode .accordion details,
+body.dark-mode .site-footer,
+body.dark-mode .skills-grid .card {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode header.banner-container {
+    background: linear-gradient(to right, #0f2027, #203a43);
+    color: #fff;
+}
+
+body.dark-mode section h2,
+body.dark-mode section h3 {
+    color: #90caf9;
+}
+
+body.dark-mode ul li a {
+    color: #90caf9;
+}
+
+body.dark-mode ul li a:hover {
+    color: #bbdefb;
+}
+
+body.dark-mode footer {
+    background: #1e1e1e;
+    color: #ccc;
+}
+
+body.dark-mode footer a {
+    color: #90caf9;
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero-card {
+        padding: 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ---------------- Skip Link ---------------- */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+    transition: top 0.3s;
+}
+
+.skip-link:focus,
+.skip-link:hover {
+    top: 0;
+}
+
+/* ---------------- Content Spacing ---------------- */
+#content {
+    margin-top: 180px;
+    /* header height */
+    scroll-margin-top: 180px;
+}
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Skills Card Borders & Animated Percentage Bars */
+.skills-grid .card {
+    border: 2px solid #0077b6;
+    border-radius: 10px;
+    padding: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skill-percentage {
+    height: 6px;
+    background-color: #2563eb;
+    border-radius: 4px;
+    margin-top: 8px;
+    width: 0;
+    /* start at 0 for animation */
+    animation: fillBar 1.2s forwards;
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--skill-width);
+    }
+
+    /* target width from CSS variable */
+}
+
+
+
+
+header .hero-card {
+    padding: 20px;
+    /* internal padding */
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}

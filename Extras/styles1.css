@@ -1,0 +1,566 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Header / Banner */
+header {
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+
+.banner-text h1 {
+    font-size: 2.4rem;
+    margin: 0;
+}
+
+.banner-text .tagline {
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: .9;
+}
+
+/* Sections */
+section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeUp 1s ease-in;
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    padding: 0;
+}
+
+section+section {
+    margin-top: 8px;
+}
+
+section p {
+    margin: 8px 0;
+}
+
+/* Headings */
+h2 {
+    color: #1a237e;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+h3 {
+    margin-top: 2rem;
+    color: #0d47a1;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+h4 {
+    color: #00796b;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+/* Lists & Links */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+    transition: transform 0.2s ease;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+}
+
+ul li a:hover {
+    color: #03045e;
+}
+
+/* New: TOC / Doc Links */
+.doc-links {
+    list-style: none;
+    padding: 0;
+}
+
+.doc-links li {
+    margin: .5rem 0;
+}
+
+.doc-links a {
+    text-decoration: none;
+    color: var(--brand, #2563eb);
+    font-weight: 500;
+}
+
+.doc-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #e0f7fa;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #0077b6;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Banner Image */
+.banner {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    display: block;
+    object-fit: contain;
+    border-bottom: 4px solid #0077b6;
+}
+
+.banner-image {
+    background-image: url('assets/qa12.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Dark Mode Toggle */
+#toggle-theme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ffffffcc;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#toggle-theme:hover {
+    background: #e0f7fa;
+}
+
+/* Dark Mode Styles */
+/* --------------------- Dark Mode --------------------- */
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links in dark mode */
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+/* Example dark mode for cards, sections, footer */
+body.dark-mode .accordion summary,
+body.dark-mode .accordion details,
+body.dark-mode .site-footer,
+body.dark-mode .skills .card {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+
+body.dark-mode header {
+    background: linear-gradient(to right, #0f2027, #203a43);
+    color: #fff;
+}
+
+body.dark-mode section h2,
+body.dark-mode section h3 {
+    color: #90caf9;
+}
+
+body.dark-mode ul li a {
+    color: #90caf9;
+}
+
+body.dark-mode ul li a:hover {
+    color: #bbdefb;
+}
+
+body.dark-mode footer {
+    background: #1e1e1e;
+    color: #ccc;
+}
+
+body.dark-mode footer a {
+    color: #90caf9;
+}
+
+/* Quotes */
+.quote {
+    color: #007BFF;
+    font-style: italic;
+    margin: 6px 0;
+    padding-left: 15px;
+    border-left: 3px solid #007BFF;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border: 2px solid #333;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Concept Blocks */
+.concept {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f2f8ff;
+    border-left: 4px solid #007acc;
+}
+
+.concept strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #005a9c;
+}
+
+.concept code {
+    background-color: #eee;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.tip {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Collapsible Docs */
+.collapsible-heading {
+    background-color: #e6f0ff;
+    padding: 10px;
+    border-left: 4px solid #007acc;
+    cursor: pointer;
+}
+
+details {
+    margin-bottom: 8px;
+}
+
+details summary h3 {
+    margin: 0;
+    padding: 4px 0;
+}
+
+details p,
+details ul {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.compact-docs {
+    margin-bottom: 16px;
+}
+
+.compact-docs details {
+    margin-bottom: 10px;
+}
+
+/* Accordion / Collapsible TOC */
+.accordion details {
+    background: #f9fbff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.accordion details[open] {
+    background: #eef5ff;
+    border-left: 4px solid #2563eb;
+}
+
+.accordion summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion h3 {
+    font-size: 1.1rem;
+    color: #0d47a1;
+    margin: 0;
+    display: inline-block;
+}
+
+.accordion ul {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.accordion li {
+    margin: 0.3rem 0;
+}
+
+.accordion a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.accordion a:hover {
+    text-decoration: underline;
+}
+
+.accordion h3 i {
+    color: #2563eb;
+    /* Blue highlight */
+    margin-right: 8px;
+}
+
+.accordion a i {
+    margin-right: 6px;
+    color: #0077b6;
+}
+
+.accordion a:hover i {
+    color: #03045e;
+}
+
+/* Timeline */
+.timeline {
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-item .icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #0077b6;
+}
+
+.timeline-item .content {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Quotes */
+.quote-block {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.quote-block blockquote {
+    font-style: italic;
+    color: #0077b6;
+    border-left: 4px solid #0077b6;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    max-width: 600px;
+}
+
+/* Skills Section */
+.skills {
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: #0077b6;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    /* hidden off-screen */
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+    transition: top 0.3s;
+}
+
+.skip-link:focus,
+.skip-link:hover {
+    top: 0;
+    /* visible when tabbed or hovered */
+}
+
+#content {
+    margin-top: 180px;
+    /* adjust to header height */
+    scroll-margin-top: 180px;
+    /* ensures skip-to-content works correctly */
+}
+
+
+/* --------------------- Fixed Header --------------------- */
+.banner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    /* Light mode header color */
+    color: #000;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* subtle shadow */
+    padding: 20px;
+}
+
+/* Dark mode header */
+body.dark-mode .banner-container {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+
+
+
+
+
+/* Smooth scroll for anchor links */
+html {
+    scroll-behavior: smooth;
+}
