@@ -18,13 +18,13 @@ a {
 }
 
 /* ---------------- Header / Banner ---------------- */
+
 header.banner-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: linear-gradient(90deg, #2563eb, #00b4d8);
-    /* blue gradient */
     color: #fff;
     z-index: 999;
     height:200px;
@@ -274,7 +274,7 @@ footer a {
 }
 
 /* ---------------- Dark Mode ---------------- */
-body.dark-mode {
+body.dark-mode  {
     background-color: #121212;
     color: #f0f0f0;
 }
@@ -286,7 +286,7 @@ body.dark-mode a {
 body.dark-mode .accordion summary,
 body.dark-mode .accordion details,
 body.dark-mode .site-footer,
-body.dark-mode .skills-grid .card {
+body.dark-mode .skills-grid .card .journey-content {
     background-color: #1e1e1e;
     color: #f0f0f0;
 }
@@ -339,6 +339,25 @@ body.dark-mode footer a {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.indented-list {
+    margin-left: 2rem;
+    padding-left: 1rem;
+    list-style: none;
+}
+
+.indented-list li {
+    cursor: default;
+    /* removes link-like behavior */
+    color: inherit;
+    /* ensures text is normal */
+}
+
+.indented-list li::before {
+    content: "✔ ";
+    color: #28a745;
+    font-weight: bold;
 }
 
 /* @keyframes fadeUp {
@@ -650,13 +669,6 @@ html {
 }
 
 
-
-
-
-
-
-
-
 /* Add width for each skill individually */
 .card[data-skill="UI Testing"] .skill-percentage {
     width: 85%;
@@ -676,4 +688,131 @@ html {
 
 .card[data-skill="Generative AI in QA"] .skill-percentage {
     width: 60%;
+}
+
+/* ✅ Special Capstone Project List (Indented + Checkmarks) */
+.indented-list {
+    margin-left: 2rem;
+    padding-left: 1rem;
+    list-style: none;
+}
+
+.indented-list li {
+    cursor: default;
+    margin: 6px 0;
+    color: inherit;
+}
+
+.indented-list li::before {
+    content: "✔ ";
+    color: #28a745;
+    font-weight: bold;
+}
+
+.tab-indent {
+    margin-left: 2rem;
+    /* Adjust value for desired indentation */
+}
+
+/* ---- FIX Explore Portfolio scroll offset ---- */
+#toc {
+    scroll-margin-top: 200px;
+    /* Adjust for fixed header height */
+}
+
+/* ---- FIX Dark Mode Skills Section ---- */
+body.dark-mode .skills-grid .card {
+    background-color: #1e1e1e;
+    /* Dark background */
+    border: 2px solid #90caf9;
+    /* Light blue border */
+    color: #f0f0f0;
+    /* White text */
+}
+
+body.dark-mode .skill-bar {
+    background: #333;
+    /* Dark grey bar background */
+}
+
+body.dark-mode .skill-percentage {
+    background: linear-gradient(90deg, #90caf9, #42a5f5);
+    color: #000;
+    /* Dark text inside filled bar */
+}
+
+/* -------- Key Concepts Styling -------- */
+.concept {
+    background: #f9fbff;
+    border-left: 5px solid #2563eb;
+    /* blue accent */
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    animation: fadeInUp 0.6s ease-in-out;
+}
+
+.concept strong {
+    font-size: 1.05rem;
+    color: #0d47a1;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.concept ul {
+    margin: 0.5rem 0 0.5rem 1.2rem;
+}
+
+.concept pre {
+    background: #eef5ff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+.concept code {
+    font-family: "Courier New", monospace;
+    color: #1a237e;
+}
+
+.tip {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #00796b;
+    background: #e0f7fa;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border-left: 4px solid #00acc1;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .concept {
+    background: #1e1e1e;
+    border-left: 5px solid #90caf9;
+}
+
+body.dark-mode .concept strong {
+    color: #90caf9;
+}
+
+body.dark-mode .concept pre {
+    background: #2c2c2c;
+    color: #f0f0f0;
+}
+
+body.dark-mode .tip {
+    background: #004d40;
+    color: #b2dfdb;
+    border-left: 4px solid #26a69a;
+}
+a[download] {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a[download]:hover {
+    text-decoration: underline;
+    color: #ff5722;
 }

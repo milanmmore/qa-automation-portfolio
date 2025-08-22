@@ -1,0 +1,53 @@
+.api-submenu {
+    list-style: none;
+    /* remove bullet points */
+    padding-left: 20px;
+    /* indent (like one tab) */
+    margin: 8px 0;
+}
+
+.api-submenu li {
+    margin: 6px 0;
+    /* spacing between rows */
+}
+
+.api-submenu li a {
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.api-submenu li a:hover {
+    color: #03045e;
+}
+
+/* Styled Table */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.95rem;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #333;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+body.dark-mode .styled-table th {
+    background-color: #1f2937;
+    /* dark gray */
+    color: #fff;
+}
+
+body.dark-mode .styled-table td {
+    border: 1px solid #555;
+}

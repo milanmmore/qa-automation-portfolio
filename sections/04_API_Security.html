@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Testing ofo APIs</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header -->
+    <header class="banner-container">
+        <div class="banner-text hero-card">
+            <h1>Functional Testing of APIs</h1>
+            <p class="tagline">
+                <span class="highlight"><strong><em>Turning Potential into Excellence – If I Could Do It, So Can
+                            You!</em></strong></span><br>
+                QA Lead • Automation Enthusiast • Lifelong Learner
+            </p>
+            <div class="cta-buttons">
+                <a href="04_API_TESTING.html" class="btn-primary">Home</a>
+                <a href="../about.html" class="btn-primary">About</a>
+                <a href="#connect" class="connect-button">Connect</a>
+            </div>
+        </div>
+        <button id="darkModeToggle" class="dark-mode">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+    <section id="Topics">
+
+        <h2><i class="fas fa-plug"></i> Security Testing of APIs</h2>
+        <p>
+            Security testing ensures that APIs are protected against unauthorized access, data leaks, and malicious attacks. It
+            validates authentication, authorization, data integrity, and input sanitization.
+        </p>
+        <br>
+        <div class="accordion">
+        <!-- Sample topic details -->
+        <details>
+            <summary>
+                <h3>🔹 Authentication Validation</i></h3>
+            </summary>
+            Check whether each API endpoint returns the correct response for a given request.<br>
+            <br>
+            <strong>Example: </strong><br>
+            Validate <code>GET /user/{id}</code> returns accurate user information for the specified ID.
+        </details>
+        </div>
+
+        <div class="accordion">
+            <details>
+                <summary>
+                    <h3>🔹 Input Handling Validation</h3>
+                </summary>
+                <p>Assess how the API processes different types of input data:<br>
+                    <ul class="tab-indent">
+                        <li><strong>Valid input:</strong> Well-formed and complete data</li>
+                        <li><strong>Invalid input:</strong> Missing required fields or incorrect formats</li>
+                        <li><strong>Boundary input:</strong> Values at the edge of acceptable ranges</li>
+                    </ul>
+                <br>
+                <strong>Example:</strong> <br>
+                Test a date filter API to ensure it rejects invalid formats like <code>99-99-9999</code>
+                </p>
+            </details>
+        </div>
+
+        <div class="accordion">
+            <details>
+                <summary>
+                    <h3>🔹 Business Rule Enforcement</h3>
+                </summary>
+                <p>Verify that the API correctly applies the intended business rules and restrictions.</p>
+                <br>
+                <p><strong>Example:</strong> <br>
+                Confirm that <code>POST /applyDiscount</code>only applies offers to qualifying
+                products based on category or price.</p>            
+            </details>
+        </div>
+
+        <div class="accordion">
+            <details>
+                <summary>
+                    <h3>🔹 External Service Interaction</h3>
+                </summary>
+                <p>Evaluate how the API communicates with dependent systems or third-party services.</p>
+                <br>
+                <strong>Example:</strong><br>
+                When calling a payment processor, ensure the API handles success, failure, and
+                timeout scenarios gracefully.
+            </details>
+        </div>  
+
+        <p class="tip"><strong>Tips:</strong>
+        <p>• Use data-driven testing to validate multiple input combinations.</p>
+        <p>• Automate functional tests with tools like REST Assured or Postman for efficiency.</p>
+
+    </p>
+    </section>
+
+
+
+        <!--   Add topic Names detail block-->
+
+    </section>
+
+        <!-- Contact Section -->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                    <a href="tel:+1234567890" class="connect-link">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Me</span>
+                    </a>
+                </div>-->
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Milan Milind More | QA Automation Portfolio</p>
+        <p>Built with ❤️ for QA enthusiasts and future testers.</p>
+        <!--p> ADD : want to add Optional: Add a small GitHub stars/fork badge for credibility.</>-->
+    </footer>
+
+<script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

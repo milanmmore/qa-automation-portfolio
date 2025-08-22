@@ -1,7 +1,7 @@
 ## Credits
 
 - To practice xPath - https://selectorshub.com/xpath-practice-page/
-                      https://the-internet.herokuapp.com/
+  https://the-internet.herokuapp.com/
 
 playwright-xpath-assignments/
 ├── README.md
@@ -22,3 +22,11 @@ playwright-xpath-assignments/
 │ └── helpers.ts
 └── assets/
 └── screenshots/
+
+## repos
+
+```
+https://github.com/anirudhadonge/PlaywrightTrainingBatchJuly25WD.git
+https://github.com/anirudhadonge/PlaywrightTrainingBatchJun25WE.git
+
+```

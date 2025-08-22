@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Testing of APIs</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../index.html">Home</a> |
+                <a href="../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic">
+
+        <!-- Introduction -->
+                <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+            <p>
+                Functional testing of APIs ensures that each endpoint behaves according to its
+                specifications. It validates input/output, workflows, and error handling.
+                Unlike UI testing, it directly tests the business logic via requests and responses.
+            </p>
+            <br>
+
+        <!-- Fundamentals & Key Concept-->
+        <div class="accordion">
+        <details>
+            <summary>
+                <h2><i class="fas fa-lightbulb"></i> Fundamentals & Key Concepts</h2>
+            </summary>
+            <ul class="indented-list">
+                <li><strong>API (functional) vs UI (Web) Testing:</strong> <br>
+                    <p>API testing focuses on backend logic while UI testing validates presentation.</p>
+                  
+                    
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>API Testing</th>
+                    <th>UI Testing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>                 
+                    <td>Scope</td>
+                    <td>Validates backend systems and business logic.</td>
+                    <td>Tests user interface interactions.</td>
+                </tr>
+                <tr> 
+                    <td>Speed</td>
+                    <td>Faster since it bypasses the graphical interface.</td>
+                    <td>Slower due to rendering processes.</td>
+                </tr>
+                <tr>
+                    <td>Reliability</td>
+                    <td>API tests are more stable;</td>
+                    <td>less prone to flaky results caused by UI changes. Prone to instability if UI elements change.</td>
+                </tr>
+                <tr>
+                    <td>Example</td>
+                    <td>Verifying a “createOrder” API works correctly.</td>
+                    <td>Testing if the “Place Order” button functions properly.</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+                
+                </li>
+
+                <li><strong>Key Concepts:</strong> <br>
+                    <details>
+                        <summary>
+                            <h3>🔹 Endpoint Behavior Verification</h3>
+                        </summary>
+                        Check whether each API endpoint returns the correct response for a given request.<br>
+                        <br>
+                        <strong>Example: </strong><br>
+                        Validate <code>GET /user/{id}</code> returns accurate user information for the specified ID.
+                    </details>
+
+                    
+
+                        <details>
+                            <summary>
+                                <h3>🔹 Input Handling Validation</h3>
+                            </summary>
+                            <p>Assess how the API processes different types of input data:<br>
+                            <ul class="tab-indent">
+                                <li><strong>Valid input:</strong> Well-formed and complete data</li>
+                                <li><strong>Invalid input:</strong> Missing required fields or incorrect formats</li>
+                                <li><strong>Boundary input:</strong> Values at the edge of acceptable ranges</li>
+                            </ul>
+                            <br>
+                            <strong>Example:</strong> <br>
+                            Test a date filter API to ensure it rejects invalid formats like <code>99-99-9999</code>
+                            </p>
+                        </details>
+
+                    
+
+                        <details>
+                            <summary>
+                                <h3>🔹 Business Rule Enforcement</h3>
+                            </summary>
+                            <p>Verify that the API correctly applies the intended business rules and restrictions.</p>
+                            <br>
+                            <p><strong>Example:</strong> <br>
+                                Confirm that <code>POST /applyDiscount</code> only applies offers to qualifying
+                                products based on category or price.</p>
+                        </details>
+
+
+                        <details>
+                            <summary>
+                                <h3>🔹 External Service Interaction</h3>
+                            </summary>
+                            <p>Evaluate how the API communicates with dependent systems or third-party services.</p>
+                            <br>
+                            <strong>Example:</strong><br>
+                            When calling a payment processor, ensure the API handles success, failure, and
+                            timeout scenarios gracefully.
+                        </details>
+                    <br>
+                </li>
+            </ul>
+        </details>
+        </div>
+        
+        <!-- What to Test -->
+        <div class="accordion">
+        <details>
+            <summary>
+                <h2><i class="fas fa-vials"></i> What to Test in Functional Testing</h2>
+            </summary>
+            <ul class="indented-list">
+                <li>✅ Correct response codes (200, 400, 401, 500 etc.)</li>
+                <li>✅ Input validation (valid & invalid requests)</li>
+                <li>✅ Response structure and schema</li>
+                <li>✅ Business logic validation</li>
+                <li>✅ Error handling and edge cases</li>
+            </ul>
+        </details>
+        </div>
+
+
+        <!-- Testing Artifacts -->
+        <div class="accordion">
+        <details>
+            <summary>
+                <h2><i class="fas fa-file-alt"></i> Testing Artifacts</h2>
+            </summary>
+        
+            <p><strong>Test Scenarios:</strong></p>
+            <ul class="indented-list">
+                <li>Verify CRUD operations (Create, Read, Update, Delete)</li>
+                <li>Verify Authentication & Authorization flows</li>
+                <li>Validate data integrity and business logic</li>
+            </ul>
+        
+            <p><strong>Test Data:</strong></p>
+            <ul class="indented-list">
+                <li>Positive test data (valid requests)</li>
+                <li>Negative test data (invalid inputs, missing fields)</li>
+                <li>Boundary values (min/max values, limits)</li>
+                <li>Edge cases (special characters, nulls, empty requests)</li>
+            </ul>
+        
+            <p><strong>Test Case Template Example:</strong></p>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Test Case ID</th>
+                        <th>Scenario</th>
+                        <th>API Endpoint</th>
+                        <th>Pre-Conditions</th>
+                        <th>Test Data</th>
+                        <th>Expected Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>FT01</td>
+                        <td>Validate Login API with valid credentials</td>
+                        <td>/api/login</td>
+                        <td>User is registered</td>
+                        <td>{ "username": "testuser", "password": "valid123" }</td>
+                        <td>200 OK + Auth Token</td>
+                    </tr>
+                    <tr>
+                        <td>FT02</td>
+                        <td>Validate Login API with invalid password</td>
+                        <td>/api/login</td>
+                        <td>User is registered</td>
+                        <td>{ "username": "testuser", "password": "wrongpass" }</td>
+                        <td>401 Unauthorized</td>
+                    </tr>
+                    <tr>
+                        <td>FT03</td>
+                        <td>Validate Product List API</td>
+                        <td>/api/products</td>
+                        <td>Valid Auth Token</td>
+                        <td>N/A</td>
+                        <td>200 OK + Product JSON Array</td>
+                    </tr>
+                </tbody>
+            </table>
+        </details>
+        </div>
+
+        <!-- Assignments -->
+        <div class="accordion">
+        <details>
+            <summary>
+                <h2><i class="fas fa-tasks"></i> Assignments</h2>
+            </summary>
+            <ul>
+                <li>
+                    <strong>Assignment 1:</strong> Create Test Scenarios for CRUD APIs
+                    <br>
+                    📥 <a href="04_API_Testing/Assets/Assignments/API_Assignment1_testcases.xlsx" download>Download Solution (XLSX)</a>
+                </li>
+                <li>
+                    <strong>Assignment 2:</strong> Build Postman Collection for Authentication APIs
+                    <br>
+                    📥 <a href="04_API_Testing/Assets/Assignments/API_assignment2_Solution.zip" download>Download Solution (ZIP)</a>
+                </li>
+                <li>
+                    <strong>Assignment 3:</strong> Analyze API Performance with JMeter
+                    <br>
+                    📥 <a href="04_API_Testing/Assets/Assignments/API_Assignment3_Solution.pdf" download>Download Solution (PDF)</a>
+                </li>
+            </ul>
+        </details>
+
+
+
+
+
+
+
+        </details>
+        </div>
+
+        <!-- Sample Project -->
+        <div class="accordion">
+        <details>
+            <summary>
+                <h2><i class="fas fa-project-diagram"></i> Sample Test Project</h2>
+            </summary>
+            <p><strong>Capstone Idea:</strong> Build a test suite for a sample e-commerce API.</p>
+            <ul class="indented-list">
+                <li>User authentication</li>
+                <li>Product listing and details</li>
+                <li>Cart and checkout APIs</li>
+                <li>Performance testing for critical endpoints</li>
+            </ul>
+        </details>
+        </div>
+
+        <!-- Tips -->
+        <div class="accordion">
+        <details>
+            <summary>
+                <h2><i class="fas fa-lightbulb"></i> Tips</h2>
+            </summary>
+            <ul class="indented-list">
+                <li>🔍 Always validate both success and error cases.</li>
+                <li>🧪 Use schema validation to ensure response consistency.</li>
+                <li>⚡ Automate repetitive flows for CI/CD integration.</li>
+            </ul>
+        </details>
+        </div>
+        
+    </section>
+            <!-- Contact Section added on each page-->
+            <section id="connect" class="connect-section">
+                <h2>Let’s Connect</h2>
+                <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+                <div class="connect-cards">
+                    <div class="card">
+                        <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Me</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                    <!--div class="card">
+                                <a href="tel:+1234567890" class="connect-link">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Me</span>
+                                </a>
+                            </div>-->
+                </div>
+    </section>
+    </main>
+
+
+    <!-- Footer -->
+    <!--footer class="site-footer">
+        <p>© <span id="year"></span> Milan Milind More | QA Automation Portfolio</p>
+        <p>Built with ❤️ for QA enthusiasts and future testers.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script> -->
+    
+<!-- Common Footer -->
+<div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+    
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        if (typeof loadTemplate === "function") {
+            try {
+                loadTemplate("header", "../assets/templates/header.html", "Functional Testing of APIs", [
+                    { text: "Home", link: "../index.html", class: "btn-primary" },
+                    { text: "Back to API Testing Guide", link: "04_API_TESTING.html", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+
+                loadTemplate("footer", "/assets/templates/footer.html");
+            } catch (e) {
+                console.error("Template loading failed", e);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

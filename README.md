@@ -19,3 +19,30 @@ Welcome to my QA Automation Portfolio! I'm Milan, a QA Lead with 18+ years of ex
 Each project is designed to demonstrate practical automation strategies, reusable frameworks, and real-world QA scenarios.
 
 ## 📬 Contact
+
+qa-portfolio/
+│── index.html # Landing page (portfolio entry point)
+│── about.html # Detailed QA journey, mentoring philosophy
+│── sections/ # Each learning section in its own HTML/MD file
+│ ├── 02_UI_TESTING.html
+│ ├── 03_AUTOMATION.html
+│ ├── 04_API_TESTING.html
+│ ├── 05_MOBILE_TESTING.html
+│ ├── 06_AI_IN_QA.html
+│ ├── 07_CLOUD_TESTING.html
+│── projects/ # Sample project demos, capstones
+│ ├── ui_project1.html
+│ ├── api_demo.html
+│ ├── mobile_demo.html
+│ ├── framework_demo.html
+│ ├── tutorial_demo.html
+│── assets/  
+│ ├── css/
+│ │ └── styles.css
+│ ├── img/
+│ │ ├── profile.png
+│ │ ├── portfolio-banner.png
+│ │ └── icons/ (QA-related icons)
+│── tutorials.html # Step-by-step tutorials
+│── references.html # Resources, blogs, recommended books
+│── README.md # Repo intro (important for recruiters)
