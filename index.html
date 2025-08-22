@@ -17,8 +17,8 @@
     <meta property="og:image" content="https://your-domain.com/assets/img/portfolio-banner.png" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
+    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKB4Imkb9hF0p0bM5b6bZ6F2F2l5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -216,13 +216,13 @@
 <script>
     if (typeof loadTemplate === "function") {
         try {
-            loadTemplate("header", "/assets/templates/header.html", "Milan Milind More – QA Portfolio", [
+            loadTemplate("header", "{{ site.baseurl }}/assets/templates/header.html", "Milan Milind More – QA Portfolio", [
                 { text: "About", link: "about.html", class: "btn-primary" },
                 { text: "Explore Portfolio", link: "#toc" },
                 { text: "Connect", link: "#connect", class: "connect-button" }
             ]);
 
-            loadTemplate("footer", "/assets/templates/footer.html");
+            loadTemplate("footer", "{{ site.baseurl }}/assets/templates/footer.html");
         } catch (e) {
             console.error("Template loading failed", e);
         }
