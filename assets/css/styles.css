@@ -218,7 +218,6 @@ section {
 }
 
 .accordion h3 {
-    font-size: 1.1rem;
     color: #0d47a1;
     margin: 0;
     display: inline-block;
@@ -233,29 +232,67 @@ section {
     margin: 0.3rem 0;
 }
 
-.accordion a {
-    color: #0077b6;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.accordion a:hover {
-    text-decoration: underline;
-}
 
 .accordion h3 i {
     color: #2563eb;
     margin-right: 8px;
 }
 
+
+
+
+
+/* Enhance link interaction with subtle lift and shadow */
+.accordion details summary::after {
+    content: "▶";
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.accordion details[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.accordion a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+        color: #0077b6;
+            text-decoration: none;
+            font-weight: 500;
+}
+
+.accordion a:hover {
+    background-color: #e0f4ff;
+    box-shadow: 0 2px 6px rgba(0, 119, 182, 0.15);
+    transform: translateX(2px);
+    text-decoration: underline;
+}
+
+
+/* Animate icons on hover */
 .accordion a i {
+    transition: transform 0.2s ease;
     margin-right: 6px;
     color: #0077b6;
+
 }
 
 .accordion a:hover i {
+    transform: scale(1.15);
     color: #03045e;
 }
+
+/* Optional: divider between sections */
+.accordion hr {
+    border: none;
+    border-top: 1px solid #d0d7de;
+    margin: 1rem 0;
+}
+
 
 /* ---------------- Footer ---------------- */
 footer.site-footer {
@@ -815,4 +852,41 @@ a[download] {
 a[download]:hover {
     text-decoration: underline;
     color: #ff5722;
+}
+
+.api-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.api-downloads a {
+    background-color: #f9fbff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.api-downloads a:hover {
+    background-color: #e0f4ff;
+    box-shadow: 0 2px 6px rgba(0, 119, 182, 0.15);
+    transform: translateY(-1px);
+}
+
+.api-downloads a i {
+    color: #0077b6;
+    transition: transform 0.2s ease;
+}
+
+.api-downloads a:hover i {
+    color: #03045e;
+    transform: scale(1.15);
 }

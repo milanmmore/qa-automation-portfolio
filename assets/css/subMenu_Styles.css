@@ -51,3 +51,62 @@ body.dark-mode .styled-table th {
 body.dark-mode .styled-table td {
     border: 1px solid #555;
 }
+
+.metric-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 4px 6px 0 0;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    background: #e8f1ff;
+    border: 1px solid #bcd3ff;
+}
+
+body.dark-mode .metric-badge {
+    display: inline-block;
+    background: #1b2735;
+    border: 1px solid #bcd3ff;
+}
+
+.code-block {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 12px 14px;
+    border-radius: 8px;
+    overflow: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+body.dark-mode .code-block {
+    background: #0b1220;
+    color: #e8eef9;
+}
+
+.callout {
+    background: #fff8e1;
+    border-left: 4px solid #ffb300;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+body.dark-mode .callout {
+    background: #2a2210;
+    border-color: #ffb300;
+    color: #ffe9b3;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 800px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+}

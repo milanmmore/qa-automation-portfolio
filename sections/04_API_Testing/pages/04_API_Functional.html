@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Functional Testing of APIs</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -20,8 +20,8 @@
         <header>
             <h1>Milan Milind More</h1>
             <nav>
-                <a href="../index.html">Home</a> |
-                <a href="../about.html">About</a>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
             </nav>
         </header>
     </noscript>
@@ -29,7 +29,7 @@
 
     <!-- Main Content -->
     <main id="content" class="container">
-        <section id="Topic">
+        <section id="Topic" class="accordion">
 
         <!-- Introduction -->
                 <h2><i class="fas fa-info-circle"></i> Introduction</h2>
@@ -41,10 +41,10 @@
             <br>
 
         <!-- Fundamentals & Key Concept-->
-        <div class="accordion">
+        <!--div class="accordion"> -->
         <details>
             <summary>
-                <h2><i class="fas fa-lightbulb"></i> Fundamentals & Key Concepts</h2>
+                <h3><i class="fas fa-lightbulb"></i> Fundamentals & Key Concepts</h3>
             </summary>
             <ul class="indented-list">
                 <li><strong>API (functional) vs UI (Web) Testing:</strong> <br>
@@ -144,13 +144,13 @@
                 </li>
             </ul>
         </details>
-        </div>
+        <!--/div>-->
         
         <!-- What to Test -->
-        <div class="accordion">
+        <!--div class="accordion">-->
         <details>
             <summary>
-                <h2><i class="fas fa-vials"></i> What to Test in Functional Testing</h2>
+                <h3><i class="fas fa-vials"></i> What to Test in Functional Testing</h3>
             </summary>
             <ul class="indented-list">
                 <li>✅ Correct response codes (200, 400, 401, 500 etc.)</li>
@@ -160,14 +160,13 @@
                 <li>✅ Error handling and edge cases</li>
             </ul>
         </details>
-        </div>
+        <!--</div>-->
 
 
         <!-- Testing Artifacts -->
-        <div class="accordion">
         <details>
             <summary>
-                <h2><i class="fas fa-file-alt"></i> Testing Artifacts</h2>
+                <h3><i class="fas fa-file-alt"></i> Testing Artifacts</h3>
             </summary>
         
             <p><strong>Test Scenarios:</strong></p>
@@ -225,44 +224,33 @@
                 </tbody>
             </table>
         </details>
-        </div>
 
         <!-- Assignments -->
-        <div class="accordion">
         <details>
             <summary>
-                <h2><i class="fas fa-tasks"></i> Assignments</h2>
+                <h3><i class="fas fa-tasks"></i> Assignments</h3>
             </summary>
             <ul>
                 <li>
                     <strong>Assignment 1:</strong> Create Test Scenarios for CRUD APIs
                     <br>
-                    📥 <a href="04_API_Testing/Assets/Assignments/API_Assignment1_testcases.xlsx" download>Download Solution (XLSX)</a>
+                    📥 <a href="assets/Assignments/API_Assignment1_testcases.xlsx" download>Download testcases (XLSX)</a>
                 </li>
                 <li>
                     <strong>Assignment 2:</strong> Build Postman Collection for Authentication APIs
                     <br>
-                    📥 <a href="04_API_Testing/Assets/Assignments/API_assignment2_Solution.zip" download>Download Solution (ZIP)</a>
+                    📥 <a href="assets/Assignments/API_assignment2_Collection.zip" download>Download Postman collection (ZIP)</a>
                 </li>
                 <li>
                     <strong>Assignment 3:</strong> Analyze API Performance with JMeter
                     <br>
-                    📥 <a href="04_API_Testing/Assets/Assignments/API_Assignment3_Solution.pdf" download>Download Solution (PDF)</a>
+                    📥 <a href="Assets/Assignments/API_Assignment3_Performace.pdf" download>Download Jmeter Performance testing guide (PDF)</a>
                 </li>
             </ul>
         </details>
 
-
-
-
-
-
-
-        </details>
-        </div>
-
         <!-- Sample Project -->
-        <div class="accordion">
+        <!--div class="accordion">
         <details>
             <summary>
                 <h2><i class="fas fa-project-diagram"></i> Sample Test Project</h2>
@@ -275,13 +263,68 @@
                 <li>Performance testing for critical endpoints</li>
             </ul>
         </details>
-        </div>
+        </div> -->
+
+        <details>
+                <summary>
+                    <h3><i class="fas fa-project-diagram"></i> Sample Test Project</h3>
+                </summary>
+
+                <p><strong>Capstone Idea:</strong> Build a test suite for a sample e-commerce API.</p>
+
+                <ul class="indented-list">
+                    <li>🔐 User authentication</li>
+                    <li>🛍️ Product listing and details</li>
+                    <li>🛒 Cart and checkout APIs</li>
+                    <li>📈 Performance testing for critical endpoints</li>
+                </ul>
+
+                <hr>
+
+                <h3>📄 Test Case Document</h3>
+                <p>Download the detailed test case document outlining manual and automated test scenarios. 
+                <a href="assets/docs/API/ecommerce-api-testcases.xlsx?v=1.0" download>
+                    <i class="fas fa-download"></i>
+                </a>
+                </p>
+                <br>
+
+                <h3><i class="fas fa-flask"></i> Postman Collection</h3>
+                <p>Use this collection to manually validate API endpoints before automation:</p>
+                <div class="api-downloads">
+                    <a href="assets/downloads/postman/ecommerce-api.postman_collection.json" download>
+                        <i class="fas fa-download"></i> Collection (.json)
+                    </a>
+                    <a href="assets/downloads/postman/ecommerce-env.postman_environment.json?v=1.0" download>
+                        <i class="fas fa-download"></i> Environment (.json)
+                    </a>
+                    <a href="assets/downloads/postman/ecommerce-postman-bundle.zip" download>
+                        <i class="fas fa-file-archive"></i> Full Bundle (.zip)
+                    </a>
+                </div>
+                <br>
+                
+                <h3>🎭 Playwright & Cypress Automation Framework</h3>
+                <p>Explore the Playwright & Cypress based API test suite with role-based fixtures and CI/CD integration:</p>
+                <div class="api-downloads">
+                    <a href="https://github.com/milanmmore/ecommerce-api-tests/tree/main/playwright" target="_blank" download>
+                        <i class="fas fa-external-link-alt"></i> View Playwright README on GitHub
+                    </a>
+                    <a href="https://github.com/milanmmore/ecommerce-api-tests/tree/main/cypress" target="_blank" download>
+                        <i class="fas fa-external-link-alt"></i> View Cypress README on GitHub
+                    </a>
+                </div>
+
+                <p style="margin-top: 1em; font-style: italic;">
+                    This layered approach helps developers transition from manual API validation to scalable automation using
+                    modern frameworks.
+                </p>
+            </details>
 
         <!-- Tips -->
-        <div class="accordion">
         <details>
             <summary>
-                <h2><i class="fas fa-lightbulb"></i> Tips</h2>
+                <h3><i class="fas fa-lightbulb"></i> Tips</h3>
             </summary>
             <ul class="indented-list">
                 <li>🔍 Always validate both success and error cases.</li>
@@ -289,7 +332,6 @@
                 <li>⚡ Automate repetitive flows for CI/CD integration.</li>
             </ul>
         </details>
-        </div>
         
     </section>
             <!-- Contact Section added on each page-->
@@ -325,14 +367,6 @@
     </section>
     </main>
 
-
-    <!-- Footer -->
-    <!--footer class="site-footer">
-        <p>© <span id="year"></span> Milan Milind More | QA Automation Portfolio</p>
-        <p>Built with ❤️ for QA enthusiasts and future testers.</p>
-    </footer>
-
-    <script src="../assets/js/main.js"></script> -->
     
 <!-- Common Footer -->
 <div id="footer"></div>
@@ -343,17 +377,17 @@
     </noscript>
     
     <!-- Scripts -->
-    <script src="../assets/js/main.js"></script>
+    <script src="../../../assets/js/main.js?v=1.0"></script>
     <script>
         if (typeof loadTemplate === "function") {
             try {
-                loadTemplate("header", "../assets/templates/header.html", "Functional Testing of APIs", [
-                    { text: "Home", link: "../index.html", class: "btn-primary" },
-                    { text: "Back to API Testing Guide", link: "04_API_TESTING.html", class: "btn-primary" },
+                loadTemplate("header", "../../../assets/templates/header.html?v=1.0", "Functional Testing of APIs", [
+                    { text: "Home", link: "../../../index.html", class: "btn-primary" },
+                    { text: "Back to API Testing Guide", link: "../../04_API_TESTING.html", class: "btn-primary" },
                     { text: "Connect", link: "#connect", class: "connect-button" }
                 ]);
 
-                loadTemplate("footer", "/assets/templates/footer.html");
+                loadTemplate("footer", "../../../assets/templates/footer.html?v=1.0");
             } catch (e) {
                 console.error("Template loading failed", e);
             }
