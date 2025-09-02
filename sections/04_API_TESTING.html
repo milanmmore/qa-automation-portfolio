@@ -467,12 +467,15 @@ Flag discrepancies between actual behavior and documented specs.
     <script>
         if (typeof loadTemplate === "function") {
             try {
-                loadTemplate("header", "../assets/templates/header.html?v=1.0", "API Testing Guide", [
+            const repoBase = window.location.pathname.includes("/QA-AUTOMATION-PRTFOLIO/")
+                    ? "/QA-AUTOMATION-PRTFOLIO/assets/templates/"
+                    : "assets/templates/";
+                loadTemplate("header", `${repoBase}header.html?v=1.0`, "API Testing Guide", [
                     { text: "About", link: "../../about.html?v=1.0", class: "btn-primary" },
                     { text: "Home", link: "../../index.html?v=1.0", class: "btn-primary" },
                     { text: "Connect", link: "#connect", class: "connect-button" }
                 ]);
-                loadTemplate("footer", "../../assets/templates/footer.html?v=1.0");
+                loadTemplate("footer", `${repoBase}footer.html?v=1.0`);
             } catch (e) {
                 console.error("Template loading failed", e);
             }
