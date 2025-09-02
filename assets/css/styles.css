@@ -557,10 +557,9 @@ body.dark-mode footer a {
 
 @media (max-width: 800px) {
 
-    /* Banner Container */
+    /* Header */
     .banner-container {
         background-color: #1976d2;
-        /* Blue banner */
         color: white;
         padding: 2rem 1rem;
         text-align: center;
@@ -568,10 +567,8 @@ body.dark-mode footer a {
         z-index: 1;
     }
 
-    /* Header Text */
-    .banner-container h1 {
+    header h1 {
         font-size: 1.6rem;
-        margin-bottom: 1rem;
     }
 
     .tagline {
@@ -580,7 +577,7 @@ body.dark-mode footer a {
         margin-bottom: 1.5rem;
     }
 
-    /* CTA Buttons */
+    /* Buttons */
     .cta-buttons {
         display: flex;
         flex-direction: column;
@@ -589,7 +586,9 @@ body.dark-mode footer a {
     }
 
     .cta-buttons a,
-    .cta-buttons button {
+    .cta-buttons button,
+    .button,
+    a {
         background-color: white;
         color: #1976d2;
         padding: 0.8rem 1.2rem;
@@ -601,6 +600,35 @@ body.dark-mode footer a {
         box-sizing: border-box;
         border: none;
         cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .button-container {
+        margin-top: 1rem;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Layout */
+    .main-content {
+        padding-top: 100px;
+    }
+
+    .connect-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.6rem;
     }
 
     /* Dark Mode Toggle */
@@ -615,28 +643,10 @@ body.dark-mode footer a {
         cursor: pointer;
     }
 
-    /* General Layout Fixes */
-    .main-content {
-        padding-top: 100px;
-        /* Adjusted for banner height */
-    }
-
-    .button-container {
-        margin-top: 1rem;
-        gap: 1rem;
-    }
-
-    .button,
-    a {
-        font-size: 1rem;
-        padding: 0.8rem 1.2rem;
-        width: 100%;
-        max-width: 300px;
-        box-sizing: border-box;
-    }
-
-    header h1 {
-        font-size: 1.6rem;
+    /* Typography */
+    h2,
+    h3 {
+        line-height: 1.4;
     }
 
     p {
@@ -644,11 +654,15 @@ body.dark-mode footer a {
         line-height: 1.6;
     }
 
-    h2,
-    h3 {
-        line-height: 1.4;
+    a:hover {
+        color: #0d47a1;
+        text-decoration: underline;
+        transition: color 0.3s ease-in-out;
     }
 }
+
+
+
 /* ---------------- Skip Link ---------------- */
 .skip-link {
     position: absolute;
