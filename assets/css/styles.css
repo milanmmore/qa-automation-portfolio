@@ -556,18 +556,17 @@ body.dark-mode footer a {
 } */
 
 @media (max-width: 800px) {
-
-    /* Header */
     .banner-container {
         background-color: #1976d2;
+        /* Blue banner */
         color: white;
-        padding: 2rem 1rem;
+        padding: 2.5rem 1rem 1.5rem;
         text-align: center;
         position: relative;
         z-index: 10;
     }
 
-    header h1 {
+    .banner-container h1 {
         font-size: 1.6rem;
         margin-bottom: 1rem;
     }
@@ -578,7 +577,6 @@ body.dark-mode footer a {
         margin-bottom: 1.5rem;
     }
 
-    /* Buttons */
     .cta-buttons {
         display: flex;
         flex-direction: column;
@@ -587,9 +585,7 @@ body.dark-mode footer a {
     }
 
     .cta-buttons a,
-    .cta-buttons button,
-    .button,
-    a {
+    .cta-buttons button {
         background-color: white;
         color: #1976d2;
         padding: 0.8rem 1.2rem;
@@ -603,35 +599,6 @@ body.dark-mode footer a {
         cursor: pointer;
     }
 
-    .button-container {
-        margin-top: 1rem;
-        gap: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Layout */
-    .main-content {
-        padding-top: 100px;
-    }
-
-    .connect-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 0.6rem;
-    }
-
-    /* Dark Mode Toggle */
     .dark-mode {
         position: absolute;
         top: 1rem;
@@ -643,21 +610,9 @@ body.dark-mode footer a {
         cursor: pointer;
     }
 
-    /* Typography */
-    h2,
-    h3 {
-        line-height: 1.4;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    a:hover {
-        color: #0d47a1;
-        text-decoration: underline;
-        transition: color 0.3s ease-in-out;
+    .main-content {
+        padding-top: 120px;
+        /* Ensures content starts below banner */
     }
 }
 
