@@ -465,8 +465,82 @@ body.dark-mode footer a {
 
 
 /* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+    .connect-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        background-color: var(--header-bg, #f5f5f5);
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 0.5rem;
+        margin: 0;
+    }
+
+    .hero-card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    h2,
+    h3 {
+        line-height: 1.4;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .button,
+    a {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 800px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 800px) {
+    a:hover {
+        color: #0d47a1;
+        text-decoration: underline;
+        transition: color 0.3s ease-in-out;
+    }
+}
 
 
+
+/*
 @media (max-width: 768px) {
     .connect-cards {
         flex-direction: column;
@@ -485,7 +559,6 @@ body.dark-mode footer a {
         padding: 1rem;
         text-align: center;
         background-color: var(--header-bg, #f5f5f5);
-        /* fallback if using CSS vars */
     }
 }
 
@@ -497,19 +570,16 @@ body.dark-mode footer a {
 
     .hero-card {
         margin-bottom: 1rem;
-        /* Add spacing between hero cards */
     }
 }
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.8rem;
-        /* Slightly smaller for very narrow screens */
     }
 
     h2,
     h3 {
         line-height: 1.4;
-        /* Improve readability */
     }
 
     p {
@@ -531,9 +601,7 @@ body.dark-mode footer a {
 @media (max-width: 600px) {
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        /* Adjust minimum width */
         gap: 0.8rem;
-        /* Reduce spacing between items */
     }
 }
 
@@ -544,6 +612,8 @@ body.dark-mode footer a {
         transition: color 0.3s ease-in-out;
     }
 }
+*/
+
 /* ---------------- Skip Link ---------------- */
 .skip-link {
     position: absolute;
