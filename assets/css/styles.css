@@ -627,9 +627,17 @@ body.dark-mode footer a {
         gap: 1rem;
     }
 
+    .button {
+        position: relative;
+        z-index: 10;
+    }
+
+
     .popup {
         width: 50%;
         margin: auto;
+        position: relative;
+        overflow: visible;
     }
 }
 
