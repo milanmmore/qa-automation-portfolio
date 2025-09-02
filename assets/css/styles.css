@@ -497,19 +497,19 @@ body.dark-mode footer a {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     h2,
     h3 {
-        line-height: 1.4;
+        line-height: 1.2;
     }
 
     p {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.8rem;
+        line-height: 1.4;
     }
 }
 
@@ -517,8 +517,8 @@ body.dark-mode footer a {
 
     .button,
     a {
-        padding: 0.8rem 1.2rem;
-        font-size: 1rem;
+        padding: 0.6rem 1.0rem;
+        font-size: 0.8rem;
         display: inline-block;
     }
 }
@@ -526,7 +526,7 @@ body.dark-mode footer a {
 @media (max-width: 800px) {
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 0.8rem;
+        gap: 0.6rem;
     }
 }
 
@@ -544,7 +544,7 @@ body.dark-mode footer a {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        margin-top: 1rem;
+        margin-top: 0.8rem;
     }
 }
 
