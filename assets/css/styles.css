@@ -465,7 +465,7 @@ body.dark-mode footer a {
 
 
 /* ---------------- Responsive ---------------- */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .connect-cards {
         flex-direction: column;
         align-items: center;
@@ -518,7 +518,7 @@ body.dark-mode footer a {
     .button,
     a {
         padding: 0.6rem 1.0rem;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         display: inline-block;
     }
 }
