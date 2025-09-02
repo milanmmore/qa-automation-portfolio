@@ -55,7 +55,7 @@ body {
 
 .timeline-item h2,
 .timeline-item h3 {
-    margin-top: 0;
+    /*margin-top: 0;*/
     color: var(--accent-color);
     font-size: 1.4rem;
 }
