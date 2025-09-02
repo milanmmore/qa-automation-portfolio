@@ -77,7 +77,7 @@ header .banner-text h1 {
 
 /* Button container */
 header .cta-buttons {
-    margin-top: 0.8rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -465,6 +465,7 @@ body.dark-mode footer a {
 
 
 /* ---------------- Responsive ---------------- */
+/*
 @media (max-width: 800px) {
     .connect-cards {
         flex-direction: column;
@@ -551,7 +552,101 @@ body.dark-mode footer a {
 @media (max-width: 800px) {
     .main-content {
         padding-top: 80px;
-        /* match header height */
+    }
+} */
+
+@media (max-width: 800px) {
+
+    /* Banner Container */
+    .banner-container {
+        background-color: #1976d2;
+        /* Blue banner */
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Header Text */
+    .banner-container h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    /* CTA Buttons */
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .cta-buttons a,
+    .cta-buttons button {
+        background-color: white;
+        color: #1976d2;
+        padding: 0.8rem 1.2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        width: 80%;
+        max-width: 300px;
+        box-sizing: border-box;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Dark Mode Toggle */
+    .dark-mode {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: transparent;
+        color: white;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    /* General Layout Fixes */
+    .main-content {
+        padding-top: 100px;
+        /* Adjusted for banner height */
+    }
+
+    .button-container {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    .button,
+    a {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+        width: 100%;
+        max-width: 300px;
+        box-sizing: border-box;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    h2,
+    h3 {
+        line-height: 1.4;
     }
 }
 /* ---------------- Skip Link ---------------- */
