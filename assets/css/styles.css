@@ -918,3 +918,15 @@ a.active {
     display: inline-block;
     margin-bottom: 5px;
 }
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 600px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+}
