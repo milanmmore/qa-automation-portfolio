@@ -555,7 +555,7 @@ body.dark-mode footer a {
     }
 } */
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .banner-container {
         background-color: #1976d2;
         /* Blue banner */
@@ -582,6 +582,10 @@ body.dark-mode footer a {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+    }
+
+    .button {
+        display: inline-block;
     }
 
     .cta-buttons a,
