@@ -27,7 +27,7 @@ header.banner-container {
     background: linear-gradient(90deg, #2563eb, #00b4d8);
     color: #fff;
     z-index: 999;
-    height:200px;
+    height: 200px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -123,6 +123,7 @@ section {
     /* Increased width for better content display */
     margin: auto;
 }
+
 /* ---------------- Content Spacing ---------------- */
 #intro {
     margin-bottom: 0.5rem;
@@ -131,7 +132,8 @@ section {
     /* Adjusted left and right padding */
 }
 
-#content, #intro {
+#content,
+#intro {
     margin-top: calc(var(--header-height, 200px));
     /* Replace 140px with your header height */
 }
@@ -260,9 +262,9 @@ section {
     padding: 6px 10px;
     border-radius: 6px;
     transition: all 0.2s ease-in-out;
-        color: #0077b6;
-            text-decoration: none;
-            font-weight: 500;
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .accordion a:hover {
@@ -311,7 +313,7 @@ footer a {
 }
 
 /* ---------------- Dark Mode ---------------- */
-body.dark-mode  {
+body.dark-mode {
     background-color: #121212;
     color: #f0f0f0;
 }
@@ -558,15 +560,20 @@ body.dark-mode footer a {
 @media (max-width: 800px) {
     .banner-container {
         background-color: #1976d2;
-        /* Blue banner */
         color: white;
-        padding: 2.5rem 1rem 1.5rem;
+        padding: 2rem 1rem;
         text-align: center;
-        position: relative;
-        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
-    .banner-container h1 {
+    .banner-text {
+        width: 100%;
+    }
+
+    .banner-text h1 {
         font-size: 1.6rem;
         margin-bottom: 1rem;
     }
@@ -574,18 +581,15 @@ body.dark-mode footer a {
     .tagline {
         font-size: 1rem;
         line-height: 1.6;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .cta-buttons {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        width: 100%;
         align-items: center;
-    }
-
-    .button {
-        display: inline-block;
     }
 
     .cta-buttons a,
@@ -613,34 +617,7 @@ body.dark-mode footer a {
         font-size: 1.2rem;
         cursor: pointer;
     }
-
-    .main-content {
-        padding-top: 120px;
-        /* Ensures content starts below banner */
-    }
 }
-
-@media (min-width: 768px) {
-    .button-container {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .button {
-        position: relative;
-        z-index: 1;
-    }
-
-
-    .popup {
-        width: 50%;
-        margin: auto;
-        position: relative;
-        overflow: visible;
-    }
-}
-
 
 /* ---------------- Skip Link ---------------- */
 .skip-link {
@@ -951,6 +928,7 @@ body.dark-mode .tip {
     color: #b2dfdb;
     border-left: 4px solid #26a69a;
 }
+
 a[download] {
     color: #2563eb;
     font-weight: 600;
@@ -1006,7 +984,8 @@ a.active {
 }
 
 .content {
-    display: none;    margin-left: 20px;
+    display: none;
+    margin-left: 20px;
 }
 
 .toggle {
@@ -1021,9 +1000,3 @@ a.active {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
-
-@media (max-width: 600px) {
-    .two-col {
-        grid-template-columns: 1fr;
-    }
-} 
