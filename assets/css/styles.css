@@ -555,7 +555,7 @@ body.dark-mode footer a {
     }
 } */
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .banner-container {
         background-color: #1976d2;
         /* Blue banner */
@@ -616,6 +616,18 @@ body.dark-mode footer a {
     }
 }
 
+@media (min-width: 768px) {
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .popup {
+        width: 50%;
+        margin: auto;
+    }
+}
 
 
 /* ---------------- Skip Link ---------------- */
