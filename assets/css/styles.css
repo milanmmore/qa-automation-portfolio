@@ -564,11 +564,12 @@ body.dark-mode footer a {
         padding: 2rem 1rem;
         text-align: center;
         position: relative;
-        z-index: 1;
+        z-index: 10;
     }
 
     header h1 {
         font-size: 1.6rem;
+        margin-bottom: 1rem;
     }
 
     .tagline {
@@ -600,7 +601,6 @@ body.dark-mode footer a {
         box-sizing: border-box;
         border: none;
         cursor: pointer;
-        font-size: 1rem;
     }
 
     .button-container {
