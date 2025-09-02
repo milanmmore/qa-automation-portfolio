@@ -463,23 +463,10 @@ Flag discrepancies between actual behavior and documented specs.
 
     <!-- Scripts -->
 
-    <script src="../assets/js/main.js?v=1.0"></script>
+    <!--script src="../assets/js/main.js?v=1.0"></script>
     <script>
         if (typeof loadTemplate === "function") {
             try {
-                /*
-                const repoBase = window.location.pathname.includes("/qa-automation-portfolio/")
-                    ? "/qa-automation-portfolio/assets/templates/"
-                    : "assets/templates/";
-                const depth = location.pathname.split("/").length;
-                const basePath = depth > 3 ? "../" : "./";  
-
-                loadTemplate("header", `${repoBase}header.html?v=1.0`, "API Testing Guide", [
-                    { text: "About", link: `${basePath}about.html?v=1.0`, class: "btn-primary" },
-                    { text: "Home", link: `${basePath}index.html?v=1.0`, class: "btn-primary" },
-                    { text: "Connect", link: "#connect", class: "connect-button" }
-                ]);
-                loadTemplate("footer", "../assets/templates/footer.html?v=1.0"); */
 
                 loadTemplate("header", "../assets/templates/header.html?v=1.0", "API Testing Guide", [
                     { text: "About", link: "../about.html?v=1.0", class: "btn-primary" },
@@ -493,7 +480,10 @@ Flag discrepancies between actual behavior and documented specs.
                 console.error("Template loading failed", e);
             }
         }
-    </script>
+    </script> -->
+    <script src="../assets/js/template.js?v=1.0" defer></script>
+    <script src="../assets/js/pageConfigs.js?v=1.0" defer></script>
+    <script src="../assets/js/main.js?v=1.0" defer></script>
 </body>
 
 </html>

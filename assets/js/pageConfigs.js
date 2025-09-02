@@ -20,6 +20,15 @@ const pageConfigs = {
       { text: "Home", link: "index.html", class: "btn-secondary" },
       { text: "Explore More", link: "#more-projects" }
     ]
-  }
+    },
+  "04_API_TESTING.html": {
+    title: "API Testing Guide",
+      buttons: [
+      { text: "About", link: "../about.html", class: "btn-secondary" },
+      { text: "Home", link: "../index.html", class: "btn-secondary" },
+      { text: "Connect", link: "#connect", class: "connect-button" }
+    ]
+
+  },
   // Add more pages as needed
 };

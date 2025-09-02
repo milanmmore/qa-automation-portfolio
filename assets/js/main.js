@@ -6,13 +6,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   try {
-    await loadTemplate("header", "assets/templates/header.html?v=1.0", config.title, config.buttons);
-    await loadTemplate("footer", "assets/templates/footer.html?v=1.0");
+    await loadTemplate("header", "../assets/templates/header.html?v=1.0", config.title, config.buttons);
+    await loadTemplate("footer", "../assets/templates/footer.html?v=1.0");
     setupNavigation();
   } catch (e) {
     console.error("Template loading failed", e);
   }
 });
+
+
 
 function setupNavigation() {
   // Anchor click behavior
