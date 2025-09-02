@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Testing of APIs</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+
+            <!-- Introduction -->
+            <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+            <p>
+Parameterization enables dynamic input values during test execution, allowing the same test logic to run against
+multiple data sets. Here's how to implement it using popular tools and formats:
+            </p>
+            <br>
+            <!-- Using Postman -->
+            <details>
+                <summary>
+                    <h3><i class="fas fa-vial"></i>Using Postman for Parameterization</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li><strong>Supported Data Formats:</strong>
+                        <ul class="tab-indent">
+                            <li><strong>CSV:</strong> Comma-separated values with headers as variable names</li>
+                            <li><strong>JSON:</strong> Array of objects with key-value pairs</li>
+                        </ul>
+                    </li>
+            
+                    <li><strong>Steps to Implement:</strong>
+                        <ol class="tab-indent">
+                            <li><strong>Prepare your data file:</strong>
+                                <br><br>
+                                <strong>CSV Example:</strong><br>
+                                <code>
+                                    username,password<br>
+                                    user1@example.com,pass123<br>
+                                    user2@example.com,pass456
+                                </code>
+                                <br><br>
+                                <strong>JSON Example:</strong><br>
+                                <code>
+                                    [<br>
+                                    &nbsp;&nbsp;{ "username": "user1@example.com", "password": "pass123" },<br>
+                                    &nbsp;&nbsp;{ "username": "user2@example.com", "password": "pass456" }<br>
+                                    ]
+                                </code>
+                            </li>
+            
+                            <li><strong>Use variables in your request:</strong><br>
+                                Replace static values with dynamic variables using double curly braces:<br>
+                                <code>
+                                    { "email": "{{username}}", "password": "{{password}}" }
+                                </code>
+                            </li>
+            
+                            <li><strong>Run the collection:</strong><br>
+                                Use Postman's <em>Collection Runner</em> to upload the data file and execute tests.
+                            </li>
+                        </ol>
+                    </li>
+            
+                    <li><strong>Accessing Variables in Scripts:</strong><br>
+                        You can reference data variables in Postman test scripts using the <code>data</code> object:<br>
+                        <code>
+                            pm.test("Status code is 200", function () {<br>
+                            &nbsp;&nbsp;pm.expect(pm.response.code).to.eql(200);<br>
+                            &nbsp;&nbsp;console.log("Testing with:", data.username);<br>
+                            });
+                        </code>
+                    </li>
+            
+                    <li><strong>Note:</strong><br>
+                        Excel files must be converted to CSV before use in Postman.
+                    </li>
+                </ul>
+            </details>
+      
+            <details>
+                <summary>
+                    <h3><i class="fas fa-code"></i>Using TypeScript with Playwright</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li><strong>Supported Data Formats:</strong>
+                        <ul class="tab-indent">
+                            <li><i class="fas fa-file-code"></i> <strong>JSON:</strong> Directly import and iterate over objects
+                            </li>
+                            <li><i class="fas fa-file-csv"></i> <strong>CSV:</strong> Use libraries like <code>csv-parse</code> or
+                                <code>papaparse</code></li>
+                            <li><i class="fas fa-file-excel"></i> <strong>Excel:</strong> Use <code>xlsx</code> to read and convert
+                                sheets</li>
+                        </ul>
+                    </li>
+            
+                    <li><strong>JSON Example:</strong>
+                        <details>
+                            <summary><i class="fas fa-file-code"></i> View Code</summary>
+                            <pre><code>
+            import test from '@playwright/test';
+            const testData = require('./data.json');
+            
+            testData.forEach(({ username, password }) => {
+              test(`Login test for ${username}`, async ({ page }) => {
+                await page.goto('https://example.com/login');
+                await page.fill('#email', username);
+                await page.fill('#password', password);
+                await page.click('button[type="submit"]');
+                await page.waitForSelector('#dashboard');
+              });
+            });
+                            </code></pre>
+                        </details>
+                    </li>
+            
+                    <li><strong>CSV Example:</strong>
+                        <details>
+                            <summary><i class="fas fa-file-csv"></i> View Code</summary>
+                            <pre><code>
+            import fs from 'fs';
+            import parse from 'csv-parse/lib/sync';
+            
+            const csvData = fs.readFileSync('./data.csv');
+            const records = parse(csvData, { columns: true });
+            
+            records.forEach(({ username, password }) => {
+              test(`Login test for ${username}`, async ({ page }) => {
+                // Same login steps
+              });
+            });
+                            </code></pre>
+                        </details>
+                    </li>
+            
+                    <li><strong>Excel Example:</strong>
+                        <details>
+                            <summary><i class="fas fa-file-excel"></i> View Code</summary>
+                            <pre><code>
+            import * as XLSX from 'xlsx';
+            
+            const workbook = XLSX.readFile('./data.xlsx');
+            const sheet = workbook.Sheets[workbook.SheetNames[0]];
+            const data = XLSX.utils.sheet_to_json(sheet);
+            
+            data.forEach(({ username, password }) => {
+              test(`Login test for ${username}`, async ({ page }) => {
+                // Same login steps
+              });
+            });
+                            </code></pre>
+                        </details>
+                    </li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>
+                    <h3><i class="fas fa-lightbulb"></i>Tips for Effective Parameterization</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li><strong>🔍 Start Simple:</strong><br>
+                        Begin with basic scenarios and gradually add complexity.
+                    </li>
+
+                    <li><strong>🔄 Reuse Test Logic:</strong><br>
+                        Keep your test steps DRY (Don't Repeat Yourself) by reusing functions.
+                    </li>
+
+                    <li><strong>📊 Monitor Test Performance:</strong><br>
+                        Keep an eye on test execution times and optimize as needed.
+                    </li>
+                </ul>
+            </details>
+
+        </section>
+        <!-- Contact Section added on each page-->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                                <a href="tel:+1234567890" class="connect-link">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Me</span>
+                                </a>
+                            </div>-->
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Common Footer -->
+    <div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js?v=1.0"></script>
+    <script>
+        if (typeof loadTemplate === "function") {
+            try {
+                loadTemplate("header", "../../../assets/templates/header.html?v=1.0", "Parameterization for Data-Driven Testing of APIs", [
+                    { text: "Home", link: "../../../index.html", class: "btn-primary" },
+                    { text: "Back to API Testing Guide", link: "../../04_API_TESTING.html", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+
+                loadTemplate("footer", "../../../assets/templates/footer.html?v=1.0");
+            } catch (e) {
+                console.error("Template loading failed", e);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

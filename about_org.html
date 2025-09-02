@@ -2,46 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me - Milan Milind More</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/about_styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 </head>
 
-
 <body>
-
-    <a class="skip-link" href="#content">Skip to content</a>
-
-    <!-- Common Header -->
-    <div id="header"></div>
-    <noscript>
-        <header>
-            <h1>Milan Milind More</h1>
-            <nav>
-                <a href="../index.html">Home</a> |
+    <!-- Header -->
+    <header class="banner-container">
+        <div class="banner-text hero-card">
+            <h1>About Me - Milan Milind More</h1>
+            <p class="tagline">
+                <span class="highlight"><strong><em>Empowering Quality Through Insight, Automation, and
+                            Mentorship</em></strong></span><br>
+                QA Lead • Automation Enthusiast • Lifelong Learner
+            </p>
+            <div class="cta-buttons">
+                <a href="index.html" class="btn-primary">Home</a>
                 <a href="#connect" class="connect-button">Connect</a>
-            </nav>
-        </header>
-    </noscript>
-
+            </div>
+        </div>
+        <button id="darkModeToggle" class="dark-mode">🌙 Dark Mode</button>
+    </header>
 
     <!-- Main Content -->
-        
-    <main id="content" class="container">
-    <!--main class="journey-content">-->
+    <main class="journey-content">
         <section id="journey" class="journey-section">
-        <!--h2>🚀 My QA Journey</h2>-->
-        <p>From a non-IT background to leading QA teams—here’s how I built a fulfilling career in software testing and automation.
-</p>
-            <div class="timeline-item">
-                <h3>🌱 Humble Beginnings</h3>
-                <p>
-                    My journey began in science, inspired by my mother’s belief that <em></em><strong>“Education is the most powerful gift you
-                        can give yourself.”</strong></em> I completed a Master’s in Inorganic Chemistry, but after moving to Pune
+
+<div class="timeline-item">
+    <h3>🌱 Humble Beginnings</h2>
+    <p>
+        My journey began in science, inspired by my mother’s belief that <em></em><strong>“Education is the most powerful gift you
+            can give yourself.”</strong></em> I completed a Master’s in Inorganic Chemistry, but after moving to Pune
         post-marriage, I pivoted toward tech—driven by curiosity and opportunity.
     </p>
     <p>
@@ -76,6 +72,7 @@
             your journey together.</strong>
     </p>
 </div>
+
 
             <div class="timeline-item">
                 <h3>🧠 Learning the Craft</h3>
@@ -128,6 +125,11 @@
                 </p>
             </div>
 
+            <div class="timeline-item">
+                <h3>💡 Words I Live By</h3
+                    >
+            </div>
+
             <blockquote class="quote center-quote">
                 <strong>“You don’t need a tech degree to thrive in QA—you need curiosity, courage, and consistency.”</strong>
             </blockquote>
@@ -161,30 +163,14 @@
         </section>
     </main>
 
-<div id="footer"></div>
-<noscript>
-    <footer>
-        <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Milan Milind More | QA Automation Portfolio</p>
+      <p>Built with ❤️ for QA enthusiasts and future testers.</p>
+      <!--p> ADD : want to add Optional: Add a small GitHub stars/fork badge for credibility.</>-->
     </footer>
-</noscript>
 
-<!-- Scripts -->
-<script src="assets/js/main.js?v=1.0"></script>
-<script>
-    if (typeof loadTemplate === "function") {
-        try {
-            loadTemplate("header", "assets/templates/header.html?v=1.0", "🚀 My QA Journey", [
-                { text: "Home", link: "index.html", class: "btn-primary" },
-                { text: "Connect", link: "#connect", class: "connect-button" }
-            ]);
-
-            loadTemplate("footer", "assets/templates/footer.html?v=1.0");
-        } catch (e) {
-            console.error("Template loading failed", e);
-        }
-    }
-</script>
-
+    <script src="assets/js/main.js"></script>
 
 </body>
 

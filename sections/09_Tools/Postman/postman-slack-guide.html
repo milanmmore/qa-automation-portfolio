@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Testing of APIs</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+
+            <!-- Introduction -->
+            <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+            <p>
+                Notify your team with test results, build status, and contextual info.
+            </p>
+            <br>
+        <details>
+            <summary>🔧 Setup Instructions</summary>
+
+            <ul class="indented-list">
+                <li>Go to Slack API: Create App</li>
+                <li>Click "Create New App" → choose From scratch</li>
+                <li>Name your app (e.g., QA-CI-Notifier) and select your workspace</li>
+                <li>In the app settings, go to Incoming Webhooks</li>
+                <li>Toggle Activate Incoming Webhooks → click Add New Webhook to Workspace</li>
+                <li>Choose the channel (e.g., #qa-reports) → click Allow</li>
+                <li>Copy the generated Webhook URL (e.g., https://hooks.slack.com/services/T000/B000/XXXX)</li>
+            </ul>
+        </details>
+
+<details>
+    <summary>🛡️ Secrets Management</summary>
+
+    <ul class="indented-list"><strong>GitHub Actions:</strong>
+        <li>Go to repo → Settings → Secrets → Actions</li>
+        <li>Add a new secret:</li>
+        <pre><code>SLACK_WEBHOOK_URL = https://hooks.slack.com/services/...</code></pre>
+    </ul>
+    <ul class="indented-list"><strong>Jenkins:</strong>
+        <li>Use Credentials Plugin → Add a secret text credential</li>
+        <li>Reference it via withCredentials block in your pipeline</li>
+    </ul>
+    <ul class="indented-list"><strong>Vault:</strong>
+        <li>Store under a path like secret/slack/webhook</li>
+        <li>Inject into pipeline using Vault agent or environment override</li>
+    </ul>
+</details>
+
+<details>
+    <summary>📦 GitHub Actions Example</summary>
+    <pre><code>
+    - name: Notify Slack
+    env:
+    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    run: |
+    curl -X POST -H 'Content-type: application/json' \
+    --data '{
+    "text": "*✅ Postman Tests Passed!*",
+    "attachments": [
+    {
+    "color": "#36a64f",
+    "fields": [
+    { "title": "Collection", "value": "Smoke Tests", "short": true },
+    { "title": "Environment", "value": "Staging", "short": true },
+    { "title": "Triggered By", "value": "${{ github.actor }}", "short": true }
+    ]
+    }
+    ]
+    }' $SLACK_WEBHOOK_URL
+    </code></pre>
+
+</details>
+
+<details>
+    <summary>🧪 Jenkins Pipeline Snippet</summary>
+    <pre><code>
+        withCredentials([string(credentialsId: 'slack-webhook', variable: 'SLACK_WEBHOOK_URL')]) {
+            sh """
+            curl -X POST -H 'Content-type: application/json' \
+            --data '{
+            "text": "*🧪 Newman Tests Completed*",
+            "attachments": [
+            {
+                "color": "#ffcc00",
+                "fields": [
+                { "title": "Status", "value": "Partial Failures", "short": true },
+                { "title": "Branch", "value": "${env.BRANCH_NAME}", "short": true }
+            ]
+            }
+        ]
+        }' $SLACK_WEBHOOK_URL
+        """
+        }
+    </code></pre>
+
+</details>
+<details>
+    <summary>📈 Parse Newman JSON & Include Stats</summary>
+
+    <pre><code>
+    newman run collection.json \
+    --reporter-json-export results.json
+
+    # Extract stats
+    total=$(jq '.run.stats.requests.total' results.json)
+    failed=$(jq '.run.stats.assertions.failed' results.json)
+
+    # Send to Slack
+    curl -X POST -H 'Content-type: application/json' \
+    --data "{
+    \"text\": \"*🧪 Newman Test Summary*\",
+    \"attachments\": [{
+    \"color\": \"${failed} == 0 ? '#36a64f' : '#ff0000'\",
+    \"fields\": [
+    { \"title\": \"Total Requests\", \"value\": \"$total\", \"short\": true },
+    { \"title\": \"Failed Assertions\", \"value\": \"$failed\", \"short\": true }
+    ]
+    }]
+    }" $SLACK_WEBHOOK_URL
+    </code></pre>
+
+</details>
+
+
+<details>
+    <summary>📊 Include Test Summary (Optional)</summary>
+    <ul>
+        <li>Use Newman’s <code>--reporter-json-export</code> to generate <code>results.json</code></li>
+        <li>Parse with <code>jq</code> to extract stats</li>
+        <li>Send summary to Slack</li>
+    </ul>
+    <pre style="background:#252526; color:#d4d4d4; padding:1em; border-radius:6px;"><code>  
+total=$(jq '.run.stats.requests.total' results.json)
+failed=$(jq '.run.stats.assertions.failed' results.json)
+
+curl -X POST -H 'Content-type: application/json' \
+--data "{
+  \"text\": \"*🧪 Newman Test Summary*\",
+  \"attachments\": [{
+    \"color\": \"${failed} == 0 ? '#36a64f' : '#ff0000'\",
+    \"fields\": [
+      { \"title\": \"Total Requests\", \"value\": \"$total\", \"short\": true },
+      { \"title\": \"Failed Assertions\", \"value\": \"$failed\", \"short\": true }
+    ]
+  }]
+}" $SLACK_WEBHOOK_URL
+      </code></pre>
+</details>
+
+<details>
+    <summary>🧩 Modular Slack Script (Reusable)</summary>
+    <pre style="background:#252526; color:#d4d4d4; padding:1em; border-radius:6px;"><code>
+#!/bin/bash
+STATUS=$1
+COLLECTION=$2
+ENV=$3
+WEBHOOK=$4
+
+curl -X POST -H 'Content-type: application/json' \
+--data "{
+  \"text\": \"*${STATUS}*\",
+  \"attachments\": [{
+    \"color\": \"${STATUS} == '✅ Passed' ? '#36a64f' : '#ff0000'\",
+    \"fields\": [
+      { \"title\": \"Collection\", \"value\": \"${COLLECTION}\", \"short\": true },
+      { \"title\": \"Environment\", \"value\": \"${ENV}\", \"short\": true }
+    ]
+  }]
+}" $WEBHOOK
+      </code></pre>
+    <p>Call from CI:</p>
+    <pre style="background:#252526; color:#d4d4d4; padding:1em; border-radius:6px;"><code>
+bash scripts/slack_notify.sh "✅ Passed" "Smoke Tests" "Staging" $SLACK_WEBHOOK_URL
+      </code></pre>
+</details>
+
+<details>
+    <summary>🧠 Tips</summary>
+    <ul>
+        <li>Use color-coded Slack messages for instant visibility</li>
+        <li>Include links to build and report artifacts</li>
+        <li>Modularize Slack logic for reuse across pipelines</li>
+        <li>Teach fallback logic and dynamic summaries</li>
+    </ul>
+</details>
+
+</section>
+
+
+        <!-- Contact Section added on each page-->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                                <a href="tel:+1234567890" class="connect-link">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Me</span>
+                                </a>
+                            </div>-->
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Common Footer -->
+    <div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js?v=1.0"></script>
+    <script>
+        if (typeof loadTemplate === "function") {
+            try {
+                loadTemplate("header", "../../../assets/templates/header.html?v=1.0", "Slack Notifications for Postman Collections", [
+                    { text: "Home", link: "../../../index.html", class: "btn-primary" },
+                    { text: "Back to API Testing Guide", link: "../../04_API_TESTING.html", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+
+                loadTemplate("footer", "../../../assets/templates/footer.html?v=1.0");
+            } catch (e) {
+                console.error("Template loading failed", e);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

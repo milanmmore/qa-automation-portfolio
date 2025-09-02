@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Testing of APIs</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+
+        <!-- Introduction -->
+                <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+            <p>
+                Functional testing of APIs ensures that each endpoint behaves according to its
+                specifications. It validates input/output, workflows, and error handling.
+                Unlike UI testing, it directly tests the business logic via requests and responses.
+            </p>
+            <br>
+
+    <details open>
+        <summary><i class="fas fa-lightbulb"></i> Fundamentals</summary>
+        <ul>
+            <li><strong>What is an API and why is it important in software testing?</strong>
+                <p>An API (Application Programming Interface) allows communication between software components. In
+                    testing, APIs are crucial for validating backend logic, data exchange, and integration points
+                    without relying on UI.</p>
+            </li>
+            <li><strong>What are the key differences between REST and SOAP APIs?</strong>
+                <p>REST is lightweight, uses HTTP, and supports multiple formats (JSON, XML). SOAP is protocol-based,
+                    XML-only, and includes strict standards like WS-Security and WSDL.</p>
+            </li>
+            <li><strong>What is the structure of an HTTP request and response?</strong>
+                <p>Request: Method, URL, Headers, Body. Response: Status Code, Headers, Body. Both are used to exchange
+                    data between client and server.</p>
+            </li>
+            <li><strong>What are common HTTP methods used in API testing?</strong>
+                <p>GET (retrieve), POST (create), PUT (replace), PATCH (update), DELETE (remove).</p>
+            </li>
+            <li><strong>What is the difference between PUT and PATCH?</strong>
+                <p>PUT replaces the entire resource, while PATCH updates only specified fields.</p>
+            </li>
+        </ul>
+    </details>
+    
+    <details>
+        <summary><i class="fas fa-tools"></i> Tools & Frameworks</summary>
+        <ul>
+            <li><strong>What is Postman and how is it used for API testing?</strong>
+                <p>Postman is a GUI-based tool for sending HTTP requests, validating responses, writing test scripts,
+                    and organizing collections for automation.</p>
+            </li>
+            <li><strong>How does Newman complement Postman in CI/CD?</strong>
+                <p>Newman is Postman's CLI runner. It executes collections in CI pipelines, supports HTML/JSON reports,
+                    and integrates with Jenkins, GitHub Actions, etc.</p>
+            </li>
+            <li><strong>What are some alternatives to Postman?</strong>
+                <p>REST Assured (Java), Karate (DSL), Cypress (JavaScript), Insomnia (GUI), and HTTPie (CLI).</p>
+            </li>
+            <li><strong>How do you automate API tests using CI platforms?</strong>
+                <p>Use CLI runners like Newman, integrate with CI tools (Jenkins, GitHub Actions), inject secrets, and
+                    generate reports as artifacts.</p>
+            </li>
+        </ul>
+    </details>
+    
+    <details>
+        <summary><i class="fas fa-shield-alt"></i> Security & Validation</summary>
+        <ul>
+            <li><strong>How do you test for authentication and authorization?</strong>
+                <p>Use valid/invalid tokens, test role-based access, and validate response codes (401, 403). Include
+                    header injection and token expiry scenarios.</p>
+            </li>
+            <li><strong>What is token-based authentication?</strong>
+                <p>Clients receive a token (e.g., JWT) after login, which is sent in headers for subsequent requests.
+                    Tokens are validated server-side.</p>
+            </li>
+            <li><strong>How do you handle secure API key injection in CI/CD?</strong>
+                <p>Store keys in secrets vaults or CI credential stores. Inject dynamically using environment overrides
+                    (e.g., jq in GitHub Actions).</p>
+            </li>
+            <li><strong>What are common API security vulnerabilities?</strong>
+                <p>Injection attacks, broken authentication, excessive data exposure, insecure endpoints, and lack of
+                    rate limiting.</p>
+            </li>
+        </ul>
+    </details>
+    
+    <details>
+        <summary><i class="fas fa-bug"></i> Troubleshooting & Debugging</summary>
+        <ul>
+            <li><strong>How do you debug a failing API test?</strong>
+                <p>Inspect request/response logs, validate headers and payloads, check environment variables, and
+                    isolate test cases.</p>
+            </li>
+            <li><strong>What tools help inspect payloads?</strong>
+                <p>Postman console, browser dev tools, curl, HTTP proxies (Fiddler, Charles), and CLI tools like HTTPie.
+                </p>
+            </li>
+            <li><strong>How do you handle flaky API failures?</strong>
+                <p>Add retries, increase timeouts, validate backend stability, and isolate external dependencies.</p>
+            </li>
+            <li><strong>How do you validate performance?</strong>
+                <p>Use response time assertions, load testing tools (JMeter, k6), and monitor latency across
+                    environments.</p>
+            </li>
+        </ul>
+    </details>
+    
+    <details>
+        <summary><i class="fas fa-code-branch"></i> Advanced Concepts</summary>
+        <ul>
+            <li><strong>What is contract testing?</strong>
+                <p>Validates that API consumers and providers agree on request/response formats. Tools: Pact, Spring
+                    Cloud Contract.</p>
+            </li>
+            <li><strong>How do you test APIs in microservices?</strong>
+                <p>Use service mocks, test orchestration flows, validate inter-service communication, and isolate
+                    dependencies.</p>
+            </li>
+            <li><strong>What is mocking and stubbing?</strong>
+                <p>Mocking simulates external services; stubbing returns predefined responses. Useful for testing
+                    without real dependencies.</p>
+            </li>
+            <li><strong>How do you handle dynamic data?</strong>
+                <p>Use environment variables, pre-request scripts, and random data generators (e.g., Faker) to simulate
+                    realistic inputs.</p>
+            </li>
+        </ul>
+    </details>
+    
+<details>
+    <summary><i class="fas fa-star"></i> Important Tips for Interview Candidates</summary>
+    <ul>
+        <li><strong>Showcase reusable test scripts and assertions</strong>
+            <p>Interviewers value candidates who write clean, maintainable tests. Mention how you use Postman's
+                <code>pm.test()</code> and <code>pm.expect()</code> to validate responses consistently.</p>
+            <p><em>Example:</em> “In my Postman collection, I created a shared test script that checks for status code,
+                response time, and JSON schema. This helped reduce duplication across 50+ requests.”</p>
+            <pre><code>pm.test("Valid response", () => {
+  pm.response.to.have.status(200);
+  pm.expect(pm.response.responseTime).to.be.below(500);
+});</code></pre>
+        </li>
+
+        <li><strong>Demonstrate modular environments and secure secrets handling</strong>
+            <p>Talk about how you manage different environments (dev, QA, prod) and inject secrets securely in CI/CD
+                pipelines.</p>
+            <p><em>Example:</em> “I used Postman environments with variables like <code>{{base_url}}</code> and
+                <code>{{auth_token}}</code>, and injected secrets via GitHub Actions using
+                <code>secrets.POSTMAN_API_KEY</code>.”</p>
+            <pre><code>env:
+  POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+  ENV_OVERRIDES: $(jq -r '.values[] | "\(.key)=\(.value)"' overrides.json)</code></pre>
+            <p>Highlight fallback logic or error handling for missing secrets to show robustness.</p>
+        </li>
+
+        <li><strong>Explain real-world CI/CD automation experience</strong>
+            <p>Interviewers appreciate candidates who’ve implemented automation beyond local testing. Share how you
+                integrated API tests into pipelines.</p>
+            <p><em>Example:</em> “I configured Newman in GitHub Actions to run Postman collections, generate HTML
+                reports, and send Slack alerts on failure. This gave our team instant feedback.”</p>
+            <pre><code>- name: Run API Tests
+  run: |
+    newman run collection.json \
+      -e environment.json \
+      -r cli,html \
+      --reporter-html-export results.html
+
+- name: Notify Slack
+  if: failure()
+  run: |
+    curl -X POST -H 'Content-type: application/json' \
+    --data '{"text":"❌ API tests failed in CI"}' ${{ secrets.SLACK_WEBHOOK }}</code></pre>
+            <p>Bonus: Mention how this improved test coverage or reduced manual effort.</p>
+        </li>
+    <li>Link to my repo for hands-on practice:
+        <a href="https://github.com/milanmmore/postman-cicd-tests" target="_blank">
+            View GitHub Repo
+        </a>
+    </li>
+    </ul>
+</details>
+
+
+        
+    </section>
+            <!-- Contact Section added on each page-->
+            <section id="connect" class="connect-section">
+                <h2>Let’s Connect</h2>
+                <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+                <div class="connect-cards">
+                    <div class="card">
+                        <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Me</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                    <!--div class="card">
+                                <a href="tel:+1234567890" class="connect-link">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Me</span>
+                                </a>
+                            </div>-->
+                </div>
+    </section>
+    </main>
+
+    <h2>🧪 API Testing - Behavioral Interview Questions</h2>
+    
+    <details>
+        <summary>1. Tell me about a time you found a critical bug during API testing.</summary>
+        <p><strong>Answer:</strong> While testing a payment API, I noticed that the endpoint accepted invalid card expiry
+            dates. I created a test case with a past expiry and confirmed it processed successfully. I flagged it,
+            collaborated with devs, and helped implement stricter validation. This prevented potential financial
+            discrepancies.</p>
+    </details>
+    
+    <details>
+        <summary>2. How do you handle flaky API tests in CI/CD pipelines?</summary>
+        <p><strong>Answer:</strong> I first isolate the flaky test by running it independently. Then I check for external
+            dependencies like rate limits or unstable environments. I add retry logic using <code>newman-reporter</code> or
+            wrap assertions with conditional checks. I also log response times and status codes to identify patterns.</p>
+    </details>
+    
+    <details>
+        <summary>3. Describe a situation where you had to test an API without documentation.</summary>
+        <p><strong>Answer:</strong> In one project, the API lacked documentation. I used Postman’s proxy and browser dev
+            tools to capture requests. Then I reverse-engineered the endpoints and created a working collection. I
+            documented everything in markdown and shared it with the team to accelerate onboarding.</p>
+    </details>
+    
+    <details>
+        <summary>4. How do you ensure secure handling of API keys in your test automation?</summary>
+        <p><strong>Answer:</strong> I avoid hardcoding secrets. Instead, I use environment variables injected via CI/CD
+            tools like GitHub Secrets or GitLab CI. For local runs, I use a Vault-backed script to override Postman
+            environments dynamically using <code>jq</code>. This ensures secrets are never exposed in logs or version
+            control.</p>
+    </details>
+    
+    <details>
+        <summary>5. How do you mentor junior testers in API testing?</summary>
+        <p><strong>Answer:</strong> I start with fundamentals—HTTP methods, status codes, and JSON structure. Then I walk
+            them through Postman collections, reusable tests, and environment setup. I use scenario-based guides with
+            collapsible sections and icons to make learning modular and accessible. I also encourage them to write their own
+            test cases and review them together.</p>
+    </details>
+    
+<!-- Common Footer -->
+<div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js?v=1.0"></script>
+    <script>
+        if (typeof loadTemplate === "function") {
+            try {
+                loadTemplate("header", "../../../assets/templates/header.html?v=1.0", "Common Interview Questtions on API Testing", [
+                    { text: "Home", link: "../../../index.html", class: "btn-primary" },
+                    { text: "Back to API Testing Guide", link: "../../04_API_TESTING.html", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+
+                loadTemplate("footer", "../../../assets/templates/footer.html?v=1.0");
+            } catch (e) {
+                console.error("Template loading failed", e);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

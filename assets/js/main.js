@@ -55,13 +55,30 @@ async function loadTemplate(id, file, pageTitle = document.title, buttons = []) 
   }
 }
 
-// Smooth scroll for anchor links (only if element exists)
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Handle anchor clicks
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       const target = document.querySelector(this.getAttribute("href"));
       if (target) {
         e.preventDefault();
+
+        // Remove 'active' class from all anchors
+        document.querySelectorAll('a[href^="#"]').forEach(a => a.classList.remove("active"));
+        this.classList.add("active");
+
+        // Expand collapsible section if needed
+        const collapsibleContent = target.closest('.content');
+        if (collapsibleContent && collapsibleContent.style.display === 'none') {
+          collapsibleContent.style.display = 'block';
+          const toggleBtn = collapsibleContent.previousElementSibling;
+          if (toggleBtn && toggleBtn.classList.contains('toggle')) {
+            toggleBtn.textContent = '▼ ' + toggleBtn.textContent.replace(/^▶|▼/, '');
+          }
+        }
+
+        // Scroll to target with header offset
         const headerOffset = document.querySelector(".banner-container")?.offsetHeight || 0;
         const elementPosition = target.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - headerOffset;
@@ -69,6 +86,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Handle toggle button clicks
+  document.querySelectorAll('.toggle').forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const content = toggle.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+
+      content.style.display = isVisible ? 'none' : 'block';
+      toggle.textContent = (isVisible ? '▶ ' : '▼ ') + toggle.textContent.replace(/^▶|▼/, '');
+    });
+  });
+
+  // Initially hide all .content sections
+  document.querySelectorAll('.content').forEach(content => {
+    content.style.display = 'none';
+  });
 });
+
+
 
 

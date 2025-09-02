@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Testing of APIs</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+
+            <!-- Introduction -->
+            <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+            <p>
+                Simulating unavailable or unstable endpoints helps ensure your test suite remains reliable even when external services
+                are down or under development.
+                <br>
+                - Isolate frontend/backend logic from third-party dependencies
+                <br>
+                - Test edge cases like timeouts, 500 errors, or malformed responses
+                <br>
+                - Enable CI/CD pipelines without relying on live services
+                <br>
+                Speed up test execution and reduce flakiness
+
+            </p>
+            <br>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-lightbulb"></i> Common Mocking Strategies</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>Static Mocks:</strong>
+            <ul class="tab-indent">
+                <li>Predefined JSON responses for known endpoints</li>
+                <li>Useful for frontend development before backend is ready</li>
+            </ul>
+        </li>
+        <li><strong>Dynamic Stubs:</strong>
+            <ul class="tab-indent">
+                <li>Conditional logic based on request parameters</li>
+                <li>Supports varied test scenarios and edge cases</li>
+            </ul>
+        </li>
+        <li><strong>Mock Servers:</strong>
+            <ul class="tab-indent">
+                <li>Simulate full API behavior locally or in cloud</li>
+                <li>Tools: JSON Server, WireMock, Beeceptor</li>
+            </ul>
+        </li>
+        <li><strong>Error Simulation:</strong>
+            <ul class="tab-indent">
+                <li>Force timeouts, 500 errors, or malformed payloads</li>
+                <li>Validates fallback logic and error handling</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-vial"></i> Mocking in Postman</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>Steps to Create a Mock Server:</strong>
+            <ul class="tab-indent">
+                <li>Create a collection with sample requests and responses</li>
+                <li>Use “Examples” tab to define mock responses</li>
+                <li>Click “Mock Server” → Generate mock URL</li>
+            </ul>
+        </li>
+        <li><strong>Example:</strong>
+            <pre><code>
+GET https://mock-server.example.com/api/user
+Response:
+{
+  "id": 101,
+  "name": "Mocked User",
+  "role": "admin"
+}
+            </code></pre>
+        </li>
+        <li><strong>Tips:</strong>
+            <ul class="tab-indent">
+                <li>Use environment variables to switch between mock and live</li>
+                <li>Document mock endpoints for team clarity</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-flask"></i> Mocking in Cypress</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>Using <code>cy.intercept()</code>:</strong>
+            <pre><code>
+cy.intercept('GET', '/api/user', {
+  statusCode: 200,
+  body: { id: 101, name: 'Mocked User', role: 'admin' }
+}).as('getUser');
+
+cy.visit('/dashboard');
+cy.wait('@getUser');
+            </code></pre>
+        </li>
+        <li><strong>Advanced Use:</strong>
+            <ul class="tab-indent">
+                <li>Mock based on query params or headers</li>
+                <li>Simulate delays using <code>delayMs</code></li>
+            </ul>
+        </li>
+        <li><strong>Best Practice:</strong>
+            <ul class="tab-indent">
+                <li>Reset intercepts between tests</li>
+                <li>Use aliases for better traceability</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-magic"></i> Mocking in Playwright</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>Using <code>page.route()</code>:</strong>
+            <pre><code>
+await page.route('**/api/user', async route => {
+  await route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: JSON.stringify({ id: 101, name: 'Mocked User', role: 'admin' })
+  });
+});
+            </code></pre>
+        </li>
+        <li><strong>Error Simulation:</strong>
+            <pre><code>
+await page.route('**/api/user', route => route.abort('failed'));
+            </code></pre>
+        </li>
+        <li><strong>Tips:</strong>
+            <ul class="tab-indent">
+                <li>Use wildcards like <code>**/api/*</code> for broad interception</li>
+                <li>Combine with fixtures for modular mock data</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-clipboard-list"></i> Common Use Cases</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><i class="fas fa-tools"></i> Frontend development before backend is ready</li>
+        <li><i class="fas fa-bug"></i> Testing edge cases like 404, 500, or slow responses</li>
+        <li><i class="fas fa-sync-alt"></i> CI/CD pipelines needing stable test data</li>
+        <li><i class="fas fa-user-shield"></i> Isolating tests from third-party dependencies</li>
+        <li><i class="fas fa-hourglass-half"></i> Simulating latency for performance testing</li>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-check-circle"></i> Best Practices & Tips</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>Modularity:</strong>
+            <ul class="tab-indent">
+                <li>Keep mocks in separate files or folders</li>
+                <li>Use fixtures or shared data sources</li>
+            </ul>
+        </li>
+        <li><strong>Documentation:</strong>
+            <ul class="tab-indent">
+                <li>Clearly label mock endpoints and expected behaviors</li>
+                <li>Include mock setup in onboarding guides</li>
+            </ul>
+        </li>
+        <li><strong>Version Control:</strong>
+            <ul class="tab-indent">
+                <li>Track changes to mock data alongside test code</li>
+                <li>Use semantic naming for mock scenarios</li>
+            </ul>
+        </li>
+        <li><strong>Validation:</strong>
+            <ul class="tab-indent">
+                <li>Ensure mocks match real API contracts</li>
+                <li>Use schema validation tools if needed</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+
+        </section>
+        <!-- Contact Section added on each page-->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                                <a href="tel:+1234567890" class="connect-link">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Me</span>
+                                </a>
+                            </div>-->
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Common Footer -->
+    <div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js?v=1.0"></script>
+    <script>
+        if (typeof loadTemplate === "function") {
+            try {
+                loadTemplate("header", "../../../assets/templates/header.html?v=1.0", "Mocking Unavailable APIs", [
+                    { text: "Home", link: "../../../index.html", class: "btn-primary" },
+                    { text: "Back to API Testing Guide", link: "../../04_API_TESTING.html", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+
+                loadTemplate("footer", "../../../assets/templates/footer.html?v=1.0");
+            } catch (e) {
+                console.error("Template loading failed", e);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

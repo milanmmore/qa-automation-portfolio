@@ -10,5 +10,6 @@ sections/08_GEN-AI/
 sections/02_Projects/05 - Projects/
 sections/02_Projects/09 - QA Tools Demos/
 sections/02_Projects/Playwright/performance/
+
 # Ignore the specific file 'createProject.md' inside 'projects' folder
 sections/02_Projects/Playwright/CreateNewProject.md

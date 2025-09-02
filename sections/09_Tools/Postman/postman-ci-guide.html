@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Testing of APIs</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+
+            <!-- Introduction -->
+            <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+            <p>
+                Continuous Integration and Continuous Deployment (CI/CD) is the backbone of modern software delivery.
+                Integrating
+                automated API tests into your CI/CD pipeline ensures that every code change is validated early,
+                reliably, and
+                repeatedly—without manual intervention.
+            </p>
+            <br>
+
+<details>
+    <summary>
+        <h3>📦 1. Prepare Your Postman Assets</h3>
+    </summary>
+
+    <ul>
+        
+        <li>Store API keys and tokens in vault and <strong>use them in your requests</strong></li>
+        <li>e.g. x-api-key value is set as {{vault:api-key}} in headers as a placeholder for secure headers</li>
+        <li>Export your Postman collection e.g. collection.json. Replace "vault:" with "vault."</li>
+        <li>Export your environment file e.g. environment.json (without secrets)</li>
+        <li>For local execution add secrets to your environment file e.g. Use {{vault.api-key}} as a placeholder for secure headers</li>
+        <li>Store all the files in a postman-tests/ directory in your repo</li>
+    </ul>
+
+</details>
+
+<details>
+    <summary>
+        <h3>🔐 2. Secure Secrets in CI Platform</h3>
+    </summary>
+
+    <p><strong>For GitHub Actions:</strong></p>
+    <p>- Go to your repo → Settings → Secrets → Actions</p>
+    <p>Add API_KEY and SLACK_WEBHOOK as secrets</p>
+
+    <br>
+    <p><strong>For Jenkins:</strong></p>
+    <p>Use the Credentials Plugin</p>
+    <p>Add postman-api-key and slack-webhook as secret text credentials</p>
+
+</details>
+
+<details>
+    <summary>
+        <h3>⚙️ 3. GitHub Actions Workflow</h3>
+    </summary>
+
+    Save this as .github/workflows/postman-tests.yml: <br>
+    <pre><code> 
+    name: Run Postman API Tests
+    
+    on: [push, pull_request]
+    
+    jobs:
+    postman-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Node.js
+    uses: actions/setup-node@v4
+    with:
+    node-version: "18"
+    
+    - name: Inject API Key
+    run: |
+    jq --arg key "$API_KEY" \
+    '.values += [{"key":"vault.api-key","value":$key,"enabled":true}]' \
+    postman-tests/environment.json > postman-tests/environment-ci.json
+    env:
+    API_KEY: ${{ secrets.API_KEY }}
+    
+    - name: Install Newman
+    run: npm install -g newman newman-reporter-html
+    
+    - name: Run Tests
+    run: |
+    mkdir -p postman-tests/reports
+    newman run postman-tests/collection.json \
+    -e postman-tests/environment-ci.json \
+    --reporters cli,html \
+    --reporter-html-export postman-tests/reports/report.html \
+    || echo "⚠️ Newman run failed"
+    
+    - name: Upload Report
+    uses: actions/upload-artifact@v4
+    with:
+    name: postman-report
+    path: postman-tests/reports/report.html
+
+    </code></pre>
+
+</details>
+
+<details>
+    <summary>
+        <h3>🧪 4. Jenkins Pipeline (Declarative)</h3>
+    </summary>
+
+    <p>Save this as Jenkinsfile:</p>
+    <pre><coode>
+        pipeline {
+            agent any
+            environment {
+            API_KEY = credentials('postman-api-key')
+            SLACK_WEBHOOK = credentials('slack-webhook')
+        }
+        stages {
+        stage('Checkout') {
+            steps { checkout scm }
+        }
+
+        stage('Inject API Key') {
+            steps {
+            sh '''
+            jq --arg key "$API_KEY" \
+            '.values += [{"key":"vault.api-key","value":$key,"enabled":true}]' \
+            postman-tests/environment.json > postman-tests/environment-jenkins.json
+            '''
+            }
+        }
+
+        stage('Run Newman Tests') {
+            steps {
+            sh '''
+            mkdir -p postman-tests/reports
+            newman run postman-tests/collection.json \
+            -e postman-tests/environment-jenkins.json \
+            --reporters cli,html \
+            --reporter-html-export postman-tests/reports/report.html || echo "⚠️ Newman run failed"
+            '''
+            }
+        }
+
+        stage('Archive Report') {
+            steps {
+                archiveArtifacts artifacts: 'postman-tests/reports/*.html', fingerprint: true
+            }
+        }
+
+        stage('Notify Slack') {
+        steps {
+            sh '''
+            curl -X POST -H 'Content-type: application/json' --data '{
+            "text": "*Postman Tests Completed*",
+            "attachments": [{
+            "color": "#2eb886",
+            "fields": [
+        {"title": "Job", "value": "${env.JOB_NAME}", "short": true},
+        {"title": "Build", "value": "${env.BUILD_NUMBER}", "short": true}
+        ]
+        }]
+        }' $SLACK_WEBHOOK
+        '''
+        }
+        }
+        }
+        }
+    </coode></pre>
+</details>
+
+<details>
+    <summary>
+        <h3>📣 5. Slack Notifications (Optional)</h3>
+    </summary>
+    <ul class="indented-list">
+        <li>Use Slack’s Incoming Webhook to post test status</li>
+        <li>Include build links and report status</li>
+        <li>Color-code messages based on success/failure</li>
+        <li>Works in both GitHub Actions and Jenkins</li>
+    </ul>
+    <p> <a href="../../09_Tools/Postman/postman-slack-guide.html" target="_blank"> <i class="fas fa-link"></i>
+        Step-by-Step Guide for Slack notifications for Postman API Collections (github actions & jenkins) </a> </p>
+</details>
+
+<details>
+    <summary>
+        <h3>🧠 6. Tips & Troubleshooting</h3>
+    </summary>
+
+    <ul>
+        <li>Use jq to validate and inject secrets securely</li>
+        <li>Use mkdir -p and -s to ensure report generation</li>
+        <li>Use || echo "⚠️ Newman run failed" to avoid pipeline crashes</li>
+        <li>Archive reports for traceability</li>
+        <li>Break pipeline into stages: setup, run, report, notify for easier debugging</li>
+        <li>Implement retry logic for flaky tests</li>
+    </ul>
+    <p><a href="https://github.com/milanmmore/postman-cicd-tests" target="_blank" style="color:#4fc3f7; text-decoration:none;">
+        <i class="fas fa-code-branch"></i> Refer to the GitHub Repo: postman-cicd-tests for more details.</p>
+
+</details>
+
+</section>
+        <!-- Contact Section added on each page-->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                                <a href="tel:+1234567890" class="connect-link">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Me</span>
+                                </a>
+                            </div>-->
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Common Footer -->
+    <div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js?v=1.0"></script>
+    <script>
+        if (typeof loadTemplate === "function") {
+            try {
+                loadTemplate("header", "../../../assets/templates/header.html?v=1.0", "Postman - CI/CD Integration", [
+                    { text: "Home", link: "../../../index.html", class: "btn-primary" },
+                    { text: "Back to API Testing Guide", link: "../../04_API_TESTING.html", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+
+                loadTemplate("footer", "../../../assets/templates/footer.html?v=1.0");
+            } catch (e) {
+                console.error("Template loading failed", e);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

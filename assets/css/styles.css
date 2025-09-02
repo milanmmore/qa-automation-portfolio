@@ -890,3 +890,21 @@ a[download]:hover {
     color: #03045e;
     transform: scale(1.15);
 }
+
+a.active {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.content {
+    display: none;
+    margin-left: 20px;
+}
+
+.toggle {
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+}

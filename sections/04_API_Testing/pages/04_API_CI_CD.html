@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Testing of APIs</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+
+            <!-- Introduction -->
+            <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+            <p>
+Continuous Integration and Continuous Deployment (CI/CD) is the backbone of modern software delivery. Integrating
+automated API tests into your CI/CD pipeline ensures that every code change is validated early, reliably, and
+repeatedly—without manual intervention.
+            </p>
+            <br>
+<details>
+    <summary>
+        <h3><i class="fas fa-sync-alt"></i> Why CI/CD Integration?</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>✅ Catch regressions before they reach production:</strong>
+            <ul class="tab-indent">
+                <li>Automated API tests run on every code change, instantly detecting breaking changes.</li>
+                <li>Helps prevent bugs from reaching staging or production environments.</li>
+                <li>Reduces firefighting and post-release patching by validating endpoints continuously.</li>
+            </ul>
+        </li>
+
+        <li><strong>🔁 Run tests on every commit, pull request, or scheduled job:</strong>
+            <ul class="tab-indent">
+                <li>CI/CD tools like GitHub Actions, Jenkins, and Azure DevOps can trigger API tests automatically.</li>
+                <li>Ensures consistent coverage across branches, environments, and development cycles.</li>
+                <li>Supports test-first workflows and early feedback loops.</li>
+            </ul>
+        </li>
+
+        <li><strong>📊 Generate reports for visibility and traceability:</strong>
+            <ul class="tab-indent">
+                <li>Tools like Newman, Playwright, and Cypress produce detailed test reports.</li>
+                <li>Reports include pass/fail summaries, response metrics, and error logs.</li>
+                <li>Can be published to dashboards or shared via Slack/email for team-wide visibility.</li>
+            </ul>
+        </li>
+
+        <li><strong>🛡️ Enforce quality gates before deployment:</strong>
+            <ul class="tab-indent">
+                <li>CI/CD pipelines can block deployments if tests fail or performance thresholds are breached.</li>
+                <li>Promotes a culture of “fail-fast” and “test-first” development.</li>
+                <li>Ensures only validated, stable APIs are promoted to production.</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-rocket"></i> CI/CD with Postman</h3>
+    </summary>
+    <ul class="indented-list">
+
+        <li><strong>Toolchain:</strong>
+            <ul class="tab-indent">
+                <li>Postman Collection + Environment</li>
+                <li>Newman CLI (Postman’s command-line runner)</li>
+                <li>CI Platform: GitHub Actions, CircleCI, Jenkins</li>
+                <li>Slack Webhook (optional for notifications)</li>
+            </ul>
+        </li>
+
+        <li><strong>Sample GitHub Actions Workflow:</strong>
+            <details>
+                <summary><i class="fas fa-file-code"></i> View YAML</summary>
+                <pre><code> name: Run API Tests with Newman
+
+on: [push, pull_request]
+
+jobs: test: runs-on: ubuntu-latest steps: - uses: actions/checkout@v4 - name: Install Node.js uses: actions/setup-node@v4 with: node-version: '18' - name: Install Newman run: npm install -g newman newman-reporter-html - name: Inject API Key into Environment run: | jq --arg key "$API_KEY" \ '.values += [{"key":"vault.api-key","value":$key,"enabled":true}]' \ tests/environment.json > tests/environment-ci.json env: API_KEY: ${{ secrets.API_KEY }} - name: Run API Tests run: newman run tests/collection.json -e tests/environment-ci.json --reporters cli,html --reporter-html-export tests/report.html - name: Upload Report uses: actions/upload-artifact@v4 with: name: postman-report path: tests/report.html </code></pre>
+            </details>
+        </li>
+
+        <li><strong>Sample Jenkins Pipeline:</strong>
+            <details>
+                <summary><i class="fas fa-file-code"></i> View Jenkinsfile</summary>
+                <pre><code> pipeline { agent any environment { API_KEY = credentials('postman-api-key') SLACK_WEBHOOK = credentials('slack-webhook') } stages { stage('Checkout') { steps { checkout scm } } stage('Prepare Environment') { steps { sh ''' jq --arg key "$API_KEY" \ '.values += [{"key":"vault.api-key","value":$key,"enabled":true}]' \ tests/environment.json > tests/environment-jenkins.json ''' } } stage('Run Newman Tests') { steps { sh ''' mkdir -p tests/reports newman run tests/collection.json -e tests/environment-jenkins.json --reporters cli,html --reporter-html-export tests/reports/report.html || echo "⚠️ Newman run failed" ''' } } stage('Archive Report') { steps { archiveArtifacts artifacts: 'tests/reports/.html', fingerprint: true } } stage('Notify Slack') { steps { sh ''' curl -X POST -H 'Content-type: application/json' --data '{ "text": "Postman Tests Completed*", "attachments": [{ "color": "#2eb886", "fields": [ {"title": "Job", "value": "${env.JOB_NAME}", "short": true}, {"title": "Build", "value": "${env.BUILD_NUMBER}", "short": true} ] }] }' $SLACK_WEBHOOK ''' } } } } </code></pre>
+            </details>
+        </li>
+
+        <li><strong>Tips:</strong>
+            <ul class="tab-indent">
+                <li>Use Postman’s built-in test scripts for assertions</li>
+                <li>Store collections and environments in version control</li>
+                <li>Inject secrets dynamically using CI environment variables</li>
+                <li>Generate HTML reports and upload as artifacts</li>
+                <li>Use Slack or email notifications for visibility</li>
+                <li>Fallback logic ensures pipeline resilience</li>
+            </ul>
+        </li>
+
+        <li><strong>Mentoring Notes:</strong>
+            <ul class="tab-indent">
+                <li>Break pipeline into teachable stages: setup, run, report, notify</li>
+                <li>Use <code>jq</code> to validate and inject secrets securely</li>
+                <li>Highlight troubleshooting steps and fallback logic</li>
+                <li>Encourage mentees to modularize and reuse CI templates</li>
+            </ul>
+        </li>
+
+        <p> <a href="../../09_Tools/Postman/postman-ci-guide.html" target="_blank"> <i class="fas fa-link"></i>
+                Step-by-Step Guide: CI/CD Integration for Postman API Collections </a> </p>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-rocket"></i> CI/CD with Postman</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>Toolchain:</strong>
+            <ul class="tab-indent">
+                <li>Postman Collection + Environment</li>
+                <li>Newman CLI (Postman’s command-line runner)</li>
+                <li>CI Platform: GitHub Actions, CircleCI, Jenkins</li>
+            </ul>
+        </li>
+
+        <li><strong>Sample GitHub Actions Workflow:</strong>
+            <details>
+                <summary><i class="fas fa-file-code"></i> View YAML</summary>
+                <pre><code>
+name: Run API Tests with Newman
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install Newman
+        run: npm install -g newman
+      - name: Run API Tests
+        run: newman run tests/collection.json -e tests/environment.json --reporters cli,html
+                </code></pre>
+            </details>
+        </li>
+
+        <li><strong>Tips:</strong>
+            <ul class="tab-indent">
+                <li>Use Postman’s built-in test scripts for assertions</li>
+                <li>Store collections and environments in version control</li>
+                <li>Generate HTML reports for visibility</li>
+            </ul>
+        </li>
+        <p>
+            <a href="../../09_Tools/Postman/postman-ci-guide.html" target="_blank">
+                <i class="fas fa-link"></i> Step-by-Step Guide: CI/CD Integration for Postman API Collections
+            </a>
+        </p>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-play-circle"></i> CI/CD with Playwright</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>Toolchain:</strong>
+            <ul class="tab-indent">
+                <li>Playwright Test Runner</li>
+                <li>Node.js + Playwright CLI</li>
+                <li>CI Platform: GitHub Actions, Azure DevOps, GitLab</li>
+            </ul>
+        </li>
+
+        <li><strong>Sample GitHub Actions Workflow:</strong>
+            <details>
+                <summary><i class="fas fa-file-code"></i> View YAML</summary>
+                <pre><code>
+name: Playwright API Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      - name: Run tests
+        run: npx playwright test
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+                </code></pre>
+            </details>
+        </li>
+
+        <li><strong>Tips:</strong>
+            <ul class="tab-indent">
+                <li>Use <code>workers: 1</code> in CI for stability</li>
+                <li>Enable sharding for parallel test execution</li>
+                <li>Generate HTML reports for traceability</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+<details>
+    <summary>
+        <h3><i class="fas fa-cogs"></i> CI/CD with Cypress</h3>
+    </summary>
+    <ul class="indented-list">
+        <li><strong>Toolchain:</strong>
+            <ul class="tab-indent">
+                <li>Cypress Test Runner</li>
+                <li>Node.js + Cypress CLI</li>
+                <li>CI Platform: GitHub Actions, CircleCI, Jenkins</li>
+            </ul>
+        </li>
+
+        <li><strong>Sample GitHub Actions Workflow:</strong>
+            <details>
+                <summary><i class="fas fa-file-code"></i> View YAML</summary>
+                <pre><code>
+name: Cypress API Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Cypress tests
+        run: npx cypress run --spec "cypress/e2e/api/*.cy.js"
+                </code></pre>
+            </details>
+        </li>
+
+        <li><strong>Tips:</strong>
+            <ul class="tab-indent">
+                <li>Use <code>cy.request()</code> for direct API testing</li>
+                <li>Mock endpoints with <code>cy.intercept()</code></li>
+                <li>Integrate with Cypress Dashboard for insights</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+
+
+        </section>
+        <!-- Contact Section added on each page-->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                                <a href="tel:+1234567890" class="connect-link">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Me</span>
+                                </a>
+                            </div>-->
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Common Footer -->
+    <div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js?v=1.0"></script>
+    <script>
+        if (typeof loadTemplate === "function") {
+            try {
+                loadTemplate("header", "../../../assets/templates/header.html?v=1.0", "CI/CD Integration", [
+                    { text: "Home", link: "../../../index.html", class: "btn-primary" },
+                    { text: "Back to API Testing Guide", link: "../../04_API_TESTING.html", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+
+                loadTemplate("footer", "../../../assets/templates/footer.html?v=1.0");
+            } catch (e) {
+                console.error("Template loading failed", e);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

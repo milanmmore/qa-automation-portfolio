@@ -7,7 +7,8 @@
     <title>API Testing | QA Portfolio</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/subMenu_Styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
 </head>
 
 <body>
@@ -223,13 +224,123 @@
             <summary>
                 <h3><i class="fas fa-file-alt"></i> Testing Artifacts</h3>
             </summary>
+
             <ul class="api-submenu">
-                <li><i class="fas fa-list"></i> Important Test Scenarios</li>
-                <li><i class="fas fa-star"></i> Best Practices</li>
-                <li><i class="fas fa-sign-in-alt"></i> Define inputs and expected outputs</li>
-                <li><i class="fas fa-table"></i> Test Case Template</li>
-                <li><i class="fas fa-database"></i> Sample Test Data</li>
-            </ul>
+                <li>
+                    <span class="toggle">▶ Important Test Scenarios</span>
+                    <div class="content">
+                        <!-- Your table here -->
+                        <table border="1">
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Authentication</td>
+                                <td>Valid/invalid login, token expiry, refresh</td>
+                            </tr>
+                            <tr>
+                                <td>CRUD Operations</td>
+                                <td>Create, Read, Update, Delete with valid/invalid data</td>
+                            </tr>
+                            <tr>
+                                <td>Rate Limiting</td>
+                                <td>Exceeding request thresholds</td>
+                            </tr>
+                            <tr>
+                                <td>Error Handling</td>
+                                <td>400, 401, 403, 404, 500 responses</td>
+                            </tr>
+                            <tr>
+                                <td>Data Validation</td>
+                                <td>Missing fields, wrong formats, boundary values</td>
+                            </tr>
+                            <tr>
+                                <td>Security</td>
+                                <td>SQL injection, XSS, unauthorized access</td>
+                            </tr>
+                            <tr>
+                                <td>Response Time</td>
+                                <td>SLA adherence under load</td>
+                            </tr>
+                            <tr>
+                                <td>Header Validation</td>
+                                <td>Content-Type, Authorization, CORS headers</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </li>
+
+                <li>
+                    <span class="toggle">▶ Best Practices</span>
+                    <div class="content">
+                    <ul>
+                        <li><strong>1. ✅ Validate All HTTP Methods</strong><br>
+                            Test GET, POST, PUT, DELETE, PATCH thoroughly. <br>
+                            Ensure each method behaves as expected and follows RESTful conventions.
+                        </li>
+                        <li><strong>2. 🔐 Security Testing</strong><br>
+                            Check for unauthorized access, token expiry, and role-based permissions. <br>
+                            Validate headers like Authorization, Content-Type, and CORS policies. <br>
+                            Test for vulnerabilities: SQL injection, XSS, and rate limiting abuse.
+                        </li>
+                        <li><strong>3. 📊 Data Validation</strong><br>
+                            Test with valid, invalid, missing, and boundary inputs. <br>
+                            Confirm that error messages are meaningful and status codes are accurate (e.g., 400, 401, 403, 404, 500).
+                        </li>
+                        <li><strong>4. 📈 Performance & Load Testing</strong><br>
+                            Simulate high traffic to test response time, throughput, and SLA adherence. <br>
+                            Use tools like JMeter, Postman Runner, or Newman for automation.
+                        </li>
+                        <li><strong>5. 🔁 Regression Testing</strong><br>
+                            Re-run tests after every deployment or code change to ensure nothing breaks. <br>
+                            Automate critical test cases to catch regressions early.
+                        </li>
+                        <li><strong>6. 📄 Contract & Schema Validation</strong><br>
+                            Use tools like Swagger, OpenAPI, or Postman schema validation to ensure responses match expected formats.
+                        </li>
+                        <li><strong>7. 🧪 Functional Testing</strong><br>
+                            Validate business logic: e.g., “user exists” → 200 OK, “invalid token” → 401 Unauthorized.
+
+Test workflows across endpoints (e.g., login → fetch profile → update settings).
+
+                        </li>
+                        <li><strong>8. 🧼 Environment Isolation</strong><br>
+                            Use mock servers or sandbox environments to avoid polluting production data. <br>
+                            Isolate test data and reset states between runs.
+                        </li>
+                        <li><strong>9. 📚 Documentation Testing</strong><br>
+                            Ensure the API behaves exactly as described in its documentation.
+
+Flag discrepancies between actual behavior and documented specs.
+
+                        </li>
+                        <li><strong>10. 🧠 Use Meaningful Test Case Templates</strong><br>
+                            Create templates that include all relevant information: <br>
+                            - Test Case ID <br>
+                            - Title <br>
+                            - Method <br>
+                            - Endpoint <br>
+                            - Input <br>
+                            - Expected Output <br>
+                        </li>
+                        <li><strong>11. Example Test Case</strong><br>
+                        <pre>
+                            Test Case ID: API_TC_001
+                            Title: Verify login with valid credentials
+                            Method: POST
+                            Endpoint: /api/login
+                            Input: { "email": "valid@example.com", "password": "correct123" }
+                            Expected: 200 OK, message: "User exists!"
+                        </pre>
+                        <p>Use environment variables, validate status codes, automate with Postman/Newman, etc.</p>
+                        </li>
+                    </div>
+                </li>
+
+
+
         </details>
 
         <!-- Advanced Topics -->
@@ -238,9 +349,9 @@
                 <h3><i class="fas fa-rocket"></i> Advanced Topics</h3>
             </summary>
             <ul class="api-submenu">
-                <li><i class="fas fa-random"></i> Parameterization for data-driven testing</li>
-                <li><i class="fas fa-mask"></i> Mocking to simulate unavailable endpoints</li>
-                <li><i class="fas fa-cogs"></i> CI/CD integration for automated test runs</li>
+                <li><a href="04_API_Testing/pages/04_API_Parameterization.html"><i class="fas fa-random"></i>Parameterization for data-driven testing</a></li>
+                <li><a href="04_API_Testing/pages/04_API_Mocking.html"><i class="fas fa-mask"></i> Mocking to simulate unavailable endpoints</a></li>
+                <li><a href="04_API_Testing/pages/04_API_CI_CD.html"><i class="fas fa-cogs"></i> CI/CD integration for automated test runs</a></li>
             </ul>
         </details>
 
@@ -257,7 +368,17 @@
                 <li> Performance testing for critical endpoints</li>
             </ul>
             <p><em>Automate with Postman or Cypress and integrate into CI/CD pipeline.</em></p>
+                <a href="assets/downloads/postman/ecommerce-postman-bundle.zip" download>
+                    <i class="fas fa-file-archive"></i> PostmanFull Bundle (.zip)
+                </a>
+                <a href="https://github.com/milanmmore/ecommerce-api-tests/tree/main/playwright" target="_blank" download>
+                    <i class="fas fa-external-link-alt"></i> View Playwright README on GitHub
+                </a>
+                <a href="https://github.com/milanmmore/ecommerce-api-tests/tree/main/cypress" target="_blank" download>
+                    <i class="fas fa-external-link-alt"></i> View Cypress README on GitHub
+                </a>
         </details>
+
 
         <!-- Documents -->
         <details>
@@ -265,12 +386,33 @@
                 <h3><i class="fas fa-book-reader"></i> Documents</h3>
             </summary>
             <ul class="api-submenu">
-                <li>🔍 Reference Documents</li>
-                    API Testing Fundamentals By Rahul Shetty - https://www.youtube.com/watch?v=bdHeDZPrYec&t=97s <br>
-                    
-                <li>📘 Learning Resources</li>
-                <li>📘 Interview Preparation</li>
-                <li>📘 QA Checklist</li>
+                <li><strong>🔍 Reference Documents</strong>
+                    <ul class="indented-list">
+                        <li><a href="04_API_Testing/Documents/API_TESTING_FLOW.pptx" target="_blank" download>API Testing Flow<i class="fas fa-download"></i></a></li>
+                        <li><a href="04_API_Testing/Documents/API_TESTING_NOTES.docx" target="_blank" download>API Testing Notes<i class="fas fa-download"></i></a></li>
+                        <li><a href="04_API_Testing/Documents/API_TEST_automation_framework.docx" target="_blank" download>API Testing Automation Framwork<i class="fas fa-download"></i></a></li>
+                        <li><a href="04_API_Testing/Documents/rest_assured_framework_architecture.pdf" target="_blank" download>RestAssured Framework & Architecture<i class="fas fa-download"></i></a></li>
+                    </ul>
+                </li>
+                <li><strong>📘 Learning Resources</strong>
+                    <ul class="indented-list">
+                        <li><a href="sections/tutorials.html">Tutorials</a></li>
+                        <li><a href="sections/cheatsheets.html">Notes & CheatSheets</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=bdHeDZPrYec&t=97s">API Testing Fundamentals By Rahul Shetty</a></li>
+                    </ul>
+                </li>
+                <li><strong>📘 Interview Preparation</strong>
+                    <ul class="indented-list">
+                        <li><a href="sections/interview-questions.html">Common API Testing Interview Questions</a></li>
+                        <li><a href="sections/behavioral-questions.html">Behavioral Questions</a></li>
+                    </ul>
+                </li>
+
+                <li><strong>📘 QA Checklist</strong>
+                    <ul class="indented-list">
+                        <li><a href="sections/qa-checklist.html">API Testing QA Checklist</a></li>
+                    </ul>
+                </li>
             </ul>
         </details>
 
@@ -318,19 +460,19 @@
             <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
         </footer>
     </noscript>
-    
+
     <!-- Scripts -->
-    <script src="../assets/js/main.js"></script>
+    
+    <script src="../../assets/js/main.js?v=1.0"></script>
     <script>
         if (typeof loadTemplate === "function") {
             try {
-                loadTemplate("header", "../assets/templates/header.html", "API Testing Guide", [
-                    { text: "About", link: "../about.html", class: "btn-primary" },
-                    { text: "Home", link: "../index.html", class: "btn-primary" },
+                loadTemplate("header", "../../assets/templates/header.html?v=1.0", "API Testing Guide", [
+                    { text: "About", link: "../../about.html?v=1.0", class: "btn-primary" },
+                    { text: "Home", link: "../../index.html?v=1.0", class: "btn-primary" },
                     { text: "Connect", link: "#connect", class: "connect-button" }
                 ]);
-
-                loadTemplate("footer", "/assets/templates/footer.html");
+                loadTemplate("footer", "../../assets/templates/footer.html?v=1.0");
             } catch (e) {
                 console.error("Template loading failed", e);
             }

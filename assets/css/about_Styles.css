@@ -1,36 +1,52 @@
+/* ===============================
+   🌟 Base Styles
+   =============================== */
+
+:root {
+    --text-color: #333;
+    --accent-color: #007acc;
+    --quote-bg: #eef6fc;
+    --quote-border: #007acc;
+    --card-bg: #fff;
+}
+
+body {
+    background-color: #fff;
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===============================
+   📌 Journey Section
+   =============================== */
+
 .journey-section {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 #journey {
     margin-bottom: 0.5rem;
-    /* Reduced bottom margin */
     padding: 1rem 0.5rem;
-    /* Adjusted left and right padding */
     margin-top: calc(var(--header-height, 200px));
 }
 
+/* ===============================
+   📘 Timeline Cards
+   =============================== */
 
 .timeline-item {
-    border-left: 6px solid #007acc;
+    border-left: 6px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
-}
-
-
-body.dark-mode .timeline-item {
-    background: #1e1e1e;
-    /* dark card background */
-    border-left: 4px solid #90caf9;
-    /* accent */
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
+    background-color: var(--card-bg);
 }
 
 .timeline-item:hover {
@@ -40,19 +56,23 @@ body.dark-mode .timeline-item {
 .timeline-item h2,
 .timeline-item h3 {
     margin-top: 0;
-    color: #007acc;
+    color: var(--accent-color);
     font-size: 1.4rem;
 }
 
 .timeline-item p {
-    margin: 0.5rem 0;
-    line-height: 1.6;
-    color: #333;
+    /*margin: 0.5rem 0;*/
+    margin:0;
+    color: var(--text-color);
 }
 
+/* ===============================
+   💬 Quotes
+   =============================== */
+
 .quote {
-    background: #eef6fc;
-    border-left: 4px solid #007acc;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--quote-border);
     padding: 1rem;
     font-style: italic;
     color: #444;
@@ -64,8 +84,8 @@ body.dark-mode .timeline-item {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #333;
-    background-color: #eef6fc;
+    color: var(--text-color);
+    background-color: var(--quote-bg);
     border-left: none;
     border-radius: 6px;
     padding: 1rem 1.5rem;
@@ -74,24 +94,71 @@ body.dark-mode .timeline-item {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-blockquote.center-quote.dark-mode {
-    background-color: #1a1a1a;
-    color: #f5f5f5;
+/* ===============================
+   🌙 Dark Mode Overrides
+   =============================== */
+body.dark-mode-active {
+    --text-color: #e0e0e0;
+    --accent-color: #90caf9;
+    --quote-bg: #2c2c2c;
+    --quote-border: #ff9800;
+    --card-bg: #1e1e1e;
+
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+body.dark-mode-active .timeline-item {
+    background-color: var(--card-bg);
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode-active .timeline-item h2,
+body.dark-mode-active .timeline-item h3 {
+    color: var(--accent-color);
+}
+
+body.dark-mode-active .timeline-item p {
+    color: var(--text-color);
+}
+
+body.dark-mode-active .quote,
+body.dark-mode-active .center-quote {
+    background-color: var(--quote-bg);
+    color: var(--text-color);
+    border-left: 4px solid var(--quote-border);
     box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
 }
 
-journey-section.dark-mode {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+body.dark-mode-active .journey-section h2,
+body.dark-mode-active .journey-section p {
+    color: var(--text-color);
 }
 
-.journey-section.dark-mode h2,
-.journey-section.dark-mode p {
+body.dark-mode-active a,
+body.dark-mode-active .highlight {
+    color: #00bcd4;
+}
+
+body.dark-mode .timeline-item {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-left: 6px solid #90caf9;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .timeline-item h2,
+body.dark-mode .timeline-item h3 {
+    color: #90caf9;
+}
+
+body.dark-mode .timeline-item p {
     color: #f0f0f0;
 }
-
-.journey-card.dark-mode {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    border: 1px solid #444;
-}
+/* ===============================
+   🧠 Mentee Tip: Use CSS Variables
+   =============================== */
+/* This structure allows easy theme switching and keeps your mentoring pages DRY and scalable */
