@@ -538,8 +538,22 @@ body.dark-mode footer a {
     }
 }
 
+@media (max-width: 800px) {
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+}
 
-
+@media (max-width: 800px) {
+    .main-content {
+        padding-top: 80px;
+        /* match header height */
+    }
+}
 /* ---------------- Skip Link ---------------- */
 .skip-link {
     position: absolute;
