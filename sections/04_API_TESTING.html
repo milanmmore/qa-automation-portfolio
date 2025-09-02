@@ -28,7 +28,7 @@
     </noscript>
 
     <!-- Main Content -->
-    <main id="content" class="container">
+    <main id="content" class="container content-wrapper">
     <section id="api-testing" class="accordion">
 
         <h2><i class="fas fa-plug"></i>Introduction</h2>
@@ -467,18 +467,28 @@ Flag discrepancies between actual behavior and documented specs.
     <script>
         if (typeof loadTemplate === "function") {
             try {
+                /*
                 const repoBase = window.location.pathname.includes("/qa-automation-portfolio/")
                     ? "/qa-automation-portfolio/assets/templates/"
                     : "assets/templates/";
                 const depth = location.pathname.split("/").length;
-                const basePath = depth > 3 ? "../" : "./";
+                const basePath = depth > 3 ? "../" : "./";  
 
                 loadTemplate("header", `${repoBase}header.html?v=1.0`, "API Testing Guide", [
                     { text: "About", link: `${basePath}about.html?v=1.0`, class: "btn-primary" },
                     { text: "Home", link: `${basePath}index.html?v=1.0`, class: "btn-primary" },
                     { text: "Connect", link: "#connect", class: "connect-button" }
                 ]);
-                loadTemplate("footer", "../assets/templates/footer.html?v=1.0");
+                loadTemplate("footer", "../assets/templates/footer.html?v=1.0"); */
+
+                loadTemplate("header", "../assets/templates/header.html?v=1.0", "API Testing Guide", [
+                    { text: "About", link: "../about.html?v=1.0", class: "btn-primary" },
+                    { text: "Home", link: "../index.html?v=1.0", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+                loadTemplate("footer", "../assets/templates/footer.html?v=1.0"); 
+
+
             } catch (e) {
                 console.error("Template loading failed", e);
             }
