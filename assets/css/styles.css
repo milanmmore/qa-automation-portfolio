@@ -31,10 +31,6 @@ header.banner-container {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-.container {
-    padding-top: 80px;
-    /* Adjust based on header height */
-}
 
 header .hero-card {
     padding: 10px 20px;
