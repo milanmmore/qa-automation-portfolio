@@ -202,6 +202,7 @@ section {
 }
 
 /* ---------------- Accordion / TOC ---------------- */
+/*
 .accordion details {
     background: #f9fbff;
     border: 1px solid #d0d7de;
@@ -211,18 +212,26 @@ section {
     transition: all 0.3s ease;
 }
 
+
 .accordion details[open] {
     background: #eef5ff;
     border-left: 4px solid #2563eb;
 }
+
+
 
 .accordion summary {
     cursor: pointer;
     list-style: none;
 }
 
+
 .accordion summary::-webkit-details-marker {
     display: none;
+}
+
+.accordion details[open] summary::after {
+    transform: rotate(90deg);
 }
 
 .accordion h3 {
@@ -247,16 +256,10 @@ section {
 }
 
 
-
-/* Enhance link interaction with subtle lift and shadow */
 .accordion details summary::after {
     content: "▶";
     float: right;
     transition: transform 0.3s ease;
-}
-
-.accordion details[open] summary::after {
-    transform: rotate(90deg);
 }
 
 .accordion a {
@@ -279,7 +282,6 @@ section {
 }
 
 
-/* Animate icons on hover */
 .accordion a i {
     transition: transform 0.2s ease;
     margin-right: 6px;
@@ -292,13 +294,116 @@ section {
     color: #03045e;
 }
 
-/* Optional: divider between sections */
 .accordion hr {
     border: none;
     border-top: 1px solid #d0d7de;
     margin: 1rem 0;
 }
+*/
 
+.accordion details,
+.portfoliio details {
+    background: #f9fbff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.accordion details[open],
+.portfoliio details[open] {
+    background: #eef5ff;
+    border-left: 4px solid #2563eb;
+}
+
+.accordion summary,
+.portfoliio summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.accordion summary::-webkit-details-marker,
+.portfoliio summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion h3,
+.portfoliio h3 {
+    color: #0d47a1;
+    margin: 0;
+    display: inline-block;
+}
+
+.accordion ul,
+.portfoliio ul {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.accordion li,
+.portfoliio li {
+    margin: 0.3rem 0;
+}
+
+.accordion h3 i,
+.portfoliio h3 i {
+    color: #2563eb;
+    margin-right: 8px;
+}
+
+.accordion details summary::after,
+.portfoliio details summary::after {
+    content: "▶";
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.accordion details[open] summary::after,
+.portfoliio details[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.accordion a,
+.portfoliio a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.accordion a:hover,
+.portfoliio a:hover {
+    background-color: #e0f4ff;
+    box-shadow: 0 2px 6px rgba(0, 119, 182, 0.15);
+    transform: translateX(2px);
+    text-decoration: underline;
+}
+
+.accordion a i,
+.portfoliio a i {
+    transition: transform 0.2s ease;
+    margin-right: 6px;
+    color: #0077b6;
+}
+
+.accordion a:hover i,
+.portfoliio a:hover i {
+    transform: scale(1.15);
+    color: #03045e;
+}
+
+.accordion hr,
+.portfoliio hr {
+    border: none;
+    border-top: 1px solid #d0d7de;
+    margin: 1rem 0;
+}
 
 /* ---------------- Footer ---------------- */
 footer.site-footer {
@@ -328,6 +433,8 @@ body.dark-mode a {
 
 body.dark-mode .accordion summary,
 body.dark-mode .accordion details,
+body.dark-mode .portfoliio summary,
+body.dark-mode .portfoliio details,
 body.dark-mode .site-footer,
 body.dark-mode .skills-grid .card .journey-content {
     background-color: #1e1e1e;
@@ -635,15 +742,17 @@ header.banner-container {
         background-color: #e0a800;
     } 
 
+    #journey, 
+    #intro,
     .accordion {
-        margin-top: 130px;
+        margin-top: calc(var(--header-height-mobile, 250px));
         padding-top: 0.5px;
     }
 
-    #journey, 
-    #intro {
-            margin-top: calc(var(--header-height-mobile, 250px));
-        padding-top: 0.5px;
+    .responsive-img {
+        width: 90%;
+        /* or a fixed value like 300px */
+        max-width: 100%;
     }
 }
 /* ---------------- Skip Link ---------------- */
