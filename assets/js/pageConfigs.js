@@ -1,17 +1,17 @@
 const pageConfigs = {
   "index.html": {
-    title: "Milan Milind More – QA Portfolio",
+    title: "Milan More – QA Portfolio",
     buttons: [
       { text: "About", link: "about.html", class: "btn-primary" },
-      { text: "Explore Portfolio", link: "#toc" },
-      { text: "Connect", link: "#connect", class: "connect-button" }
+      { text: "Explore", link: "#toc" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
   },
   "about.html": {
-    title: "About Milan – QA Leader & Mentor",
+    title: "🚀 My QA Journey",
     buttons: [
-      { text: "Back to Portfolio", link: "index.html", class: "btn-secondary" },
-      { text: "Connect", link: "#connect", class: "connect-button" }
+      { text: "Home", link: "index.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
   },
   "projects.html": {
@@ -24,11 +24,10 @@ const pageConfigs = {
   "04_API_TESTING.html": {
     title: "API Testing Guide",
       buttons: [
-      { text: "About", link: "../about.html", class: "btn-secondary" },
-      { text: "Home", link: "../index.html", class: "btn-secondary" },
-      { text: "Connect", link: "#connect", class: "connect-button" }
-    ]
-
-  },
+       { text: "About", link: "../about.html", class: "btn-primary" },
+      { text: "Home", link: "../index.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+      ]
+  }
   // Add more pages as needed
 };

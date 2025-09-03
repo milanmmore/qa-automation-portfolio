@@ -19,6 +19,12 @@ a {
 
 /* ---------------- Header / Banner ---------------- */
 
+:root {
+    --header-height-desktop: 200px;
+    --header-height-mobile: 250px;
+    --header-height: 200px;
+}
+
 header.banner-container {
     position: fixed;
     top: 0;
@@ -27,13 +33,12 @@ header.banner-container {
     background: linear-gradient(90deg, #2563eb, #00b4d8);
     color: #fff;
     z-index: 999;
-    height: 200px;
+    height: var(--header-height-desktop);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-
 header .hero-card {
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
@@ -116,10 +121,9 @@ header .cta-buttons a.btn-secondary:hover {
 
 
 
-
 /* ---------------- Sections ---------------- */
 section {
-    padding: 1.5rem 0.5rem;
+    padding: 1rem 0.5rem;
     /* Reduced left and right padding */
     max-width: 1200px;
     /* Increased width for better content display */
@@ -241,8 +245,6 @@ section {
     color: #2563eb;
     margin-right: 8px;
 }
-
-
 
 
 
@@ -569,29 +571,30 @@ header.banner-container {
         top: 0;
         left: 0;
         width: 100%;
-        height: 340px;
+        height: 250px;
         /* ✅ Adjusted to match actual stacked content */
         background-color: #1976d2;
         color: white;
-        padding: 2rem 1rem;
+        padding: 1rem 0.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
         z-index: 10;
     }
-
+    
     #darkModeToggle {
         position: absolute;
         top: 1rem;
         right: 1rem;
         background: transparent;
-        color: white;
+        color: rgb(245, 240, 240);
         border: none;
-        font-size: 1.4rem;
+        font-size: 1rem;
         cursor: pointer;
         z-index: 20;
     }
+        
 
     .cta-buttons {
         display: flex;
@@ -621,7 +624,7 @@ header.banner-container {
         text-align: center;
         flex: 1 1 auto;
     }
-/*
+
     .connect-button {
         background-color: #ffc107;
         color: #000;
@@ -630,36 +633,17 @@ header.banner-container {
 
     .connect-button:hover {
         background-color: #e0a800;
-    } */
+    } 
 
-.connect-button {
-    background-color: #ffc107;
-    /* Yellow with a subtle tone */
-    color: #000;
-    /* Black text for clarity */
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.connect-button:hover {
-    background-color: #e0a800;
-    /* Slightly darker yellow on hover */
-    transform: translateY(-3px);
-    /* Lift effect */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-        main#content,
-        .main-content {
+        .accordion {
+            margin-top: 130px;
             padding-top: 0.5px;
         }
 
+   #journey {
+        margin-top: 250px;
+        padding-top: 0.5px;
+    }
 
 }
 /* ---------------- Skip Link ---------------- */
@@ -1042,4 +1026,8 @@ a.active {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+}
+
+main#content {
+    outline: 2px dashed red;
 }
