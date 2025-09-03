@@ -12,8 +12,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     title: document.title,
     buttons: []
   };
+  basefilepath = basePath & "/templates/header.html";
 
   try {
+    console.log(`Loading templates from: ${basePath}`);
+    console.log(basefilepath);
     await loadTemplate("header", `${basePath}/templates/header.html?v=1.0`, config.title, config.buttons);
     await loadTemplate("footer", `${basePath}/templates/footer.html?v=1.0`);
 
