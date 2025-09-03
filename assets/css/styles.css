@@ -21,7 +21,7 @@ a {
 
 :root {
     --header-height-desktop: 200px;
-    --header-height-mobile: 250px;
+    --header-height-mobile: 260px;
     --header-height: 200px;
 }
 
@@ -745,7 +745,7 @@ header.banner-container {
     #journey, 
     #intro,
     .accordion {
-        margin-top: calc(var(--header-height-mobile, 240px));
+        margin-top: calc(var(--header-height-mobile, 250px));
         padding-top: 0.8px;
     }
 
