@@ -1,13 +1,22 @@
+function resolveAssetPath(relativePath) {
+  const depth = window.location.pathname.split("/").length - 2;
+  const prefix = "../".repeat(depth);
+  return `${prefix}${relativePath}`;
+}
+
+
 document.addEventListener("DOMContentLoaded", async () => {
   const currentPage = window.location.pathname.split("/").pop();
+  const basePath = window.location.pathname.includes("/sections/") ? "../assets" : "assets";
   const config = pageConfigs?.[currentPage] || {
     title: document.title,
     buttons: []
   };
 
   try {
-    await loadTemplate("header", "../assets/templates/header.html?v=1.0", config.title, config.buttons);
-    await loadTemplate("footer", "../assets/templates/footer.html?v=1.0");
+    await loadTemplate("header", `${basePath}/templates/header.html?v=1.0`, config.title, config.buttons);
+    await loadTemplate("footer", `${basePath}/templates/footer.html?v=1.0`);
+
     setupNavigation();
   } catch (e) {
     console.error("Template loading failed", e);

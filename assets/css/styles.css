@@ -745,8 +745,8 @@ header.banner-container {
     #journey, 
     #intro,
     .accordion {
-        margin-top: calc(var(--header-height-mobile, 250px));
-        padding-top: 0.5px;
+        margin-top: calc(var(--header-height-mobile, 240px));
+        padding-top: 0.8px;
     }
 
     .responsive-img {

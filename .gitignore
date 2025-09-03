@@ -2,7 +2,6 @@
 # Ignore the entire  folders
 extras/
 sections/01_TestDocuments/
-sections/02_projects/
 sections/03_Tutorials/
 sections/05_Mo bile_testing/
 sections/06_Cloud_testing/

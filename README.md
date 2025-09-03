@@ -7,6 +7,18 @@ Comprehensive QA Automation Portfolio featuring real-world projects using Cypres
 # 🧪 QA Automation Portfolio
 
 Welcome to my QA Automation Portfolio! I'm Milan, a QA Lead with 18+ years of experience in software testing, automation, and team leadership. This repository showcases hands-on projects across multiple domains including banking, life sciences, and mobile apps — using modern tools like Cypress, Playwright, Selenium, Appium, and Postman.
+please you want to clone this repo , you should -
+
+```Bash
+git clone --recurse-submodules https://github.com/milanmmore/qa-automation-portfolio.git
+
+```
+
+Or if already cloned:
+
+```Bash
+git submodule update --init --recursive
+```
 
 ## 🔍 What's Inside
 
