@@ -640,8 +640,8 @@ header.banner-container {
             padding-top: 0.5px;
         }
 
-   #journey {
-        margin-top: 250px;
+    #journey {
+            margin-top: calc(var(--header-height-mobile, 250px));
         padding-top: 0.5px;
     }
 
