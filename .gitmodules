@@ -1,0 +1,3 @@
+[submodule "sections/02_Projects/Playwright/API/functional/eCommerce-API-Playwright"]
+	path = sections/02_Projects/Playwright/API/functional/eCommerce-API-Playwright
+	url = https://github.com/milanmmore/eCommerce-API-Playwright.git
