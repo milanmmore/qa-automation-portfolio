@@ -45,7 +45,7 @@ header .hero-card {
 }
 
 header .banner-text h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     /* slightly smaller */
     margin-bottom: 0.3rem;
 }
@@ -678,7 +678,7 @@ header.banner-container {
         top: 0;
         left: 0;
         width: 100%;
-        height: 250px;
+        height: 260px;
         /* ✅ Adjusted to match actual stacked content */
         background-color: #1976d2;
         color: white;
@@ -745,7 +745,7 @@ header.banner-container {
     #journey, 
     #intro,
     .accordion {
-        margin-top: calc(var(--header-height-mobile, 250px));
+        margin-top: calc(var(--header-height-mobile, 260px));
         padding-top: 0.8px;
     }
 
