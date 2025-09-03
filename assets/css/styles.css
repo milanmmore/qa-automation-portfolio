@@ -635,16 +635,16 @@ header.banner-container {
         background-color: #e0a800;
     } 
 
-        .accordion {
-            margin-top: 130px;
-            padding-top: 0.5px;
-        }
-
-    #journey {
-            margin-top: calc(var(--header-height-mobile, 250px));
+    .accordion {
+        margin-top: 130px;
         padding-top: 0.5px;
     }
 
+    #journey, 
+    #intro {
+            margin-top: calc(var(--header-height-mobile, 250px));
+        padding-top: 0.5px;
+    }
 }
 /* ---------------- Skip Link ---------------- */
 .skip-link {
