@@ -12,7 +12,7 @@ function getBasePath() {
 document.addEventListener("DOMContentLoaded", async () => {
   const currentPage = window.location.pathname.split("/").pop();
   //const basePath = getBasePath();
-  const basePath = "/QA-AUTOMATION-POORTFOILIO";
+  const basePath = "/qa-automation-portfolio";
   const config = pageConfigs?.[currentPage] || {
     title: document.title,
     buttons: []
