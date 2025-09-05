@@ -28,6 +28,41 @@ const pageConfigs = {
       { text: "Home", link: "../index.html", class: "btn-primary" },
       { text: "Connect", link: "#connect", class: "btn-secondary" }
       ]
+  },
+    "04_API_Functional.html": {
+    title: "Functional Testing of APIs",
+      buttons: [
+  
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+      ]
+  },
+      "04_API_Security.html": {
+    title: "Security Testing of APIs",
+      buttons: [
+  
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+      ]
+  },
+  "04_API_Performance.html": {
+    title: "Performance Testing of APIs",
+    buttons: [
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
+  },
+  "04_API_ResValidation.html": {
+    title: "API Response Validation",
+    buttons: [
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
   }
+  
   // Add more pages as needed
 };

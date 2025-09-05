@@ -4,16 +4,21 @@ function resolveAssetPath(relativePath) {
   return `${prefix}${relativePath}`;
 }
 
+function getBasePath() {
+  const depth = window.location.pathname.split("/").length - 2; // subtract domain and file
+  return "../".repeat(depth) + "assets";
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
   const currentPage = window.location.pathname.split("/").pop();
-  const basePath = window.location.pathname.includes("/sections/") ? "../assets" : "assets";
+  const basePath = getBasePath();
   const config = pageConfigs?.[currentPage] || {
     title: document.title,
     buttons: []
   };
   basefilepath = basePath & "/templates/header.html";
-
+  console.log(basefilepath);
+  console.log(basePath)
   try {
     console.log(`Loading templates from: ${basePath}`);
     console.log(basefilepath);

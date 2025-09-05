@@ -377,22 +377,9 @@
     </noscript>
     
     <!-- Scripts -->
-    <script src="../../../assets/js/main.js?v=1.0"></script>
-    <script>
-        if (typeof loadTemplate === "function") {
-            try {
-                loadTemplate("header", "../../../assets/templates/header.html?v=1.0", "Functional Testing of APIs", [
-                    { text: "Home", link: "../../../index.html", class: "btn-primary" },
-                    { text: "Back to API Testing Guide", link: "../../04_API_TESTING.html", class: "btn-primary" },
-                    { text: "Connect", link: "#connect", class: "connect-button" }
-                ]);
-
-                loadTemplate("footer", "../../../assets/templates/footer.html?v=1.0");
-            } catch (e) {
-                console.error("Template loading failed", e);
-            }
-        }
-    </script>
+    <script src="../../../assets/js/template.js?v=1.0" defer></script>
+    <script src="../../../assets/js/pageConfigs.js?v=1.0" defer></script>
+    <script src="../../../assets/js/main.js?v=1.0" defer></script>
 
 </body>
 

@@ -1136,7 +1136,3 @@ a.active {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
-
-main#content {
-    outline: 2px dashed red;
-}

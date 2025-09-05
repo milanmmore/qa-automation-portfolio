@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool - POSTMAN</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+        <h2><i class="fas fa-plug"></i> Introduction</h2>
+        <p>
+            Postman is a collaborative API platform that lets you design, test, automate, and document APIs. It’s loved by QA
+            engineers for its:
+            <ul class="indented-list">
+                <li>🧪 Test scripting with JavaScript</li>
+                <li>📦 Collections for modular test organization</li>
+                <li>🔁 Environment switching (dev/stage/prod)</li>
+                <li>🚀 CI/CD integration via Newman CLI</li>
+                <li>📊 Visual reports and monitors</li>
+            </ul>
+        </p>
+        <br>
+        <!-- Sample topic details -->
+        <details>
+            <summary>
+                <h3>🔧 Install & Setup</i></h3>
+            </summary>
+            <ul>
+                <li>Download & install Postman from the official website.(https://www.postman.com/downloads/)</li>
+                <li>Create a free Postman account to sync collections and environments.</li>
+                <li>Launch Postman and start with a new request</li>
+            </ul>
+        </details>
+
+
+
+            <details>
+                <summary>
+                    <h3>🔧 Create Your first API test</h3>
+                </summary>
+                    <ul class="tab-indent">
+                        <li>Click New → HTTP Request.</li>
+                        <li>Enter an endpoint (e.g. https://reqres.in/api/users/2)</li>
+                        <li>Choose method: GET, POST, etc.</li>
+                        <li>Add headers or body if needed</li>
+                        <li>Click Send — view status, headers, and JSON response</li>
+                    </ul>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>🔧 Write Test Scripts</h3>
+                </summary>
+                <p>In the Tests tab, use JavaScript to validate responses:</p>
+                <br>
+                <pre><code>
+                pm.test("Status code is 200", () => {
+                pm.response.to.have.status(200);
+                });
+                
+                pm.test("Response has user data", () => {
+                const jsonData = pm.response.json();
+                pm.expect(jsonData.data).to.have.property("email");
+                });
+
+                pm.test("Check if user is created", function () {
+                    pm.response.to.have.status(201);
+                    pm.response.to.be.json;
+                    pm.expect(pm.response.json().data).to.have.property("id");
+                });
+                </code></pre>
+                <p>You can chain multiple assertions and use Chai-style syntax.</p>            
+            </details>
+
+
+            <details>
+                <summary>
+                    <h3>🔧 Use Collections for Modular Testing</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li>Group related requests into collections</li>
+                    <li>Add folders for logical grouping (e.g. Auth, Users, Orders)</li>
+                    <li>Attach pre-request scripts and tests to each request</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>🔧 Switch Environments Dynamically</h3>
+                </summary>
+                <p>Define environments like:</p>
+                <pre><code>
+                {
+                    "baseUrl": "https://api.staging.example.com",
+                    "authToken": "Bearer abc123"
+                }
+                </code></pre>
+                <p>Use variables in requests:</p>
+                <pre><code>
+                GET {{baseUrl}}/users
+                Authorization: {{authToken}}
+                </code></pre>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>🔧 Automate with Collection Runner</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li>Click Runner → select a collection</li>
+                    <li>Choose environment and iterations</li>
+                    <li>View test results and export reports</li>
+                </ul>
+                <p>Use variables</p>
+                <pre><code>
+            {{baseUrl}}/users
+            </code></pre>
+            <p>This makes your tests portable across dev, stage & prod.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>🔧 Automate with Collection Runner</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li>Click Runner → select a collection</li>
+                    <li>Choose environment and iterations</li>
+                </ul>
+                <p>View test results and export reports</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>🔧 Integrate with CI/CD Using Newman</h3>
+                </summary>
+                <p>Install Newman CLI:</p>
+            <pre><code>
+            npm install -g newman
+            Run tests from terminal:
+            
+            newman run ecommerce.postman_collection.json -e staging.postman_environment.json
+            You can plug this into GitHub Actions, Jenkins, or Azure Pipelines.
+            </code></pre>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>🔧 Mock Servers & Documentation</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li>Create mock servers to simulate API responses</li>
+                    <li>Auto-generate API documentation from collections</li>
+                    <li>Share with devs or clients via public workspace</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>📚 Recommended Guides</h3>
+                </summary>
+                Postman for QA Professionals – QAClouds
+            
+            ToolsQA Postman Tutorial
+            
+            Beginner’s Guide to Postman
+
+                    <!-- Tips -->
+                    <details>
+                        <summary>
+                            <h3><i class="fas fa-lightbulb"></i> Tips</h3>
+                        </summary>
+                        <ul class="indented-list">
+                            <li>Use tools like Postman or REST Assured to automate API testing.</li>
+                            <li>Incorporate security tests into your CI/CD pipeline for continuous validation.</li>
+                            <li>Regularly update your test cases to cover new vulnerabilities and threats.</li>
+                        </ul>
+                    </details>
+    </section>
+
+
+
+        <!--   Add topic Names detail block-->
+
+    </section>
+
+        <!-- Contact Section -->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                    <a href="tel:+1234567890" class="connect-link">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Me</span>
+                    </a>
+                </div>-->
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Milan Milind More | QA Automation Portfolio</p>
+        <p>Built with ❤️ for QA enthusiasts and future testers.</p>
+        <!--p> ADD : want to add Optional: Add a small GitHub stars/fork badge for credibility.</>-->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../../assets/js/template.js?v=1.0" defer></script>
+    <script src="../../../assets/js/pageConfigs.js?v=1.0" defer></script>
+    <script src="../../../assets/js/main.js?v=1.0" defer></script>
+
+
+</body>
+    
+</html>

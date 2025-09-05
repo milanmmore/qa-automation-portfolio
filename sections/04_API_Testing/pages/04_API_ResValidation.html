@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Testing of APIs</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../index.html">Home</a> |
+                <a href="../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+            <p>Validating API responses ensures that the returned data is accurate, complete, and conforms to expectations. This
+                helps catch issues early and improves reliability across integrations.</p>
+            <details>
+                <summary>
+                    <h3 class="heading-main">🔹 Status Code Validation</h3>
+                </summary>
+                    <p>Confirm that the API returns the correct HTTP status code for each scenario.</p>
+                    <ul>
+                        <li>
+                            <pre><code>200 OK</code></pre>: Successful request
+                        </li>
+                        <li>
+                            <pre><code>404 Not Found</code></pre>: Resource doesn’t exist
+                        </li>
+                        <li>
+                            <pre><code>500 Internal Server Error</code></pre>: Server-side failure
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <h3 class="heading-main">🔹 Response Body Validation</h3>
+                    </summary>
+                    <p>Check that the response contains the expected fields and values.</p>
+                    <p><strong>Example:</strong> For a user API, verify that fields like
+                    <pre><code>name</code></pre>,
+                    <pre><code>email</code></pre>, and
+                    <pre><code>age</code></pre> are present and correctly typed.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>
+                        <h3 class="heading-main">🔹 Schema Validation</h3>
+                    </summary>
+                    <p>Ensure the structure of the response matches the defined schema (e.g., JSON Schema).</p>
+                    <p class="tip"><strong>Tip:</strong> Use tools like
+                    <pre><code>JSON Schema Validator</code></pre> or
+                    <pre><code>Ajv</code></pre> to
+                    automate schema
+                    checks.</p>
+                </details>
+
+                <details>
+                    <summary>
+                        <h3 class="heading-main">🔹 Data Accuracy</h3>
+                    </summary>
+                    <p>Verify that the returned data matches what’s stored or expected.</p>
+                    <p><strong>Example:</strong> If
+                    <pre><code>GET /product/{id}</code></pre> returns a price, confirm it matches the database
+                    record.</p>
+                </details>
+
+                <details>
+                    <summary>
+                        <h3 class="heading-main">🔹 Error Message Validation</h3>
+                    </summary>
+                    <p>Check that error responses are clear, consistent, and secure.</p>
+                    <p><strong>Example:</strong> If a required field is missing, the API should return a message like
+                    <pre><code>"Missing parameter: email"</code></pre>.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>
+                        <h3 class="tips"><strong>Tip:</strong></h3>
+                    </summary>
+                    <p>Include assertions for all critical fields to avoid missed validations during regression testing.</p>
+                </details>
+</section>
+
+            <!-- Contact Section added on each page-->
+            <section id="connect" class="connect-section">
+                <h2>Let’s Connect</h2>
+                <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+                <div class="connect-cards">
+                    <div class="card">
+                        <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Me</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                    <!--div class="card">
+                                            <a href="tel:+1234567890" class="connect-link">
+                                                <i class="fas fa-phone"></i>
+                                                <span>Call Me</span>
+                                            </a>
+                                        </div>-->
+                </div>
+            </section>
+            </main>
+            
+            
+            <!-- Common Footer -->
+            <div id="footer"></div>
+            <noscript>
+                <footer>
+                    <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+                </footer>
+            </noscript>
+            
+            <!-- Scripts -->
+            <script src="../../../assets/js/template.js?v=1.0" defer></script>
+            <script src="../../../assets/js/pageConfigs.js?v=1.0" defer></script>
+            <script src="../../../assets/js/main.js?v=1.0" defer></script>
+            
+            </body>
+            
+            </html>
+
+

@@ -88,7 +88,7 @@
             <summary>
                 <h3><i class="fas fa-vials"></i>What to Validate (How to Test Performance)</h3>
             </summary>
-            <ul>
+            <ul class="indented-list">
                 <li><i class="fas fa-stopwatch-20"></i> Response time targets (avg, p95, p99)</li>
                 <li><i class="fas fa-wave-square"></i> Throughput targets (e.g., 500 RPS sustained)</li>
                 <li><i class="fas fa-triangle-exclamation"></i> Error budgets (e.g., &lt;0.1% 5xx)</li>
@@ -98,18 +98,18 @@
                 </li>
             </ul>
                 <h4><i class="fas fa-sitemap"></i> Recommended Test Types</h4>
-                <ul>
+                <ul class="indented-list">
                     <li>Baseline (sanity), Load (steady), Stress (limit), Spike (burst), Soak (endurance)</li>
                 </ul>
                 <h4><i class="fas fa-list-check"></i> Workflow</h4>
-                <ol>
+                <ul class="indented-list">
                     <li>Define SLIs/SLOs & success criteria</li>
                     <li>Pick target endpoints & payloads (auth, headers, caching)</li>
                     <li>Prepare realistic data (seed DB, unique IDs)</li>
                     <li>Model traffic (RPS/concurrency, think-time)</li>
                     <li>Run tests, monitor infra/app + collect percentiles</li>
                     <li>Analyze bottlenecks, iterate, and re-test</li>
-                </ol>
+                </ul>
         </details>
 
 
@@ -147,15 +147,15 @@
             <summary>
                 <h3><i class="fas fa-tasks"></i> Assignments</h3>
             </summary>
-                <ol>
+                <ul class="indented-list">
                     <li>Design SLOs for a sample catalog API (p95 &lt; 300ms @ 200 RPS, errors &lt;0.1%).</li>
                     <li>Write a k6 script to load test <code>/products</code> at 200 RPS for 5 minutes.</li>
                     <li>Compare cold vs warm cache runs and document deltas.</li>
                     <li>Run a spike test (10→500 RPS→10) and capture error spikes + saturation point.</li>
                     <li>Create performance assertions (e.g., p95 &lt; 400ms) that fail the CI job if breached.</li>
-                </ol>
+                </ul>
                 <h4><i class="fas fa-code"></i> Minimal k6 Example</h4>
-                <div class="code-block">
+                <pre><code><div class="code-block">
                     // save as perf_products.js
                     import http from 'k6/http';
                     import { check, sleep } from 'k6';
@@ -174,6 +174,7 @@
                         sleep(0.2);
                         }
                 </div>
+                </code></pre>
         </details>
 
         <details>
@@ -267,22 +268,10 @@
     </noscript>
     
     <!-- Scripts -->
-    <script src="../../../../../assets/js/main.js?v=1.0"></script>
-    <script>
-        if (typeof loadTemplate === "function") {
-            try {
-                loadTemplate("header", "../../../../../assets/templates/header.html?v=1.0", "Performance Testing of APIs", [
-                    { text: "Home", link: "../../../../../index.html", class: "btn-primary" },
-                    { text: "Back to API Testing Guide", link: "04_API_TESTING.html", class: "btn-primary" },
-                    { text: "Connect", link: "#connect", class: "connect-button" }
-                ]);
-
-                loadTemplate("footer", "../../../../../assets/templates/footer.html?v=1.0");
-            } catch (e) {
-                console.error("Template loading failed", e);
-            }
-        }
-    </script>
+    <!-- Scripts -->
+    <script src="../../../assets/js/template.js?v=1.0" defer></script>
+    <script src="../../../assets/js/pageConfigs.js?v=1.0" defer></script>
+    <script src="../../../assets/js/main.js?v=1.0" defer></script>
 
 </body>
 
