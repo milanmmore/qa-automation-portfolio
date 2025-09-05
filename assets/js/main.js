@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     title: document.title,
     buttons: []
   };
-  basefilepath = basePath + "assets/templates/header.html?v=1.0";
+  basefilepath = basePath + "/assets/templates/header.html?v=1.0";
   console.log(basefilepath);
   console.log(basePath)
   try {
