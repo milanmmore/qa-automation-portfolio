@@ -11,19 +11,20 @@ function getBasePath() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const currentPage = window.location.pathname.split("/").pop();
-  const basePath = getBasePath();
+  //const basePath = getBasePath();
+  const basePath = "/QA-AUTOMATION-POORTFOILIO";
   const config = pageConfigs?.[currentPage] || {
     title: document.title,
     buttons: []
   };
-  basefilepath = basePath & "/templates/header.html";
+  basefilepath = basePath + "assets/templates/header.html?v=1.0";
   console.log(basefilepath);
   console.log(basePath)
   try {
     console.log(`Loading templates from: ${basePath}`);
     console.log(basefilepath);
-    await loadTemplate("header", `${basePath}/templates/header.html?v=1.0`, config.title, config.buttons);
-    await loadTemplate("footer", `${basePath}/templates/footer.html?v=1.0`);
+    await loadTemplate("header", `${basePath}/assets/templates/header.html?v=1.0`, config.title, config.buttons);
+    await loadTemplate("footer", `${basePath}/assets/templates/footer.html?v=1.0`);
 
     setupNavigation();
   } catch (e) {
