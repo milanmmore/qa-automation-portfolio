@@ -71,14 +71,41 @@ const pageConfigs = {
       { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
   },
-      "04_API_RestAssured.html": {
+    
+    "04_API_RestAssured.html": {
     title: "Tools for API Testing: REST Assured",
     buttons: [  
       { text: "Home", link: "../../../index.html", class: "btn-primary" },
       { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
       { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
-  }
+  },
+    "04_API_Cypress.html": {
+    title: "Tools for API Testing: Cypress",
+    buttons: [  
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
+  },
   
+    "04_API_Playwright.html": {
+    title: "Tools for API Testing: Playwright",
+    buttons: [  
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
+  },
+    
+    "04_API_SoapUI.html": {
+    title: "Tools for API Testing: SoapUI",
+    buttons: [  
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
+  }
+
   // Add more pages as needed
 };
