@@ -27,101 +27,39 @@
 
 
     <main id="content" class="container">
-            <div class="container">
+
+        <div class="progress-wrapper">
+            <div class="message-box">
                 <h1>🚧 Page in Progress</h1>
                 <p>This section is under active development and will be available soon.</p>
-                <div class="badge">Coming Soon</div>
+                <!--<div class="badge">Coming Soon</div>-->
             </div>
+        </div>
+        
+        <div class="spinner-overlay" id="spinner">
+            <div class="spinner"></div>
+        </div>
+
         <!-- REmove the comment tags below when the content is ready -->
         <!--
         <section id="Topic" class="accordion">
         <h2><i class="fas fa-plug"></i> Introduction</h2>
         <p>
-            Cypress is a next-generation front-end testing tool built for the modern web. It’s loved by QA engineers for its:
-            <ul class="indented-list">
-                <li>⚡ Fast, reliable test execution with real-time reloads</li>
-                <li>🛠 Easy setup with zero configuration</li>
-                <li>🔍 Time-travel debugging to see exactly what happened at each step</li>
-                <li>📊 Rich dashboards and analytics</li>
-                <li>🤝 Seamless integration with CI/CD pipelines</li>
-            </ul>
+            SoapUI is a powerful open-source tool for testing SOAP and REST web services. It provides a user-friendly interface for creating, executing, and analyzing API tests.
         </p>
-        <br>
-        <details>
-            <summary>
-                <h3>🔧 Install & Setup</i></h3>
-            </summary>
-            <ul>
-                <li>Install Node.js (v12 or higher)</li>
-                <li>Run <code>npm install cypress --save-dev</code> in your project directory</li>
-                <li>Add test scripts to package.json: <code>"cypress:open": "cypress open"</code></li>
-                <li>Run <code>npm run cypress:open</code> to launch the Cypress Test Runner</li>
-            </ul>
-        </details>
-
-
-        <details>
-                <summary>
-                    <h3>🔧 Create Your first API test</h3>
-                </summary>
-                <p>In the Cypress Test Runner, create a new test file under <code>cypress/e2e/</code>:</p>
-                <br>
-                <pre><code>
-                // cypress/e2e/api_test.cy.js
-                describe('API Testing with Cypress', () => {
-                it('GET /users - fetch users', () => {
-                cy.request('https://reqres.in/api/users/2')
-                .then((response) => {
-                expect(response.status).to.eq(200);
-                expect(response.body).to.have.property('data');
-                expect(response.body.data).to.have.property('email');
-                });
-                });
-                });
-                </code></pre>
-                <p>Run the test in the Cypress Test Runner UI.</p>
-            </details>
-
-            
-            <details>
-                <summary>
-                    <h3>🔧 Integrate with CI/CD Using Newman</h3>
-                </summary>
-            </details>
-
-            <details>
-                <summary>
-                    <h3>🔧 Mock Servers & Documentation</h3>
-                </summary>
-
-
-            </details>
-
-            <details>
-                <summary>
-                    <h3>📚 Recommended Guides</h3>
-                </summary>
-                <ul class="indented-list">
-                    <li><a href="https://docs.cypress.io/guides/overview/why-cypress" target="_blank">Why Cypress?</a></li>
-                    <li><a href="https://docs.cypress.io/guides/getting-started/installing-cypress" target="_blank">Installing Cypress</a></li>
-                    <li><a href="https://docs.cypress.io/guides/end-to-end-testing/api-testing" target="_blank">API Testing with Cypress</a></li>
-                    <li><a href="https://docs.cypress.io/guides/continuous-integration/introduction" target="_blank">Cypress CI Integration</a></li>
-                    <li><a href="https://docs.cypress.io/guides/references/best-practices" target="_blank">Cypress Best Practices</a></li>
-                </ul>
-
-            </details>
-
-            <details>
-                <summary>
-                    <h3><i class="fas fa-lightbulb"></i> Tips</h3>
-                </summary>
-                <ul class="indented-list">
-                    <li>🔍 Always validate both success and error cases.</li>
-                    <li>🧪 Use schema validation to ensure response consistency.</li>
-                    <li>⚡ Automate repetitive flows for CI/CD integration.</li>
-                </ul>
-            </details>
-    </section>
+        <p>
+            Key features of SoapUI include:
+        </p>
+        <ul>
+            <li>Support for both SOAP and REST protocols</li>
+            <li>Ability to create complex test scenarios with assertions and validations</li>
+            <li>Integration with CI/CD pipelines for automated testing</li>
+            <li>Extensive reporting and logging capabilities</li>
+        </ul>
+        <p>
+            SoapUI is widely used by QA professionals and developers to ensure the reliability and performance of web services.
+        </p>
+        </section>
 -->
 
 
@@ -172,6 +110,16 @@
     <script src="../../../assets/js/template.js?v=1.0" defer></script>
     <script src="../../../assets/js/pageConfigs.js?v=1.0" defer></script>
     <script src="../../../assets/js/main.js?v=1.0" defer></script>
+
+    <script>
+        // Show the spinner
+        document.getElementById('spinner').style.display = 'flex';
+
+        // Hide the spinner after 3 seconds (example)
+        setTimeout(() => {
+            document.getElementById('spinner').style.display = 'none';
+        }, 3000);
+    </script>
 
 </body>
     
