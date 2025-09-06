@@ -5,26 +5,40 @@ function resolveAssetPath(relativePath) {
 }
 
 function getBasePath() {
-  const depth = window.location.pathname.split("/").length - 2; // subtract domain and file
-  return "../".repeat(depth) + "assets";
+  let path = window.location.pathname;
+  if (!path.endsWith('/')) {
+    path = path.substring(0, path.lastIndexOf('/') + 1);
+  }
+  return path;
 }
+
+
+function resolveTemplatePath(relativePath) {
+  const depth = window.location.pathname.split("/").length - 2;
+  const prefix = "../".repeat(depth);
+  return `${prefix}${relativePath}`;
+}
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   const currentPage = window.location.pathname.split("/").pop();
-  //const basePath = getBasePath();
-  const basePath = "/qa-automation-portfolio";
+
   const config = pageConfigs?.[currentPage] || {
     title: document.title,
     buttons: []
   };
-  basefilepath = basePath + "/assets/templates/header.html?v=1.0";
-  console.log(basefilepath);
-  console.log(basePath)
+
   try {
+    const basePath = getBasePath();
     console.log(`Loading templates from: ${basePath}`);
-    console.log(basefilepath);
-    await loadTemplate("header", `${basePath}/assets/templates/header.html?v=1.0`, config.title, config.buttons);
-    await loadTemplate("footer", `${basePath}/assets/templates/footer.html?v=1.0`);
+    console.log(basePath);
+
+    const headerPath = resolveTemplatePath("assets/templates/header.html?v=1.0");
+    await loadTemplate("header", headerPath, config.title, config.buttons);
+
+
+    const footerPath = resolveTemplatePath("assets/templates/footer.html?v=1.0");
+    await loadTemplate("footer", footerPath);
 
     setupNavigation();
   } catch (e) {

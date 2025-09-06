@@ -62,6 +62,14 @@ const pageConfigs = {
       { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
       { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
+  },
+    "04_API_POSTMAN.html": {
+    title: "Tools for API Testing: POSTMAN",
+    buttons: [
+      { text: "Home", link: "../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
   }
   
   // Add more pages as needed
