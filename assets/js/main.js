@@ -21,8 +21,11 @@ function resolveTemplatePath(relativePath) {
 
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const currentPage = window.location.pathname.split("/").pop();
-
+  //const currentPage = window.location.pathname.split("/").pop();
+  const currentPage = window.location.pathname.endsWith("/")
+  ? "index.html"
+  : window.location.pathname.split("/").pop();
+  console.log(`Current page: ${currentPage}`);
   const config = pageConfigs?.[currentPage] || {
     title: document.title,
     buttons: []
