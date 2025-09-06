@@ -14,9 +14,7 @@ function getBasePath() {
 
 
 function resolveTemplatePath(relativePath) {
-  const depth = window.location.pathname.split("/").length - 2;
-  const prefix = "../".repeat(depth);
-  return `${prefix}${relativePath}`;
+  return `/qa-automation-portfolio/${relativePath}`;
 }
 
 
