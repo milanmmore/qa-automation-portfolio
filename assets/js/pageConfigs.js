@@ -129,6 +129,14 @@ const pageConfigs = {
       { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
       { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
+  },
+  "04_API_cheetsheet.html": {
+    title: "API Testing Cheat Sheet",
+    buttons: [
+      { text: "Home", link: "../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
   }
 
   // Add more pages as needed

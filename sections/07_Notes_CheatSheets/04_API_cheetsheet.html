@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool - Cypress</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../../../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+
+    <main id="content" class="container">
+
+        <section id="Topic" class="accordion">
+            <h2><i class="fas fa-book"></i> API Testing Basics CheatSheet</h2>
+        
+            <div class="centered-badges">
+                <img src="https://img.shields.io/badge/API-Testing-blue?style=flat" alt="API Badge">
+                <img src="https://img.shields.io/badge/REST-CRUD%20Operations-green?style=flat" alt="REST Badge">
+                <img src="https://img.shields.io/badge/Tools-Postman%20%26%20More-orange?style=flat" alt="Tools Badge">
+                <p><strong>Essential API Testing Concepts & Techniques</strong></p>
+            </div>
+        
+            <details open>
+                <summary>
+                    <h3>🔍 What is API Testing?</h3>
+                </summary>
+                <p><strong>API Testing</strong> ensures APIs meet functionality, reliability, performance, and security
+                    requirements.</p>
+                <ul class="indented-list">
+                    <li>🧪 Early Testing: Test before UI is ready</li>
+                    <li>⚡ Faster Execution: No browser overhead</li>
+                    <li>📈 Better Coverage: Test business logic directly</li>
+                    <li>🌐 Language Independent: Test any API regardless of implementation</li>
+                </ul>
+            </details>
+        
+            <details>
+                <summary>
+                    <h3>📊 API Types</h3>
+                </summary>
+                <h4>REST APIs</h4>
+                <ul>
+                    <li>Protocol: HTTP/HTTPS</li>
+                    <li>Data Format: JSON, XML</li>
+                    <li>Methods: GET, POST, PUT, DELETE, PATCH</li>
+                    <li>Stateless: Each request is independent</li>
+                </ul>
+                <h4>SOAP APIs</h4>
+                <ul>
+                    <li>Protocol: HTTP, SMTP, TCP</li>
+                    <li>Data Format: XML</li>
+                    <li>Standards: WSDL, WS-Security</li>
+                    <li>Stateful: Can maintain state</li>
+                </ul>
+                <h4>GraphQL APIs</h4>
+                <ul>
+                    <li>Protocol: HTTP</li>
+                    <li>Data Format: JSON</li>
+                    <li>Single Endpoint: One endpoint for all operations</li>
+                    <li>Flexible Queries: Clients specify exact data needed</li>
+                </ul>
+            </details>
+        
+            <details>
+                <summary>
+                    <h3>🔧 HTTP Methods (CRUD)</h3>
+                </summary>
+                <h4>GET - Read</h4>
+                <pre><code>GET /api/users
+        GET /api/users/123
+        GET /api/users?page=1&amp;limit=10</code></pre>
+        
+                <h4>POST - Create</h4>
+                <pre><code>POST /api/users
+        Content-Type: application/json
+        
+        {
+          "name": "John Doe",
+          "email": "john@example.com"
+        }</code></pre>
+        
+                <h4>PUT - Update (Complete)</h4>
+                <pre><code>PUT /api/users/123
+        Content-Type: application/json
+        
+        {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "age": 30
+        }</code></pre>
+        
+                <h4>PATCH - Update (Partial)</h4>
+                <pre><code>PATCH /api/users/123
+        Content-Type: application/json
+        
+        {
+          "age": 31
+        }</code></pre>
+        
+                <h4>DELETE - Delete</h4>
+                <pre><code>DELETE /api/users/123</code></pre>
+            </details>
+        
+            <details>
+                <summary>
+                    <h3>🔐 Authentication Methods</h3>
+                </summary>
+                <pre><code>X-API-Key: your-api-key-here</code></pre>
+                <pre><code>Authorization: Bearer your-jwt-token-here</code></pre>
+                <pre><code>Authorization: Basic base64(username:password)</code></pre>
+                <pre><code>Authorization: Bearer access-token</code></pre>
+            </details>
+        
+            <details>
+                <summary>
+                    <h3>📋 API Testing Checklist</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li>✅ Valid requests return expected responses</li>
+                    <li>❌ Invalid requests return appropriate error codes</li>
+                    <li>🔍 Required fields are validated</li>
+                    <li>🧪 Optional fields are handled correctly</li>
+                    <li>📐 Data types are validated</li>
+                    <li>📊 Business rules are enforced</li>
+                </ul>
+            </details>
+        
+            <details>
+                <summary>
+                    <h3>🛠️ Testing Tools</h3>
+                </summary>
+                <h4>Postman</h4>
+                <pre><code>pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+        });</code></pre>
+        
+                <h4>Python Requests</h4>
+                <pre><code>import requests
+        response = requests.get('https://api.example.com/users')
+        assert response.status_code == 200</code></pre>
+        
+                <h4>cURL</h4>
+                <pre><code>curl -X GET https://api.example.com/users</code></pre>
+            </details>
+        
+            <details>
+                <summary>
+                    <h3>📈 API Testing Metrics</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li>📊 Response Time</li>
+                    <li>✅ Success Rate</li>
+                    <li>❌ Error Rate</li>
+                    <li>🕒 Availability</li>
+                </ul>
+            </details>
+        
+            <details>
+                <summary>
+                    <h3>🚀 Best Practices</h3>
+                </summary>
+                <ul class="indented-list">
+                    <li>🧪 Test both positive and negative cases</li>
+                    <li>📐 Validate response structure and data types</li>
+                    <li>🔁 Automate repetitive tests</li>
+                    <li>📚 Document test scenarios clearly</li>
+                </ul>
+            </details>
+        
+            <div class="centered-note">
+                <i>Part of <a href="https://github.com/Yasin-asif/SQA-Professional-Portfolio" target="_blank">Muhammad Yasin's
+                        SQA Professional Portfolio</a></i>
+            </div>
+        </section>
+
+
+
+
+        <!-- Contact Section -->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                    <a href="tel:+1234567890" class="connect-link">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Me</span>
+                    </a>
+                </div>-->
+            </div>
+        </section>
+
+    </main>
+
+
+    <div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="../../../assets/js/template.js?v=1.0" defer></script>
+    <script src="../../../assets/js/pageConfigs.js?v=1.0" defer></script>
+    <script src="../../../assets/js/main.js?v=1.0" defer></script>
+</body>
+    
+</html>
