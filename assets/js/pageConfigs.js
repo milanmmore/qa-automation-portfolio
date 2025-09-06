@@ -63,11 +63,11 @@ const pageConfigs = {
       { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
   },
-    "04_API_POSTMAN.html": {
+    "04_AP04_API_Postman.html": {
     title: "Tools for API Testing: POSTMAN",
-    buttons: [
-      { text: "Home", link: "../../index.html", class: "btn-primary" },
-      { text: "Back", link: "../../../04_API_TESTING.html", class: "btn-primary" },
+    buttons: [  
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
       { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
   }
