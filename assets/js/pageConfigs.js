@@ -105,6 +105,30 @@ const pageConfigs = {
       { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
       { text: "Connect", link: "#connect", class: "btn-secondary" }
     ]
+  },
+  "04_API_Parameterization.html": {
+    title: "API Parameterization Techniques",
+    buttons: [
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
+  },
+  "04_API_Mocking.html": {
+    title: "API Mocking Strategies",
+    buttons: [
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
+  },
+  "04_API_CI_CD.html": {
+    title: "API Testing in CI/CD Pipelines",
+    buttons: [
+      { text: "Home", link: "../../../index.html", class: "btn-primary" },
+      { text: "Back", link: "../../04_API_TESTING.html", class: "btn-primary" },
+      { text: "Connect", link: "#connect", class: "btn-secondary" }
+    ]
   }
 
   // Add more pages as needed
