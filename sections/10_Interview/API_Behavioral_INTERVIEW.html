@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Testing Behavioral Interview Questions</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/subMenu_Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../..../index.html">Home</a> |
+                <a href="../../../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+        <section id="Topic" class="accordion">
+
+
+<!--
+How Testing differs between REST and SOAP APIs
+
+REST and SOAP APIs involve distinct approaches due to their architectural and protocol differences. Here's a
+breakdown of how they differ:
+
+🔍 Key Differences in Testing REST vs. SOAP APIs
+Feature REST API Testing SOAP API Testing
+Protocol HTTP/HTTPS HTTP, SMTP, TCP
+Data Format JSON (mostly), XML XML only
+Tooling Postman, REST Assured, Cypress, etc. SOAP UI, Apache JMeter (with WSDL support)
+Message Structure Lightweight, flexible Strict, structured (requires envelope, header, body)
+Test Setup Simple: define endpoint, method, headers Complex: requires WSDL, XML schema validation
+Assertions Status codes, JSON fields, headers XPath/XQuery assertions on XML structure
+Authentication API keys, Bearer tokens, OAuth WS-Security, SSL, Basic Auth
+Statefulness Stateless (each request is independent) Can be stateful (maintains session context)
+Error Handling HTTP status codes (e.g., 404, 500) SOAP faults (structured error messages)
+🧪 Testing REST APIs
+Use tools like Postman, Cypress, or REST Assured
+
+Validate:
+
+HTTP status codes (e.g., 200 OK, 404 Not Found)
+
+JSON response structure and values
+
+Headers like Content-Type, Authorization
+
+Easier to automate and integrate into CI/CD pipelines
+
+Common in mobile and web applications
+
+🧪 Testing SOAP APIs
+Use tools like SOAP UI or JMeter
+
+Requires importing WSDL (Web Services Description Language)
+
+Validate:
+
+XML schema compliance
+
+SOAP envelope structure
+
+SOAP fault messages
+
+Often used in enterprise systems with strict compliance needs
+
+🧠 Summary
+REST testing is generally faster, simpler, and more flexible.
+
+SOAP testing is more rigorous, structured, and suited for complex enterprise-grade systems.
+
+1. Scenario - try to test API and somehow teh response is not getting back - how to debug -
+Server down, endpoint wrong, auth issue, headers issue, payload issue - use postman/curl to verify - check
+
+network tab, postman, curl, check endpoint, check auth, check headers, check payload
+
+2. What is API chaining?
+   - Alerts: use variables to store response data and use in subsequent requests
+   - Assertions: status code, response body, headers
+3. How to handle authentication in API testing?
+   - Basic Auth, Bearer Tokens, OAuth, API Keys 
+4. Difference between SOAP and REST APIs?
+   - Protocol, Data Format, Tooling, Message Structure, Test Setup, Assertions, Authentication
+5. How to validate response data in API testing?
+   - Status Codes, Response Body, Headers, Schema Validation
+6. What are common HTTP status codes and their meanings?
+   - 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error
+7. How to test error handling in APIs?
+   - Send invalid requests, check error codes and messages, validate error response structure
+8. What tools do you use for API testing and why?
+   - Postman, REST Assured, Cypress, SOAP UI, JMeter - based on project needs
+9. How to automate API tests in CI/CD pipelines?
+   - Use tools with CLI support, integrate with Jenkins/GitHub Actions, run tests on code changes
+10. How to handle dynamic data in API tests?
+   - Use variables, data-driven testing, parameterization
+11. What is the difference between PUT and PATCH methods?
+   - PUT: full update, idempotent; PATCH: partial update, not necessarily idempotent
+12. How to test APIs with rate limiting?
+   - Send multiple requests, check for 429 Too Many Requests response, validate retry-after headers
+13. How to mock APIs for testing purposes?
+   - Use tools like Postman Mock Servers, WireMock, or create stubs in testing frameworks
+14. How to ensure API security during testing?
+   - Test authentication, authorization, input validation, and data encryption
+15. What is API versioning and how to test different versions?
+   - Use versioned endpoints (e.g., /v1/, /v2/), test backward compatibility
+16. How to handle pagination in API testing?
+   - Test with different page sizes, validate next/previous links, check total count
+17. How to test APIs with different environments (dev, staging, prod)?
+   - Use environment variables, configuration files, and separate test suites for each environment
+18. What is the importance of API documentation in testing?
+   - Helps understand endpoints, request/response formats, and error codes; ensures accurate tests
+19. How to test APIs for performance and load?
+   - Use tools like JMeter, Gatling; simulate concurrent users, measure response times and throughput
+20. How to handle flaky API tests?
+    - Implement retries, use stable test data, isolate tests, and analyze failure patterns
+
+    put and patch difference example
+
+    PUT /users/1
+    {
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+    }
+
+    PATCH /users/1
+    {
+        "email": "john.newemail@example.com"
+    }
+
+    difference between form parameter and query parameter?
+        Form parameters are sent in the body of the request, typically for POST requests, 
+        while query parameters are included in the URL, usually for GET requests.
+
+        Interface in java - how to use in rest assured?
+        An interface in Java defines a contract that classes can implement. In Rest Assured, you
+        can create an interface to define common methods for API requests, and then implement that
+        interface in your test classes to ensure consistent behavior across tests.
+
+        When to use interface in rest assured?
+        Use an interface in Rest Assured when you want to define a common set of methods for different API
+        interactions, promoting code reusability and maintainability.
+
+        Automation integration in CI/CD - how to do that?
+        Integrate API tests into CI/CD pipelines by using tools like Jenkins, GitHub Actions, or GitLab CI. Configure the pipeline to run your API tests automatically on code commits,
+        pull requests, or scheduled intervals, and report the results.
+
+        Synchronous vs Asynchronous API testing?
+        Synchronous API testing involves sending a request and waiting for an immediate response, while
+        asynchronous API testing involves sending a request and receiving a response at a later time, often through
+        callbacks or polling mechanisms.
+
+
+        if one sprint you are not able to complete all the tasks - how to handle that?
+        Communicate with your team and stakeholders, prioritize remaining tasks for the next sprint, and
+        conduct a retrospective to identify and address any blockers or inefficiencies.
+
+        if GAP in requirements - how to handle that?
+        Clarify requirements with stakeholders,(review the requirements) 
+        document any assumptions made, and 
+        ensure alignment before proceeding with development or testing.
+
+        shift left testing - how to implement that in your team?
+        Encourage early involvement of testers in the development process, promote collaboration between
+        developers and testers, and implement practices like test-driven development (TDD) or behavior-driven
+        development (BDD).
+
+        if there are changes in requirements during development - how to handle that?
+        Reassess the impact of changes, communicate with stakeholders, and adjust the development or testing
+        approach as needed.
+        Ensure proper documentation of changes and their implications.
+
+        if you find a bug in production - how to handle that?
+        Prioritize the bug based on its severity, communicate with the development team, and initiate a
+        hotfix if necessary. Conduct a root cause analysis to prevent future occurrences.
+
+        Automation failed to create ROI - how to handle that?
+        Evaluate the automation strategy, identify areas for improvement, and ensure that tests are
+        maintainable and relevant. Focus on high-value tests that provide the most benefit.
+        Communicate the value of automation to stakeholders.
+
+        How to convey stakeholders about the importance of Automation
+
+        -->
+
+        </section>
+    </main>
+
+</body>
+</html>
+
