@@ -1,1 +1,82 @@
 https://www.youtube.com/shorts/dvtLY_UzgLI
+
+Cypress - 
+
+Features - 
+Automatically waits
+Takes screenshots for each step
+Mocking service er response
+Video for entire tests execution
+WE can see what happened. On every step with screenshot and error messages in cypress
+
+
+Architecture 
+
+Cypress directly works inside the browser
+Cypress built on node.js and comes packaged as npm modules
+This enables cypress to listen and modify the browser behaviour at run time by manipulating DOM and altering Network requests and responses on the fly.
+
+Cypress run on chrome , electron , Firefox , IE.
+
+Components
+
+Test Runner
+Dashboard service
+
+
+Installation 
+
+Download Node.js from nodes.org 
+
+Download VS Code
+
+8975751223
+
+
+
+Npmjs.cvom - all dependancies related to nodes
+
+Create new dir and 
+Install Cypress
+
+npm install cypress —save-dev
+
+Npx cypress open
+
+Testrunner will be open
+
+Cypress run 
+
+
+
+1. let and const
+* let: Allows block-scoped variable declarations.
+* const: Allows block-scoped constant declarations.
+2. Arrow Functions
+* Provides a shorter syntax for writing functions.
+* Does not have its own this context.
+
+3. Template Literals
+* Allows embedded expressions and multi-line strings using backticks (`).
+
+4. Destructuring Assignment
+* Allows unpacking values from arrays or properties from objects into distinct variables.
+
+5. Default Parameters
+* Allows setting default values for function parameters.
+
+6. Rest and Spread Operators
+* Rest: Collects all remaining elements into an array.
+* Spread: Expands an array into individual elements.
+
+7. Classes
+* Provides a more intuitive way to create objects and deal with inheritance.
+
+8. Promises
+* Allows handling asynchronous operations more effectively.
+
+9. Modules
+* Allows splitting code into reusable modules.
+
+10. Enhanced Object Literals
+* Provides shorthand syntax for defining object properties and methods.
