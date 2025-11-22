@@ -1,333 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <title>UI Testing Overview | QA Automation Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Step-by-step overview of professional UI testing for a QA automation portfolio." />
-  <style>
-    :root {
-      --bg: #0f1419;
-      --panel: #121a22;
-      --text: #d1e2ff;
-      --muted: #9bb3cf;
-      --accent: #76c7ff;
-      --border: #223243;
-      --code-bg: #0b1117;
-      --code-border: #1b2a3a;
-      --green: #7fd1a2;
-      --yellow: #ffd080;
-      --red: #ff8f8f;
-    }
-    html, body { background: var(--bg); color: var(--text); font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    body { margin: 0; line-height: 1.6; }
-    header { border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #111a24 0%, #0f1419 100%); }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
-    h1, h2, h3, h4 { color: #e6f2ff; margin: 0.6em 0 0.3em; }
-    p { color: var(--muted); margin: 0.3em 0 1em; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin: 16px 0; }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 880px) { .grid.two { grid-template-columns: 1fr 1fr; } }
-    ul, ol { margin: 0.5em 0 1em; padding-left: 1.2em; }
-    li { margin: 0.35em 0; }
-    strong { color: #e6f2ff; }
-    .kpi { display: inline-block; border: 1px dashed var(--border); border-radius: 8px; padding: 8px 12px; margin: 6px 8px 0 0; color: var(--muted); }
-    .tag { display: inline-block; background: #193043; border: 1px solid var(--border); color: var(--accent); border-radius: 999px; padding: 4px 10px; font-size: 12px; margin-right: 6px; }
-    .toc a { display: block; padding: 8px 0; border-bottom: 1px dotted var(--border); }
-    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
-    pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 10px; padding: 14px; overflow: auto; }
-    .callout { border-left: 3px solid var(--accent); padding-left: 12px; margin: 12px 0; }
-    .footer { color: var(--muted); font-size: 13px; padding: 24px 0 40px; border-top: 1px solid var(--border); }
-    table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; }
-    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; }
-    th { background: #0f1e2a; color: #cfe4ff; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Testing | QA Portfolio</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
+
 <body>
-  <header>
-    <div class="wrap">
-      <h1>UI testing overview</h1>
-      <p>A practical, step-by-step guide to demonstrate professional UI testing in your QA automation portfolio.</p>
-      <div>
-        <span class="tag">E2E</span>
-        <span class="tag">Cross-browser</span>
-        <span class="tag">Accessibility</span>
-        <span class="tag">Visual checks</span>
-      </div>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <nav class="panel toc" aria-label="Table of contents">
-      <h2>Contents</h2>
-      <a href="#purpose-and-outcomes">Purpose and outcomes</a>
-      <a href="#testing-types-and-scope">Testing types and scope</a>
-      <a href="#step-by-step-process">Step-by-step process</a>
-      <a href="#tools-and-patterns">Tools and patterns</a>
-      <a href="#example-app-and-tests">Example app and tests</a>
-      <a href="#project-setup">Project setup</a>
-      <a href="#ci-and-reporting">CI and reporting</a>
-      <a href="#metrics-and-quality-signals">Metrics and quality signals</a>
-      <a href="#portfolio-checklist">Portfolio checklist</a>
-    </nav>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-    <section id="purpose-and-outcomes" class="panel" aria-labelledby="purpose-heading">
-      <h2 id="purpose-heading">Purpose and outcomes</h2>
-      <p>UI testing validates that the interface renders and behaves correctly so users can reliably complete tasks across browsers and devices. The goal is predictable, accessible, and visually consistent experiences that hold up under real-world conditions.</p>
-      <ul>
-        <li><strong>Outcome:</strong> Catch regressions early, reduce production incidents, and increase confidence in releases.</li>
-        <li><strong>Portfolio value:</strong> Show strategy, execution, and measurable impact—code, CI runs, and reports that a reviewer can verify.</li>
-      </ul>
-      <div>
-        <span class="kpi">Smoke run: &lt; 3 min</span>
-        <span class="kpi">Flake rate: &lt; 2%</span>
-        <span class="kpi">Accessibility: AA baseline</span>
-      </div>
-    </section>
+  <!-- Common Header -->
+  <div id="header"></div>
+  <noscript>
+    <header>
+      <h1>Milan Milind More</h1>
+      <nav>
+        <a href="../index.html">Home</a> |
+        <a href="../about.html">About</a>
+      </nav>
+    </header>
+  </noscript>
 
-    <section id="testing-types-and-scope" class="panel" aria-labelledby="types-heading">
-      <h2 id="types-heading">Testing types and scope</h2>
-      <div class="grid two">
-        <div>
-          <h3>Functional</h3>
-          <ul>
-            <li><strong>Controls:</strong> Buttons, inputs, selects, modals, and form validation.</li>
-            <li><strong>Navigation:</strong> Routing, breadcrumbs, and back/forward history.</li>
-            <li><strong>Error states:</strong> Inline errors, toasts, and retry flows.</li>
-          </ul>
+  <!-- Main Content -->
+  <main id="content" class="container">
+    <section id="ui-testing" class="accordion">
+
+      <h2><i class="fas fa-desktop"></i> Introduction</h2>
+      <p>
+        UI testing ensures that the user interface behaves and renders correctly across browsers and devices.
+        It validates functionality, layout, accessibility, and visual consistency to deliver a reliable user experience.
+      </p>
+      <br>
+
+      <!-- Fundamentals -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-lightbulb"></i> Fundamentals</h3>
+        </summary>
+        <ul class="ui-submenu">
+          <li>
+            <strong>🖱️ Functional UI Testing</strong>
+            <p>Verifies buttons, inputs, forms, navigation, and workflows behave as expected.</p>
+            <ul class="indented-list">
+              <li>✅ Form validation</li>
+              <li>✅ Navigation flows</li>
+              <li>✅ Modal dialogs</li>
+              <li>✅ Error messages</li>
+            </ul>
+          </li>
+          <li>
+            <strong>🎨 Visual UI Testing</strong>
+            <p>Checks layout, alignment, and rendering consistency across browsers and devices.</p>
+            <ul class="indented-list">
+              <li>📐 Responsive design</li>
+              <li>🖼️ Pixel-perfect rendering</li>
+              <li>🔍 Visual regression detection</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Key Concepts -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+        </summary>
+        <div class="concept">
+          <strong>🔗 1. Selectors</strong>
+          <p>Use stable selectors like roles, labels, or data-test IDs for reliable automation.</p>
+          <pre><code>await page.getByRole('button', { name: 'Submit' }).click();</code></pre>
         </div>
-        <div>
-          <h3>Visual and layout</h3>
-          <ul>
-            <li><strong>Rendering:</strong> Component alignment, spacing, and responsive breakpoints.</li>
-            <li><strong>Diffs:</strong> Optional pixel-diff checks for critical pages.</li>
-          </ul>
+        <div class="concept">
+          <strong>📐 2. Responsive Testing</strong>
+          <p>Validate UI across multiple viewport sizes (desktop, tablet, mobile).</p>
         </div>
-        <div>
-          <h3>Cross-browser and device</h3>
-          <ul>
-            <li><strong>Browsers:</strong> Chromium, Firefox, WebKit.</li>
-            <li><strong>Viewports:</strong> Desktop, tablet, and mobile profiles.</li>
-          </ul>
+        <div class="concept">
+          <strong>♿ 3. Accessibility</strong>
+          <p>Ensure proper ARIA roles, labels, and keyboard navigation.</p>
         </div>
-        <div>
-          <h3>Accessibility basics</h3>
-          <ul>
-            <li><strong>Semantics:</strong> Roles, labels, names, and alt text.</li>
-            <li><strong>Keyboard:</strong> Focus order and key interactions.</li>
-          </ul>
+        <div class="concept">
+          <strong>🎥 4. Visual Regression</strong>
+          <p>Capture screenshots and compare against baselines to detect unintended changes.</p>
+        </div>
+      </details>
+
+      <!-- What to Test -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-vials"></i> What to Test in UI Testing</h3>
+        </summary>
+        <ul class="ui-submenu">
+          <li>Forms and validation</li>
+          <li>Navigation menus</li>
+          <li>Responsive layouts</li>
+          <li>Accessibility compliance</li>
+          <li>Cross-browser compatibility</li>
+          <li>Visual regressions</li>
+        </ul>
+      </details>
+
+      <!-- Tools -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-tools"></i> Tools for UI Testing</h3>
+        </summary>
+        <ul class="ui-submenu">
+          <li><a href="09_Tools/Cypress/02_UI_Cypress.html"><i class="fas fa-cube"></i> Cypress</a></li>
+          <li><a href="09_Tools/Playwright/02_UI_Playwright.html"><i class="fas fa-play-circle"></i> Playwright</a></li>
+          <li><a href="09_Tools/Selenium/02_UI_Selenium.html"><i class="fas fa-globe"></i> Selenium</a></li>
+          <li><a href="09_Tools/TestCafe/02_UI_TestCafe.html"><i class="fas fa-coffee"></i> TestCafe</a></li>
+        </ul>
+      </details>
+
+      <!-- Best Practices -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-file-alt"></i> Best Practices</h3>
+        </summary>
+        <ul>
+          <li>✅ Use accessible selectors</li>
+          <li>✅ Automate critical user journeys</li>
+          <li>✅ Run tests in CI/CD pipelines</li>
+          <li>✅ Capture screenshots/videos for failures</li>
+          <li>✅ Keep tests deterministic and isolated</li>
+        </ul>
+      </details>
+
+      <!-- Capstone Project -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-graduation-cap"></i> Capstone Project</h3>
+        </summary>
+        <p>Build a complete UI test suite for a sample Todo app:</p>
+        <ul class="indented-list">
+          <li>Add and complete tasks</li>
+          <li>Filter active/completed tasks</li>
+          <li>Responsive layout checks</li>
+          <li>Accessibility validation</li>
+        </ul>
+        <p><em>Automate with Playwright or Cypress and integrate into CI/CD pipeline.</em></p>
+      </details>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="connect" class="connect-section">
+      <h2>Let’s Connect</h2>
+      <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+      <div class="connect-cards">
+        <div class="card">
+          <a href="mailto:milanmmore@gmail.com" class="connect-link">
+            <i class="fas fa-envelope"></i>
+            <span>Email Me</span>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
-    </section>
-
-    <section id="step-by-step-process" class="panel" aria-labelledby="process-heading">
-      <h2 id="process-heading">Step-by-step process</h2>
-      <ol>
-        <li><strong>Requirements and risk:</strong> Map user journeys, acceptance criteria, and prioritize high-impact flows.</li>
-        <li><strong>Scenario design:</strong> Cover happy paths, edge cases, and error states with deterministic data.</li>
-        <li><strong>Author tests:</strong> Use resilient selectors, auto-wait expectations, and minimal sleeps.</li>
-        <li><strong>Execute locally and CI:</strong> Run headed/headless, capture screenshots and traces on failure.</li>
-        <li><strong>Regress and report:</strong> Validate fixes, run focused and full suites, publish reports.</li>
-        <li><strong>Improve continuously:</strong> Refactor helpers, harden selectors, and add accessibility/visual checks where valuable.</li>
-      </ol>
-      <div class="callout">
-        <p><strong>Tip:</strong> Keep test data close to tests via fixtures and factories, and isolate slow or flaky dependencies with mocks for reliability.</p>
-      </div>
-    </section>
-
-    <section id="tools-and-patterns" class="panel" aria-labelledby="tools-heading">
-      <h2 id="tools-heading">Tools and patterns</h2>
-      <div class="grid two">
-        <div>
-          <h3>Core capabilities</h3>
-          <ul>
-            <li><strong>Browser automation:</strong> Parallel runs, auto-waiting, and rich locator APIs.</li>
-            <li><strong>Visual checks:</strong> Pixel-diff or snapshot baselines for key screens.</li>
-            <li><strong>Accessibility:</strong> Automated checks plus manual keyboard/focus sweeps.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Selector strategy</h3>
-          <ul>
-            <li><strong>Accessible locators:</strong> Roles, labels, and names for stability.</li>
-            <li><strong>Data test IDs:</strong> Use sparingly for non-semantic components.</li>
-            <li><strong>Avoid brittle CSS:</strong> Don’t couple tests to presentational selectors.</li>
-          </ul>
-        </div>
-      </div>
-      <table aria-label="Cypress to Playwright mapping">
-        <thead>
-          <tr>
-            <th>Area</th>
-            <th>Pattern</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Element select</td>
-            <td>Accessible locator</td>
-            <td><code>page.getByRole('button', { name: 'Save' })</code></td>
-          </tr>
-          <tr>
-            <td>Typing</td>
-            <td>Label-based</td>
-            <td><code>page.getByLabel('Email').fill('user@example.com')</code></td>
-          </tr>
-          <tr>
-            <td>Assert text</td>
-            <td>Expectation</td>
-            <td><code>expect(page.getByText('Done')).toBeVisible()</code></td>
-          </tr>
-          <tr>
-            <td>Network mock</td>
-            <td>Route fulfill</td>
-            <td><code>page.route('**/api/items', r =&gt; r.fulfill({...}))</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="example-app-and-tests" class="panel" aria-labelledby="example-heading">
-      <h2 id="example-heading">Example app and tests</h2>
-      <h3>Minimal Todo UI (HTML)</h3>
-      <pre><code>&lt;div id="app"&gt;
-  &lt;h1&gt;Todos&lt;/h1&gt;
-  &lt;form aria-label="Add todo"&gt;
-    &lt;label for="todo-input"&gt;New todo&lt;/label&gt;
-    &lt;input id="todo-input" name="todo" /&gt;
-    &lt;button type="submit"&gt;Add&lt;/button&gt;
-  &lt;/form&gt;
-  &lt;ul aria-label="Todo list"&gt;&lt;/ul&gt;
-  &lt;div role="group" aria-label="Filters"&gt;
-    &lt;button aria-pressed="true"&gt;All&lt;/button&gt;
-    &lt;button&gt;Active&lt;/button&gt;
-    &lt;button&gt;Completed&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-      <h3>Sample UI test (Playwright)</h3>
-      <pre><code>import { test, expect } from '@playwright/test';
-
-test.describe('Todos', () =&gt; {
-  test.beforeEach(async ({ page }) =&gt; {
-    await page.goto('/');
-  });
-
-  test('adds and completes a todo', async ({ page }) =&gt; {
-    await page.getByLabel('New todo').fill('Buy milk');
-    await page.getByRole('button', { name: 'Add' }).click();
-
-    const list = page.getByRole('list', { name: 'Todo list' });
-    const item = list.getByRole('listitem').filter({ hasText: 'Buy milk' });
-    await expect(item).toBeVisible();
-
-    await item.getByRole('checkbox').check();
-    await page.getByRole('button', { name: 'Completed' }).click();
-    await expect(item).toBeVisible();
-  });
-
-  test('filters active todos', async ({ page }) =&gt; {
-    await page.getByLabel('New todo').fill('Read book');
-    await page.getByRole('button', { name: 'Add' }).click();
-    await page.getByRole('button', { name: 'Active' }).click();
-    const list = page.getByRole('list', { name: 'Todo list' });
-    await expect(list.getByRole('listitem').filter({ hasText: 'Read book' })).toBeVisible();
-  });
-});</code></pre>
-
-      <h3>Network mocking example</h3>
-      <pre><code>test('mocks items endpoint', async ({ page }) =&gt; {
-  await page.route('**/api/items', async route =&gt; {
-    await route.fulfill({
-      status: 200,
-      contentType: 'application/json',
-      body: JSON.stringify([{ id: 1, name: 'Mock item' }]),
-    });
-  });
-  await page.goto('/items');
-  await expect(page.getByText('Mock item')).toBeVisible();
-});</code></pre>
-    </section>
-
-    <section id="project-setup" class="panel" aria-labelledby="setup-heading">
-      <h2 id="setup-heading">Project setup</h2>
-      <ul>
-        <li><strong>Structure:</strong> <code>ui-tests/e2e/</code> for specs, <code>ui-tests/fixtures/</code> for data, <code>ui-tests/utils/</code> for helpers.</li>
-        <li><strong>Config:</strong> Base URL, browser projects, retries, reporters, and test artifacts on failure.</li>
-        <li><strong>Helpers:</strong> Auth fixtures, stable selectors, and network routes for deterministic runs.</li>
-      </ul>
-      <pre><code>// playwright.config.ts (example)
-import { defineConfig, devices } from '@playwright/test';
-
-export default defineConfig({
-  use: { baseURL: 'http://localhost:3000' },
-  reporter: [['html']],
-  projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
-    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
-  ],
-});</code></pre>
-    </section>
-
-    <section id="ci-and-reporting" class="panel" aria-labelledby="ci-heading">
-      <h2 id="ci-heading">CI and reporting</h2>
-      <ul>
-        <li><strong>Parallel matrix:</strong> Run multiple browsers and shard tests for speed.</li>
-        <li><strong>Artifacts:</strong> Publish HTML reports, screenshots, videos, and traces.</li>
-        <li><strong>Failure triage:</strong> Auto-attach logs, label flaky tests, and link issues to runs.</li>
-      </ul>
-      <pre><code># Example GitHub Actions snippet
-name: ui-tests
-on: [push, pull_request]
-jobs:
-  e2e:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '20' }
-      - run: npm ci
-      - run: npx playwright install --with-deps
-      - run: npx playwright test --reporter=html
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ui-test-report
-          path: playwright-report</code></pre>
-    </section>
-
-    <section id="metrics-and-quality-signals" class="panel" aria-labelledby="metrics-heading">
-      <h2 id="metrics-heading">Metrics and quality signals</h2>
-      <ul>
-        <li><strong>Pass rate:</strong> Percentage of green runs; track per project and suite.</li>
-        <li><strong>Flake rate:</strong> Percentage of tests that pass on retry; aim to reduce steadily.</li>
-        <li><strong>Execution time:</strong> Average duration for smoke and full suites; optimize bottlenecks.</li>
-        <li><strong>Detection and fix time:</strong> Mean time to failure detection and resolution.</li>
-      </ul>
-      <div class="callout">
-        <p><strong>Tip:</strong> Display trends over time in README or GitHub Pages to showcase reliability improvements.</p>
-      </div>
-    </section>
-
-    <section id="portfolio-checklist" class="panel" aria-labelledby="checklist-heading">
-      <h2 id="checklist-heading">Portfolio checklist</h2>
-      <ul>
-        <li><strong>Scope:</strong> Document covered flows and prioritization rationale.</li>
-        <li><strong>Standards:</strong> Selector strategy, accessibility minimums, and visual testing policy.</li>
-        <li><strong>Setup:</strong> Install steps, environment variables, data seeding, and run commands.</li>
-        <li><strong>CI:</strong> Pipeline config, browser matrix, artifacts, and triage process.</li>
-        <li><strong>Quality signals:</strong> Definitions and links to reports or dashboards.</li>
-        <li><strong>Demo:</strong> Example app or public target with scripts to launch locally.</li>
-      </ul>
-    </section>
-
-    <section class="footer" aria-label="Footer">
-      <p>Page: 02_UI_TESTING.html • QA Automation Portfolio by Milan • Last updated: 2025</p>
-      <p>Improve this page by submitting a PR on GitHub. Include examples, screenshots, and links to CI runs for maximum credibility.</p>
     </section>
   </main>
+
+  <!-- Common Footer -->
+  <div id="footer"></div>
+  <noscript>
+    <footer>
+      <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+    </footer>
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../assets/js/template.js?v=1.0" defer></script>
+  <script src="../assets/js/pageConfigs.js?v=1.0" defer></script>
+  <script src="../assets/js/main.js?v=1.0" defer></script>
 </body>
+
 </html>
