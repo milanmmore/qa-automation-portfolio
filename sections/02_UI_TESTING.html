@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Testing | QA Portfolio</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+
+<body>
+
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Common Header -->
+  <div id="header"></div>
+  <noscript>
+    <header>
+      <h1>Milan Milind More</h1>
+      <nav>
+        <a href="../index.html">Home</a> |
+        <a href="../about.html">About</a>
+      </nav>
+    </header>
+  </noscript>
+
+  <!-- Main Content -->
+  <main id="content" class="container">
+    <section id="ui-testing" class="accordion">
+
+      <h2><i class="fas fa-desktop"></i> Introduction</h2>
+      <p>
+        UI testing ensures that the user interface behaves and renders correctly across browsers and devices.
+        It validates functionality, layout, accessibility, and visual consistency to deliver a reliable user experience.
+      </p>
+      <br>
+
+      <!-- Fundamentals -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-lightbulb"></i> Fundamentals</h3>
+        </summary>
+        <ul class="ui-submenu">
+          <li>
+            <strong>🖱️ Functional UI Testing</strong>
+            <p>Verifies buttons, inputs, forms, navigation, and workflows behave as expected.</p>
+            <ul class="indented-list">
+              <li>✅ Form validation</li>
+              <li>✅ Navigation flows</li>
+              <li>✅ Modal dialogs</li>
+              <li>✅ Error messages</li>
+            </ul>
+          </li>
+          <li>
+            <strong>🎨 Visual UI Testing</strong>
+            <p>Checks layout, alignment, and rendering consistency across browsers and devices.</p>
+            <ul class="indented-list">
+              <li>📐 Responsive design</li>
+              <li>🖼️ Pixel-perfect rendering</li>
+              <li>🔍 Visual regression detection</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Key Concepts -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+        </summary>
+        <div class="concept">
+          <strong>🔗 1. Selectors</strong>
+          <p>Use stable selectors like roles, labels, or data-test IDs for reliable automation.</p>
+          <pre><code>await page.getByRole('button', { name: 'Submit' }).click();</code></pre>
+        </div>
+        <div class="concept">
+          <strong>📐 2. Responsive Testing</strong>
+          <p>Validate UI across multiple viewport sizes (desktop, tablet, mobile).</p>
+        </div>
+        <div class="concept">
+          <strong>♿ 3. Accessibility</strong>
+          <p>Ensure proper ARIA roles, labels, and keyboard navigation.</p>
+        </div>
+        <div class="concept">
+          <strong>🎥 4. Visual Regression</strong>
+          <p>Capture screenshots and compare against baselines to detect unintended changes.</p>
+        </div>
+      </details>
+
+      <!-- What to Test -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-vials"></i> What to Test in UI Testing</h3>
+        </summary>
+        <ul class="ui-submenu">
+          <li>Forms and validation</li>
+          <li>Navigation menus</li>
+          <li>Responsive layouts</li>
+          <li>Accessibility compliance</li>
+          <li>Cross-browser compatibility</li>
+          <li>Visual regressions</li>
+        </ul>
+      </details>
+
+      <!-- Tools -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-tools"></i> Tools for UI Testing</h3>
+        </summary>
+        <ul class="ui-submenu">
+          <li><a href="09_Tools/Cypress/02_UI_Cypress.html"><i class="fas fa-cube"></i> Cypress</a></li>
+          <li><a href="09_Tools/Playwright/02_UI_Playwright.html"><i class="fas fa-play-circle"></i> Playwright</a></li>
+          <li><a href="09_Tools/Selenium/02_UI_Selenium.html"><i class="fas fa-globe"></i> Selenium</a></li>
+          <li><a href="09_Tools/TestCafe/02_UI_TestCafe.html"><i class="fas fa-coffee"></i> TestCafe</a></li>
+        </ul>
+      </details>
+
+      <!-- Best Practices -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-file-alt"></i> Best Practices</h3>
+        </summary>
+        <ul>
+          <li>✅ Use accessible selectors</li>
+          <li>✅ Automate critical user journeys</li>
+          <li>✅ Run tests in CI/CD pipelines</li>
+          <li>✅ Capture screenshots/videos for failures</li>
+          <li>✅ Keep tests deterministic and isolated</li>
+        </ul>
+      </details>
+
+      <!-- Capstone Project -->
+      <details>
+        <summary>
+          <h3><i class="fas fa-graduation-cap"></i> Capstone Project</h3>
+        </summary>
+        <p>Build a complete UI test suite for a sample Todo app:</p>
+        <ul class="indented-list">
+          <li>Add and complete tasks</li>
+          <li>Filter active/completed tasks</li>
+          <li>Responsive layout checks</li>
+          <li>Accessibility validation</li>
+        </ul>
+        <p><em>Automate with Playwright or Cypress and integrate into CI/CD pipeline.</em></p>
+      </details>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="connect" class="connect-section">
+      <h2>Let’s Connect</h2>
+      <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+      <div class="connect-cards">
+        <div class="card">
+          <a href="mailto:milanmmore@gmail.com" class="connect-link">
+            <i class="fas fa-envelope"></i>
+            <span>Email Me</span>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Common Footer -->
+  <div id="footer"></div>
+  <noscript>
+    <footer>
+      <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+    </footer>
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../assets/js/template.js?v=1.0" defer></script>
+  <script src="../assets/js/pageConfigs.js?v=1.0" defer></script>
+  <script src="../assets/js/main.js?v=1.0" defer></script>
+</body>
+
+</html>
