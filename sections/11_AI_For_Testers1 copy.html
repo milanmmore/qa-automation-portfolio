@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI For Testers | QA Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <!--link rel="stylesheet" href="../assets/css/subMenu_Styles.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Common Header -->
+    <div id="header"></div>
+    <noscript>
+        <header>
+            <h1>Milan Milind More</h1>
+            <nav>
+                <a href="../index.html">Home</a> |
+                <a href="../about.html">About</a>
+            </nav>
+        </header>
+    </noscript>
+
+    <!-- Main Content -->
+    <main id="content" class="container">
+    <section id="api-testing" class="accordion">
+
+        <h2><i class="fas fa-plug"></i>Introduction</h2>
+        <p>
+            AI is transforming software testing. Tools like Claude, ChatGPT, Gemini, and Copilot help testers 
+            work faster, improve test coverage, and reduce repetitive effort. This page introduces how testers 
+            can use AI and LLMs to enhance manual testing, automation, API testing, debugging, documentation, 
+            and overall product quality.
+        </p>
+        <br>
+
+        <!-- Fundamentals -->
+<details>
+    <summary>
+        <h3><i class="fas fa-lightbulb"></i> Fundamentals</h3>
+    </summary>
+    <ul class="api-submenu">
+        <li>
+            <strong>⚙️ Functional API Testing</strong>
+            <p>
+                Ensures each endpoint behaves according to requirements by validating
+                <em>requests, responses, status codes, and workflows</em>.
+            </p>
+            <ul class="indented-list">
+                <li>✅ Correct status codes (200, 400, 401, 500, etc.)</li>
+                <li>✅ Input/output validation</li>
+                <li>✅ CRUD operations (Create, Read, Update, Delete)</li>
+                <li>✅ Business rule validation</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>📊 Non-Functional API Testing</strong>
+            <p>
+                Focuses on how well the API performs under different conditions — speed, security, and reliability.
+            </p>
+            <ul class="indented-list">
+                <li>⚡ Performance → Response time, throughput, scalability</li>
+                <li>🔒 Security → Authentication, authorization, data protection</li>
+                <li>🔄 Reliability & availability under load</li>
+                <li>🌍 Compatibility across environments & versions</li>
+            </ul>
+        </li>
+        <br>
+        👉 In short: <br>
+        Functional = Are we building the right thing? <br>
+        Non-Functional = Is it fast, secure, and reliable enough?
+    </ul>
+    </details>
+
+    <details>
+        <summary>
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+        </summary>
+    
+        <!-- Diagram first -->
+        <p>
+            <img src="../assets/img/api-testing-diagram.png" alt="API Testing Conceptual Diagram" width="600" class="responsive-img">
+        </p>
+    
+        <!-- Concept 1 -->
+        <div class="concept">
+            <strong>🔗 1. Endpoints</strong>
+            <p>The URL paths where APIs are accessed.</p>
+            <p><strong>Example:</strong></p>
+            <pre><code>GET https://api.example.com/users/123</code></pre>
+            <p class="tip">Tip: Always document endpoints with required parameters and expected responses.</p>
+        </div>
+    
+        <!-- Concept 2 -->
+        <div class="concept">
+            <strong>📤 2. HTTP Methods</strong>
+            <p>Define the type of operation the API performs:</p>
+            <ul>
+                <li><strong>GET:</strong> Retrieve data</li>
+                <li><strong>POST:</strong> Create new data</li>
+                <li><strong>PUT:</strong> Update existing data</li>
+                <li><strong>DELETE:</strong> Remove data</li>
+            </ul>
+            <p class="tip">Tip: Ensure the API adheres to RESTful conventions.</p>
+        </div>
+    
+        <!-- Concept 3 -->
+        <div class="concept">
+            <strong>📦 3. Request Payloads & Parameters</strong>
+            <ul>
+                <li><strong>Query Parameters:</strong> Appended to the URL
+                    <pre><code>?userId=123</code></pre>
+                </li>
+                <li><strong>Body Parameters:</strong> Sent in the request body (e.g., JSON for POST)</li>
+            </ul>
+            <p class="tip">Tip: Validate edge cases like missing, null, or invalid values.</p>
+        </div>
+    
+        <!-- Concept 4 -->
+        <div class="concept">
+            <strong>📥 4. Responses & Status Codes</strong>
+            <p>APIs return structured data and HTTP status codes like:</p>
+            <ul>
+                <li>
+                    <pre><code>200 OK</code></pre>: Success
+                </li>
+                <li>
+                    <pre><code>201 Created</code></pre>: Resource created
+                </li>
+                <li>
+                    <pre><code>400 Bad Request</code></pre>: Client error
+                </li>
+                <li>
+                    <pre><code>401 Unauthorized</code></pre>: Auth failure
+                </li>
+                <li>
+                    <pre><code>500 Internal Server Error</code></pre>: Server crash
+                </li>
+            </ul>
+            <p class="tip">Tip: Test all possible response scenarios, including error handling.</p>
+        </div>
+    
+        <!-- Concept 5 -->
+        <div class="concept">
+            <strong>🧾 5. Headers</strong>
+            <p>Carry metadata like content type and authentication tokens.</p>
+            <p><strong>Example:</strong></p>
+            <pre><code>Authorization: Bearer &lt;token&gt;</code></pre>
+            <p class="tip">Tip: Validate headers for correctness and completeness.</p>
+        </div>
+    
+        <!-- Concept 6 -->
+        <div class="concept">
+            <strong>✅ 6. Assertions</strong>
+            <p>Validate API behavior by checking:</p>
+            <ul>
+                <li>Status codes</li>
+                <li>Response body content</li>
+                <li>Response time</li>
+            </ul>
+            <p class="tip">Tip: Use tools like Postman, REST Assured, or JSON Schema Validator for automated assertions.</p>
+        </div>
+    
+        <!-- Concept 7 -->
+        <div class="concept">
+            <strong>🔐 7. Authentication & Authorization</strong>
+            <p>APIs often require secure access:</p>
+            <ul>
+                <li>API Keys</li>
+                <li>OAuth2 Tokens</li>
+                <li>JWTs</li>
+            </ul>
+            <p class="tip">Tip: Test role-based access and token expiry scenarios.</p>
+        </div>
+    
+        <!-- Concept 8 -->
+        <div class="concept">
+            <strong>📊 8. Performance & Reliability</strong>
+            <p>Measure response time, throughput, and stability under load.</p>
+            <p><strong>Example:</strong></p>
+            <pre><code>GET /weather</code></pre>
+            <p>Ensure response within <strong>200ms</strong> under <strong>100 concurrent users</strong>.</p>
+            <p class="tip">Tip: Use JMeter or Gatling for load and stress testing.</p>
+        </div>
+    </details>
+
+        <!-- What to Test -->
+        <details>
+            <summary>
+                <h3><i class="fas fa-vials"></i> What to Test in API Testing</h3>
+            </summary>
+            <ul class="api-submenu">
+                <li><a href="04_API_Testing/pages/04_API_Functional.html"><i class="fas fa-book-open"></i> Functional Testing</a></li>
+                <li><a href="04_API_Testing/pages/04_API_Security.html"><i class="fas fa-book-open"></i> Security Testing</a></li>
+                <li><a href="04_API_Testing/pages/04_API_Performance.html"><i class="fas fa-book-open"></i> Performance Testing</a></li>
+                <li><a href="04_API_Testing/pages/04_API_InterOperability.html"><i class="fas fa-book-open"></i> Interoperability Testing</a></li>
+                <li><a href="04_API_Testing/pages/04_API_Contract.html"><i class="fas fa-book-open"></i> Contract Testing</a></li>
+                <li><a href="04_API_Testing/pages/04_API_ResValidation.html"><i class="fas fa-book-open"></i> How to validate API response</a></li>
+            </ul>
+        </details>
+
+        <!-- Tools -->
+        <details>
+            <summary>
+                <h3><i class="fas fa-tools"></i> Tools for API Testing</h3>
+            </summary>
+            <ul class="api-submenu">
+                <li><a href="09_Tools/Postman/04_API_Postman.html"><i class="fas fa-paper-plane"></i> Postman – manual & automated testing</a></li>
+                <li><a href="09_Tools/RestAssured/04_API_RestAssured.html"><i class="fas fa-code"></i> REST Assured – Java-based automation</a></li>
+                <li><a href="09_Tools/Cypress/04_API_Cypress.html"><i class="fas fa-cube"></i> Cypress – JavaScript-based automation</a></li>
+                <li><a href="09_Tools/Playwright/04_API_Playwright.html"><i class="fas fa-play-circle"></i> Playwright – TypeScript-based automation</a></li>
+                <li><a href="09_Tools/SoapUI/04_API_SoapUI.html"><i class="fas fa-water"></i> SoapUI – testing SOAP services</a></li>
+            </ul>
+        </details>
+
+        <!-- Testing Artifacts -->
+        <details>
+            <summary>
+                <h3><i class="fas fa-file-alt"></i> Testing Artifacts</h3>
+            </summary>
+
+            <ul class="api-submenu">
+                <li>
+                    <span class="toggle">▶ Important Test Scenarios</span>
+                    <div class="content">
+                        <!-- Your table here -->
+                        <table border="1">
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Authentication</td>
+                                <td>Valid/invalid login, token expiry, refresh</td>
+                            </tr>
+                            <tr>
+                                <td>CRUD Operations</td>
+                                <td>Create, Read, Update, Delete with valid/invalid data</td>
+                            </tr>
+                            <tr>
+                                <td>Rate Limiting</td>
+                                <td>Exceeding request thresholds</td>
+                            </tr>
+                            <tr>
+                                <td>Error Handling</td>
+                                <td>400, 401, 403, 404, 500 responses</td>
+                            </tr>
+                            <tr>
+                                <td>Data Validation</td>
+                                <td>Missing fields, wrong formats, boundary values</td>
+                            </tr>
+                            <tr>
+                                <td>Security</td>
+                                <td>SQL injection, XSS, unauthorized access</td>
+                            </tr>
+                            <tr>
+                                <td>Response Time</td>
+                                <td>SLA adherence under load</td>
+                            </tr>
+                            <tr>
+                                <td>Header Validation</td>
+                                <td>Content-Type, Authorization, CORS headers</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </li>
+
+                <li>
+                    <span class="toggle">▶ Best Practices</span>
+                    <div class="content">
+                    <ul>
+                        <li><strong>1. ✅ Validate All HTTP Methods</strong><br>
+                            Test GET, POST, PUT, DELETE, PATCH thoroughly. <br>
+                            Ensure each method behaves as expected and follows RESTful conventions.
+                        </li>
+                        <li><strong>2. 🔐 Security Testing</strong><br>
+                            Check for unauthorized access, token expiry, and role-based permissions. <br>
+                            Validate headers like Authorization, Content-Type, and CORS policies. <br>
+                            Test for vulnerabilities: SQL injection, XSS, and rate limiting abuse.
+                        </li>
+                        <li><strong>3. 📊 Data Validation</strong><br>
+                            Test with valid, invalid, missing, and boundary inputs. <br>
+                            Confirm that error messages are meaningful and status codes are accurate (e.g., 400, 401, 403, 404, 500).
+                        </li>
+                        <li><strong>4. 📈 Performance & Load Testing</strong><br>
+                            Simulate high traffic to test response time, throughput, and SLA adherence. <br>
+                            Use tools like JMeter, Postman Runner, or Newman for automation.
+                        </li>
+                        <li><strong>5. 🔁 Regression Testing</strong><br>
+                            Re-run tests after every deployment or code change to ensure nothing breaks. <br>
+                            Automate critical test cases to catch regressions early.
+                        </li>
+                        <li><strong>6. 📄 Contract & Schema Validation</strong><br>
+                            Use tools like Swagger, OpenAPI, or Postman schema validation to ensure responses match expected formats.
+                        </li>
+                        <li><strong>7. 🧪 Functional Testing</strong><br>
+                            Validate business logic: e.g., “user exists” → 200 OK, “invalid token” → 401 Unauthorized.
+
+Test workflows across endpoints (e.g., login → fetch profile → update settings).
+
+                        </li>
+                        <li><strong>8. 🧼 Environment Isolation</strong><br>
+                            Use mock servers or sandbox environments to avoid polluting production data. <br>
+                            Isolate test data and reset states between runs.
+                        </li>
+                        <li><strong>9. 📚 Documentation Testing</strong><br>
+                            Ensure the API behaves exactly as described in its documentation.
+
+Flag discrepancies between actual behavior and documented specs.
+
+                        </li>
+                        <li><strong>10. 🧠 Use Meaningful Test Case Templates</strong><br>
+                            Create templates that include all relevant information: <br>
+                            - Test Case ID <br>
+                            - Title <br>
+                            - Method <br>
+                            - Endpoint <br>
+                            - Input <br>
+                            - Expected Output <br>
+                        </li>
+                        <li><strong>11. Example Test Case</strong><br>
+                        <pre>
+                            Test Case ID: API_TC_001
+                            Title: Verify login with valid credentials
+                            Method: POST
+                            Endpoint: /api/login
+                            Input: { "email": "valid@example.com", "password": "correct123" }
+                            Expected: 200 OK, message: "User exists!"
+                        </pre>
+                        <p>Use environment variables, validate status codes, automate with Postman/Newman, etc.</p>
+                        </li>
+                    </div>
+                </li>
+        </details>
+
+        <!-- Advanced Topics -->
+        <details>
+            <summary>
+                <h3><i class="fas fa-rocket"></i> Advanced Topics</h3>
+            </summary>
+            <ul class="api-submenu">
+                <li><a href="04_API_Testing/pages/04_API_Parameterization.html"><i class="fas fa-random"></i>Parameterization for data-driven testing</a></li>
+                <li><a href="04_API_Testing/pages/04_API_Mocking.html"><i class="fas fa-mask"></i> Mocking to simulate unavailable endpoints</a></li>
+                <li><a href="04_API_Testing/pages/04_API_CI_CD.html"><i class="fas fa-cogs"></i> CI/CD integration for automated test runs</a></li>
+            </ul>
+        </details>
+
+        <!-- Capstone Project 1-->
+        <details>
+            <summary>
+                <h3><i class="fas fa-graduation-cap"></i> Capstone Project 1</h3>
+            </summary>
+            <p>Build a complete API test suite for a sample e-commerce API:</p>
+            <ul  class="indented-list">
+                <li> User authentication</li>
+                <li> Product listing and details</li>
+                <li> Cart and checkout APIs</li>
+                <li> Performance testing for critical endpoints</li>
+            </ul>
+            <p><em>Automate with Postman , Playwright or Cypress and integrate into CI/CD pipeline.</em></p>
+                <a href="09_Tools/Postman/assets/ecommerce-postman-bundle.zip" download>
+                    <i class="fas fa-file-archive"></i> PostmanFull Bundle (.zip)
+                </a>
+                <a href="https://github.com/milanmmore/eCommerce-API-Playwright/blob/main/README.md" target="_blank" download>
+                    <i class="fas fa-external-link-alt"></i> View Playwright README on GitHub
+                </a>
+                <!--a href="https://github.com/milanmmore/ecommerce-api-tests/tree/main/cypress" target="_blank" download>
+                    <i class="fas fa-external-link-alt"></i> View Cypress README on GitHub
+                </a>-->
+        </details>
+        <!-- Capstone Project 2 -->
+        <details>
+            <summary>
+                <h3><i class="fas fa-graduation-cap"></i> Capstone Project 2</h3>
+            </summary>
+            <p>Build a complete API test suite for the Reqres demo API:</p>
+            <ul class="indented-list">
+                <li> User authentication and token validation</li>
+                <li> CRUD operations for user data (create, read, update, delete)</li>
+                <li> Performance testing for key endpoints with response time scoring</li>
+                <li> CI/CD integration with GitHub Actions and Slack notifications</li>
+                <li> Modular architecture with reusable payloads and query parameters</li>
+            </ul>
+            <p><em>create Postman Collection for manual testing & Automate with Playwright and TypeScript, optimized for scalability and team visibility.</em></p>
+            <a href="https://github.com/milanmmore/reqres-api-postman/blob/main/README.md" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Postman collections & CICD Integration - README
+            </a>
+            <a href="https://github.com/milanmmore/reqres-api-playwright/blob/main/README.md" target="_blank">
+                <i class="fas fa-external-link-alt"></i> View Reqres Playwright README on GitHub
+            </a>
+            <a href="https://milanmmore.github.io/reqres-api-playwright/" target="_blank">
+                <i class="fas fa-chart-line"></i> View Sample HTML Report
+            </a>
+            <details>
+                <summary><strong>📊 Test Coverage Breakdown</strong></summary>
+                <ul class="indented-list">
+                    <li><strong>🔄 CRUD Analysis:</strong> Create, Read, Update, Delete endpoints</li>
+                    <li><strong>🔐 Authentication:</strong> Login/Register flows, token validation</li>
+                    <li><strong>⚡ Performance:</strong> Response time checks, threshold alerts</li>
+                    <li><strong>📣 Slack Integration:</strong> Threaded alerts, status indicators</li>
+                    <li><strong>📁 Reporting:</strong> HTML reports, screenshots, trace uploads</li>
+                </ul>
+            </details>
+        </details>
+
+        <!-- Documents -->
+        <details>
+            <summary>
+                <h3><i class="fas fa-book-reader"></i> Documents</h3>
+            </summary>
+            <ul class="api-submenu">
+                <li><strong>🔍 Reference Documents</strong>
+                    <ul class="indented-list">
+                        <li><a href="04_API_Testing/Documents/API_TESTING_FLOW.pptx" target="_blank" download>API Testing Flow<i class="fas fa-download"></i></a></li>
+                        <li><a href="04_API_Testing/Documents/API_TESTING_NOTES.docx" target="_blank" download>API Testing Notes<i class="fas fa-download"></i></a></li>
+                        <li><a href="04_API_Testing/Documents/API_TEST_automation_framework.docx" target="_blank" download>API Testing Automation Framwork<i class="fas fa-download"></i></a></li>
+                        <li><a href="04_API_Testing/Documents/rest_assured_framework_architecture.pdf" target="_blank" download>RestAssured Framework & Architecture<i class="fas fa-download"></i></a></li>
+                    </ul>
+                </li>
+                <li><strong>📘 Learning Resources</strong>
+                    <ul class="indented-list">
+                        <li><a href="03_Tutorials/API_TESTING/README.md">Tutorials</a></li>
+                        <li><a href="07_Notes_CheatSheets/04_API_cheetsheet.html">Notes & CheatSheets</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=bdHeDZPrYec&t=97s">API Testing Fundamentals By Rahul Shetty</a></li>
+                    </ul>
+                </li>
+                <li><strong>📘 Interview Preparation</strong>
+                    <ul class="indented-list">
+                        <li><a href="10_interview/API_Common_INTERVIEW.html">Common API Testing Interview Questions</a></li>
+                        <li><a href="10_Interview/API_Behavioral_INTERVIEW.html">Behavioral Questions</a></li>
+                    </ul>
+                </li>
+
+                <li><strong>📘 QA Checklist</strong>
+                    <ul class="indented-list">
+                        <li><a href="sections/qa-checklist.html">API Testing QA Checklist</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+
+    </section>
+
+        <!-- Contact Section -->
+        <section id="connect" class="connect-section">
+            <h2>Let’s Connect</h2>
+            <p>Reach out for collaborations, opportunities, or just to say hi!</p>
+            <div class="connect-cards">
+                <div class="card">
+                    <a href="mailto:milanmmore@gmail.com" class="connect-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://linkedin.com/in/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/milanmmore" target="_blank" class="connect-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <!--div class="card">
+                    <a href="tel:+1234567890" class="connect-link">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Me</span>
+                    </a>
+                </div>-->
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Common Footer -->
+    <div id="footer"></div>
+    <noscript>
+        <footer>
+            <p>© 2025 Milan Milind More | QA Automation Portfolio</p>
+        </footer>
+    </noscript>
+
+    <!-- Scripts -->
+
+    <!--script src="../assets/js/main.js?v=1.0"></script>
+    <script>
+        if (typeof loadTemplate === "function") {
+            try {
+
+                loadTemplate("header", "../assets/templates/header.html?v=1.0", "API Testing Guide", [
+                    { text: "About", link: "../about.html?v=1.0", class: "btn-primary" },
+                    { text: "Home", link: "../index.html?v=1.0", class: "btn-primary" },
+                    { text: "Connect", link: "#connect", class: "connect-button" }
+                ]);
+                loadTemplate("footer", "../assets/templates/footer.html?v=1.0"); 
+
+
+            } catch (e) {
+                console.error("Template loading failed", e);
+            }
+        }
+    </script> -->
+    <script src="../assets/js/template.js?v=1.0" defer></script>
+    <script src="../assets/js/pageConfigs.js?v=1.0" defer></script>
+    <script src="../assets/js/main.js?v=1.0" defer></script>
+</body>
+
+</html>
