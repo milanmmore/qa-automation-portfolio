@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Git Workflow for QA Engineers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+
+<body>
+<div id="wrapper">
+
+  <!-- Header -->
+  <header id="header">
+    <h1>Git Workflow</h1>
+    <p>Essential Git Commands & Best Practices for QA Automation</p>
+  </header>
+
+  <!-- Main -->
+  <div id="main">
+
+    <section class="main">
+      <header class="major">
+        <h2>Why Git Matters in QA</h2>
+      </header>
+
+      <p>
+        Git is a critical skill for QA engineers and automation testers.  
+        It helps you manage test code, collaborate with developers, track changes,
+        and maintain clean version control across automation frameworks, test data,
+        and documentation.
+      </p>
+
+      <hr />
+
+      <!-- SECTION 1 -->
+      <h2>1. Initial Setup</h2>
+
+      <h3>Set Git Username & Email</h3>
+      <pre>
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+      </pre>
+
+      <h3>Check Configuration</h3>
+      <pre>
+git config --global --list
+      </pre>
+
+      <hr />
+
+      <!-- SECTION 2 -->
+      <h2>2. Creating or Cloning a Repository</h2>
+
+      <h3>Create a New Repo</h3>
+      <pre>
+git init
+      </pre>
+
+      <h3>Clone an Existing Repo</h3>
+      <pre>
+git clone https://github.com/username/repository.git
+      </pre>
+
+      <hr />
+
+      <!-- SECTION 3 -->
+      <h2>3. Standard Git Workflow</h2>
+
+      <h3>Check Status</h3>
+      <pre>
+git status
+      </pre>
+
+      <h3>Stage Changes</h3>
+      <pre>
+git add .
+      </pre>
+
+      <h3>Commit Changes</h3>
+      <pre>
+git commit -m "Meaningful commit message"
+      </pre>
+
+      <h3>Push to Remote</h3>
+      <pre>
+git push origin main
+      </pre>
+
+      <h3>Pull Latest Changes</h3>
+      <pre>
+git pull origin main
+      </pre>
+
+      <hr />
+
+      <!-- SECTION 4 -->
+      <h2>4. Branching Strategy</h2>
+
+      <p>Recommended QA branching model:</p>
+      <ul>
+        <li><strong>main</strong> – stable, production-ready code</li>
+        <li><strong>dev</strong> – integration branch for new features</li>
+        <li><strong>feature/xyz</strong> – individual work branches</li>
+      </ul>
+
+      <h3>Create a Branch</h3>
+      <pre>
+git checkout -b feature/my-new-test
+      </pre>
+
+      <h3>Switch Branches</h3>
+      <pre>
+git checkout main
+      </pre>
+
+      <h3>Merge a Branch</h3>
+      <pre>
+git merge feature/my-new-test
+      </pre>
+
+      <hr />
+
+      <!-- SECTION 5 -->
+      <h2>5. Handling Merge Conflicts</h2>
+
+      <p>When Git detects conflicting changes:</p>
+      <ul>
+        <li>Open the file in VS Code</li>
+        <li>Choose between <strong>Accept Current</strong>, <strong>Accept Incoming</strong>, or <strong>Manual Merge</strong></li>
+        <li>Save the file</li>
+        <li>Stage and commit again</li>
+      </ul>
+
+      <pre>
+git add .
+git commit -m "Resolved merge conflict"
+      </pre>
+
+      <hr />
+
+      <!-- SECTION 6 -->
+      <h2>6. Connecting to GitHub</h2>
+
+      <h3>Add Remote Origin</h3>
+      <pre>
+git remote add origin https://github.com/username/repository.git
+      </pre>
+
+      <h3>Verify Remote</h3>
+      <pre>
+git remote -v
+      </pre>
+
+      <hr />
+
+      <!-- SECTION 7 -->
+      <h2>7. Commit Message Standards</h2>
+
+      <p>Use clear, meaningful messages:</p>
+      <ul>
+        <li><strong>feat:</strong> new feature</li>
+        <li><strong>fix:</strong> bug fix</li>
+        <li><strong>test:</strong> test updates</li>
+        <li><strong>docs:</strong> documentation changes</li>
+        <li><strong>refactor:</strong> code cleanup</li>
+      </ul>
+
+      <pre>
+git commit -m "feat: added login test cases"
+      </pre>
+
+      <hr />
+
+      <!-- SECTION 8 -->
+      <h2>8. Git Workflow for QA Automation Projects</h2>
+
+      <ol>
+        <li>Pull latest changes</li>
+        <li>Create a feature branch</li>
+        <li>Write tests / update framework</li>
+        <li>Commit frequently</li>
+        <li>Push branch to GitHub</li>
+        <li>Create a Pull Request</li>
+        <li>Get review → merge to dev → merge to main</li>
+      </ol>
+
+      <hr />
+
+      <!-- SECTION 9 -->
+      <h2>9. GitHub Pages Deployment (Optional)</h2>
+
+      <p>If your portfolio uses GitHub Pages:</p>
+
+      <pre>
+git checkout -b gh-pages
+git push origin gh-pages
+      </pre>
+
+      <p>Then enable GitHub Pages in repo settings.</p>
+
+      <hr />
+
+      <a href="../index.html" class="button">⬅ Back to Home</a>
+
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>&copy; 2026 Milan. Git Workflow Guide.</p>
+  </footer>
+
+</div>
+</body>
+</html>
